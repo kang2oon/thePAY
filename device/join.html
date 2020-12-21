@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>thePAY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/device.css" />
+</head>
+<body>
+<div class="container">
+	<input type="number" placeholder="Type mobile number" />
+	<input type="button" value="SEND VERIFICATION CODE" class="btn full ty_send" />
+	<input type="number" placeholder="Type Verification Code" id="vc_number" />
+
+	
+	<button class="btn full fixed_bottom ty_ok">OK</button>
+</div>
+
+		
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script>
+	$(document).ready(function(){
+		$('input.ty_send').click(function(){
+			$('input#vc_number').show().focus();
+		});
+	});
+</script>
+</body>
+</html>
