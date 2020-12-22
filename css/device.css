@@ -1,4 +1,4 @@
-*{font-family: 'Noto Sans KR', sans-serif;box-sizing:border-box;}
+*{font-family: 'Noto Sans KR', sans-serif;font-size:20px;box-sizing:border-box;}
 html,body{position:relative;width:100%;height:100%;margin:0;padding:0;}
 .clearfix:before,.clearfix:after{content:"";display:block}.clearfix:after{clear:both;visibility:hidden;line-height:0;height:0}.clearfix{*zoom:1}
 img{max-width:100%;line-height:0;}
@@ -16,15 +16,15 @@ a{text-decoration:none;color:inherit;}
 .container{position:relative;width:100%;padding:2.5%;}
 
 input::placeholder{color:#c9c9c9;opacity:1;}
-input[type='number']{width:100%;padding:8px;border:1px solid #dfdfdf;}
+input[type='number']{width:100%;padding:14px;border:1px solid #dfdfdf;}
 input+input{margin-top:5px;}
 input:focus{border-color:#6c6c6c;outline: 0 none;}
 input#vc_number{display:none;}
 
 
-.btn{padding:8px 5px;border:none;}
+.btn{padding:14px 5px;border:none;}
 .ty_ok{background:#ef5350;color:#fff;}
 .ty_send{background:#0ab9b2;color:#fff;}
 .full{width:100%;}
-.fixed_bottom{position:fixed;left:0;bottom:0;font-size:16px;padding:13px 5px;}
+.fixed_bottom{position:fixed;left:0;bottom:0;font-size:25px;padding:18px 5px;}
 	
