@@ -44,7 +44,7 @@ input#vc_number{display:none;}
 		transform:rotate(45deg);
 	}
 	.agree-wrap li .btn{
-		position:absolute;top:13px;right:13px;
+		position:absolute;top:15px;right:13px;
 		font-size:13px;color:#7c7c7c;background:#fff;padding:5px 13px;border:1px solid #e4e4e4;border-raidus:3px;
 		box-shadow: 0 0 3px #ccc;
 	}
