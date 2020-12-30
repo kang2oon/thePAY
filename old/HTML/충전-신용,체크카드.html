@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=1080, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="thePAY" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="thePAY">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title>thePAY</title>
+<link rel="stylesheet" href="./common/css/default.css">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="./images/favicon.ico">
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+    <!-- WRAP -->
+    <div id="WRAP">
+        <!-- HEADER -->
+        <div id="HEADER">
+            <header>
+                <h1 class="head__text">Recharge thePAY Cash</h1>
+                <button class="head__back"><img src="./images/i_back.png" alt="뒤로"></button>
+            </header>
+        </div>
+        <!-- //HEADER -->
+
+
+
+        <!-- CONTAINER -->
+        <div id="CONTAINER">
+            <div id="FORM_PAGE">
+                <div id="FORM_PAGE__CONTENT">
+
+                    <div class="l__tabmenu">
+                        <ul class="column col2">
+                            <li><a href="javascript:;">Credit/Check card</a></li>
+                            <li class="on"><a href="javascript:;">Bank account</a></li>
+                        </ul>
+                    </div>
+
+                    <form action="">
+                        <fieldset>
+                            <div class="l__inner">
+                                <div class="form-group">
+                                    <label for="form_namebank">Name of bank</label>
+                                    <div class="int_bank">
+                                        <div class="int_select int_bank_text"><img src="./images/img-bank.png" alt=""></div>
+                                        <select name="form_namebank" id="form_namebank" class="int">
+                                            <option value=""></option>
+                                            <option value="">신한은행</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form_banknumber">bank number</label>
+                                    <input type="text" class="int" id="form_banknumber">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form_depositor">Depositor</label>
+                                    <input type="text" class="int" id="form_depositor">
+                                </div>
+                                <div class="form-group bot">
+                                    <div class="int_form_desc margin_t">
+                                        Only keep ‘thePAY Cash’ after deposit into above bank account. <br>
+                                        Please check balance and recharge by yourself
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-btns fixed_btn">
+                                <div class="fixed_height"></div>
+                                <input type="submit" value="OK" class="btn" id="SUMBIT">
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div><!-- //LOGIN_PAGE__CONTENT -->
+            </div>
+        </div>
+        <!-- //CONTAINER -->
+
+
+
+    </div>
+    <!-- //WRAP -->
+<script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.tab_menu li').on('click', function() {
+            $(this).toggleClass('on');
+        });
+    });
+</script>
+</body>
+</html>

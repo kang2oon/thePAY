@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=1080, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="thePAY" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="thePAY">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title>thePAY</title>
+<link rel="stylesheet" href="./common/css/default.css">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="./images/favicon.ico">
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+    <!-- WRAP -->
+    <div id="WRAP">
+        <!-- HEADER -->
+        <div id="HEADER">
+            <header>
+                <h1 class="head__text">SKT LTE 데이터 충전</h1>
+                <button class="head__back"><img src="./images/i_back.png" alt="뒤로"></button>
+            </header>
+        </div>
+        <!-- //HEADER -->
+
+
+
+        <!-- CONTAINER -->
+        <div id="CONTAINER">
+            <div id="FORM_PAGE">
+                <div id="FORM_PAGE__CONTENT">
+
+                    <form action="">
+                        <fieldset>
+                            <div class="l__inner">
+                                <div class="form-group form-group_col">
+                                    <label for="form_phone">충전 번호</label>
+                                    <div class="int_phone">
+                                        <input type="text" name="form_phone" id="form_phone" class="int" placeholder="숫자만 입력">
+                                        <a href="javascript:;" class="btn_Address" id=""><img src="./images/i_address.png" alt="전화부 아이콘"></a>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group_col">
+                                    <label for="form_product">충전 상품 <a href="javascript:;" class="btn_question"><img src="./images/ic-question.png" alt="물음표 아이콘"></a></label>
+                                    <div class="int_select_inner">
+                                        <a href="javascript:;" class="int_select btn_question">SKT 데이터충전 (100M)</a>
+                                    </div>
+                                </div>
+                                <div class="form-group bot">
+                                    <label for="form_amount">충전 금액</label>
+                                    <select name="form_amount" id="form_amount" class="int">
+                                        <option value="">￦ 10,000</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="line__bot"></div>
+
+                            <div class="l__inner">
+                                <div class="BOX__line">
+                                    <div class="BOX__line_row top">
+                                        <dl class="details_guide_col col_2">
+                                            <dd class="details_col col1">
+                                                <div class="FT__title subcolor"><strong class="FW__M">Amount</strong></div>
+                                                <div class="FT__title3"><strong>￦ 10,000</strong></div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="BOX__line_row">
+                                        <dl class="details_guide_col col_2">
+                                            <dd class="details_col col1">
+                                                <div class="FT__desc3 subcolor"><strong class="FW__L">thePAY Cash</strong></div>
+                                                <div class="FT__title2">￦ 5,000</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="BOX__line_row bot tac">
+                                        <div class="FT__title subcolor">결제할 금액</div>
+                                        <div class="FT__title3"><strong class="point2">￦ 5,000</strong></div>
+                                        <div class="FT__desc3 subcolor">* 최소 결제 금액은 1,000원입니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-btns fixed_btn">
+                                <div class="fixed_height"></div>
+                                <input type="submit" value="충전" class="btn" id="SUMBIT">
+                            </div>
+                        </fieldset>
+                    </form>
+
+                    <div class="l__popup" id="POPUP_question">
+                        <div class="dim"></div>
+                        <div class="l-table">
+                            <div class="l-cell">
+                                <div class="popup__wrap">
+                                    <div class="popup__head">
+                                        <div class="popup__title">
+                                            알림
+                                        </div>
+                                    </div>
+                                    <div class="popup__body">
+                                        <div class="l-table">
+                                            <div class="l-cell">
+                                                <div class="popup__desc FT__desc2">
+                                                    <strong>[SKT LTE 데이터 사용 방법]</strong>
+                                                    1. SK 후불폰(3G, LTE)에 자동 충전됩니다. <br>
+                                                    2. 가입하신 월 사용 데이터 다 사용 후 차감됩니다. <br>
+                                                    3. 매월 나눠서 차감, 최대 1년간 자동 이월 사용 가능합니다. <br>
+                                                    4. 쿠폰 사용량은 SMS로 안내됩니다. (50%, 80%, 100%)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup__foot">
+                                        <a href="javascript:;" class="btn_ok popup__close">OK</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- //LOGIN_PAGE__CONTENT -->
+            </div>
+        </div>
+        <!-- //CONTAINER -->
+
+
+
+    </div>
+    <!-- //WRAP -->
+<script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        // 팝업닫기
+        $('.popup__close').on('click', function() {
+            $('.l__popup').fadeOut();
+        });
+
+        // 충전상품 퀘스천
+        $('.btn_question').on('click', function() {
+            $('#POPUP_question').fadeIn();
+        });
+    });
+</script>
+</body>
+</html>

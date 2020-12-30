@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=1080, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="thePAY" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="thePAY">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title>thePAY</title>
+<link rel="stylesheet" href="./common/css/default.css">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="./images/favicon.ico">
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+    <!-- WRAP -->
+    <div id="WRAP">
+        <!-- HEADER -->
+        <div id="HEADER">
+            <header>
+                <h1 class="head__text">thePAY 간편결제</h1>
+                <button class="head__back"><img src="./images/i_back.png" alt="뒤로"></button>
+            </header>
+        </div>
+        <!-- //HEADER -->
+
+
+
+        <!-- CONTAINER -->
+        <div id="CONTAINER">
+            <div id="thePAY_PAGE">
+                <div id="thePAY_PAGE__CONTENT">
+
+                    <form action="">
+                        <fieldset>
+
+                            <div class="step_nav tac">
+                                <ul class="column col4">
+                                    <li>STEP <strong>1</strong></li>
+                                    <li class="on">STEP <strong>2</strong></li>
+                                    <li>STEP <strong>3</strong></li>
+                                    <li>STEP <strong>4</strong></li>
+                                </ul>
+                            </div>
+
+                            <div class="l__inner">
+                                <div class="FT__title4 l__interval4"><strong>첨부파일 등록</strong></div>
+                                <div class="FT__title">간편 결제 카드로 등록할 카드를 찍어 주세요.</div>
+                            </div>
+
+                            <div class="l__inner">
+                                <div class="l__guide">
+                                    <dl class="details_guide details_file">
+                                        <dt class="blind">카드 사진 앞면</dt>
+                                        <dd class="details_check">
+                                            <div class="int_check_v2">
+                                                <input type="checkbox" id="cehckbox_01"><label for="cehckbox_01"><span></span></label>
+                                            </div>
+                                        </dd>
+                                        <dd class="details_title">
+                                            <div class="l-table">
+                                                <div class="l-cell">
+                                                    <div class="FT__title">카드 사진 앞면</div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                        <dd class="details_camera">
+                                            <a href="javascript:;"><img src="./images/ic-camera.png" alt="카메라 이미지"></a>
+                                        </dd>
+                                    </dl>
+                                    <dl class="details_guide details_file">
+                                        <dt class="blind">카드 사진 뒷면</dt>
+                                        <dd class="details_check">
+                                            <div class="int_check_v2">
+                                                <input type="checkbox" id="cehckbox_02"><label for="cehckbox_02"><span></span></label>
+                                            </div>
+                                        </dd>
+                                        <dd class="details_title">
+                                            <div class="l-table">
+                                                <div class="l-cell">
+                                                    <div class="FT__title">카드 사진 뒷면</div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                        <dd class="details_camera">
+                                            <a href="javascript:;"><img src="./images/ic-camera.png" alt="카메라 이미지"></a>
+                                        </dd>
+                                    </dl>
+                                    <dl class="details_guide details_file">
+                                        <dt class="blind"></dt>
+                                        <dd class="details_check">
+                                            <div class="int_check_v2">
+                                                <input type="checkbox" id="cehckbox_03"><label for="cehckbox_03"><span></span></label>
+                                            </div>
+                                        </dd>
+                                        <dd class="details_title">
+                                            <div class="l-table">
+                                                <div class="l-cell">
+                                                    <div class="FT__title">카드 비밀번호 확인</div>
+                                                    <div class="FT__desc3">앞 2자리 비번 입력</div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                        <dd class="details_camera">
+                                            <a href="javascript:;"><img src="./images/ic-camera.png" alt="카메라 이미지"></a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <div class="form-btns fixed_btn">
+                                <div class="fixed_height"></div>
+                                <input type="submit" value="NEXT" class="btn" id="SUMBIT">
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div><!-- //LOGIN_PAGE__CONTENT -->
+            </div>
+        </div>
+        <!-- //CONTAINER -->
+
+
+
+    </div>
+    <!-- //WRAP -->
+<script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.tab_menu li').on('click', function() {
+            $(this).toggleClass('on');
+        });
+    });
+</script>
+</body>
+</html>

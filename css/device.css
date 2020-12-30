@@ -1,4 +1,4 @@
-*{font-family: 'Noto Sans KR', sans-serif;font-size:20px;box-sizing:border-box;}
+*{font-family: 'Noto Sans KR', sans-serif;font-size:18px;box-sizing:border-box;}
 html,body{position:relative;width:100%;height:100%;margin:0;padding:0;}
 .clearfix:before,.clearfix:after{content:"";display:block}.clearfix:after{clear:both;visibility:hidden;line-height:0;height:0}.clearfix{*zoom:1}
 img{max-width:100%;line-height:0;}
@@ -26,5 +26,5 @@ input#vc_number{display:none;}
 .ty_ok{background:#ef5350;color:#fff;}
 .ty_send{background:#0ab9b2;color:#fff;}
 .full{width:100%;}
-.fixed_bottom{position:fixed;left:0;bottom:0;font-size:25px;padding:18px 5px;}
+.fixed_bottom{position:fixed;left:0;bottom:0;font-size:21px;padding:18px 5px;}
 	

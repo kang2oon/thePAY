@@ -1,0 +1,465 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ARIP</title>
+<script type="text/javascript" src="HTML/common/js/jquery-3.2.1.min.js"></script>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+    *{margin:0;padding:0;font-family:"Noto Sans KR","Malgun Gothic", sans-serif;font-size:14px;line-height:1.5;color:#62697b;}
+    /*h1 img {height:60px;}*/
+    ul,li,ol{list-style:none}
+    table, tr, td, th{border-collapse:collapse;border-spacing:0;}
+    .header{position:fixed;width:100%;padding:0;height:100px;background-color:#fff}
+    .header > div{position:relative;}
+    .header h1{width:100%;padding:27px 0;text-align:center;font-weight:500;font-size:30px;color:#181818;}
+    .header h1 img {height:45px;}
+    .header .link{position:absolute;bottom:5px;right:5%;}
+    .header .link a{font-size:16px;color:#fff;margin-left:10px;}
+    .tableWrap{padding-top:98px;padding-bottom:50px}
+    .tableTh{position:fixed;width:100%;}
+    .tableTd{margin-top:32px;}
+    table{width:100%;table-layout:fixed}
+    tr:hover{background-color:#f9fbfd}
+    th{padding:7px 0;background-color:#231916;color:#fff;font-weight:normal;font-family:"Noto Sans KR","Malgun Gothic", sans-serif}
+    th span {color:#333;}
+    td{padding:5px 0;border:1px solid #edeef1;text-align:center;}
+    td:nth-child(5),td:nth-child(6){text-align:left;padding-left:10px;}
+    td a{text-decoration:none;}
+    td a:hover{text-decoration:underline;}
+    td p{color:#ff3838;line-height:1.3}
+    .depth1{font-family:"Noto Sans KR","Malgun Gothic", sans-serif;font-weight:600;color:#000;}
+    .goTop{display:block;position:fixed;bottom:0;width:100%;padding:10px 0;text-align:center;color:#000;background-color:#fff;border-top:1px solid #ddd;}
+    .line_bot td {border-bottom-color:#231916;}
+    .txtOrg,
+    .todo li{color:#ddd;}
+    .done li{color:#ddd;}
+    .done li:first-child{color:#ddd;}
+    .done li:nth-child(2){color:#ddd;}
+    .done li:nth-child(3){color:red;}
+    .done li:nth-child(4){color:#ddd;}
+    .done li:nth-child(5){color:#ddd;}
+    .done li:nth-child(6){color:#ddd;}
+    .done li:nth-child(7){color:#ddd;}
+    .done li:nth-child(8){color:#ddd;}
+    .done li:nth-child(9){color:#ddd;}
+    .done li:nth-child(10){color:red;}
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+    $('td>a').click(function(){
+        window.open(this.href,'','scrollbars=yes, top=0, left=0, width=1100, height=975');
+        return false;
+    });
+});
+//]]>
+</script>
+
+</head>
+<body>
+    <div class="header" id="top">
+        <h1>thePAY</h1>
+        <p style="text-align:right;margin-top:-26px;margin-right:20px;font-size:12px;color:#111">* 2020.08.12 최신파일. v4</p>
+    </div>
+    <div class="tableWrap">
+        <table class="tableTh">
+            <colgroup>
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="25%" />
+                <col width="*" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>1depth</th>
+                    <th>2depth</th>
+                    <th>3depth</th>
+                    <th>4depth</th>
+                    <th>파일명</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="tableTd">
+            <colgroup>
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="25%" />
+                <col width="*" />
+            </colgroup>
+            <tbody>
+                <tr class="line_bot">
+                    <td class="depth1">공통</td>
+                    <td>레이어팝업</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/공통선택_레이어팝업.html" target="_blank">/공통선택_레이어팝업.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li>20200811 - 추가</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1">내정보</td>
+                    <td>디폴트</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/내정보.html" target="_blank">/내정보.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li>20200811 - 셀렉박스 수정</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td>변경</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/내정보변경.html" target="_blank">/내정보변경.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td>인증번호추가</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/내정보변경-인증번호추가.html" target="_blank">/내정보변경-인증번호추가.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1"></td>
+                    <td></td>
+                    <td>핸드폰 인증</td>
+                    <td></td>
+                    <td><a href="HTML/내정보변경-인증번호추가_디폴트.html" target="_blank">/내정보변경-인증번호추가_디폴트.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li>20200811 - 셀렉박스 수정</li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="depth1">충전-은행계좌/카드</td>
+                    <td>신용,체크카드</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/충전-신용,체크카드.html" target="_blank">/충전-신용,체크카드.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr >
+                    <td class="depth1"></td>
+                    <td>충전</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/충전-은행계좌_design.html" target="_blank">/충전-은행계좌_design.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1"></td>
+                    <td>인증동의</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/인증동의 - 소거.html" target="_blank">/인증동의 - 소거.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="depth1">선불폰 충전</td>
+                    <td>일반선불</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/선불폰충전-일반선불.html" target="_blank">/선불폰충전-일반선불.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li>20200811 - 셀렉박스 수정</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td></td>
+                    <td>외국</td>
+                    <td></td>
+                    <td><a href="HTML/선불폰충전-일반선불_외국.html" target="_blank">/선불폰충전-일반선불_외국.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li>20200811 - 셀렉박스 수정</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1"></td>
+                    <td>월정액</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/선불폰충전-월정액.html" target="_blank">/선불폰충전-월정액.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li>20200811 - 셀렉박스 수정</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1">국제전화충전</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/국제전화충전.html" target="_blank">/국제전화충전.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr class="line_bot">
+                    <td class="depth1">SKT LTE 데이터충전</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/SKT LTE 데이터충전.html" target="_blank">/SKT LTE 데이터충전.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li>팝업 &emsp; 데이터충전 팝업</li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1">체류</td>
+                    <td>외국인 가이드</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/국내체류외국인가이드.html" target="_blank">/국내체류외국인가이드.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td></td>
+                    <td>02</td>
+                    <td></td>
+                    <td><a href="HTML/체류기간연장_02.html" target="_blank">/체류기간연장_02.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td></td>
+                    <td>03</td>
+                    <td></td>
+                    <td><a href="HTML/체류기간연장_03.html" target="_blank">/체류기간연장_03.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1"></td>
+                    <td>고객센터</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/고객센터.html" target="_blank">/고객센터.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1">이로드</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/이로드.html" target="_blank">/이로드.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1">공지사항</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/공지사항.html" target="_blank">/공지사항.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1">내역조회</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/내역조회.html" target="_blank">/내역조회.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1">안심결제</td>
+                    <td>01</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/안심결제01.html" target="_blank">/안심결제01.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td>02</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/안심결제02.html" target="_blank">/안심결제02.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td>03</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/안심결제03.html" target="_blank">/안심결제03.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td>04</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/안심결제04.html" target="_blank">/안심결제04.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1"></td>
+                    <td>05</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="HTML/안심결제05.html" target="_blank">/안심결제05.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1">카드등록</td>
+                    <td>간편결제등록</td>
+                    <td>촬영5</td>
+                    <td></td>
+                    <td><a href="HTML/thePAY_간편결제등록_촬영–5.html" target="_blank">/thePAY_간편결제등록_촬영–5.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="depth1"></td>
+                    <td></td>
+                    <td>촬영7</td>
+                    <td></td>
+                    <td><a href="HTML/thePAY_간편결제등록_촬영–7.html" target="_blank">/thePAY_간편결제등록_촬영–7.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="line_bot">
+                    <td class="depth1"></td>
+                    <td></td>
+                    <td>촬영19</td>
+                    <td></td>
+                    <td><a href="HTML/Android 모바일-18_design.html" target="_blank">/Android 모바일-18_design.html</a></td>
+                    <td>
+                        <ul class="done">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="#" class="goTop">TOP</a>
+</body>
+</html>

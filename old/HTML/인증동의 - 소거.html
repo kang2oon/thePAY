@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=1080, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="thePAY" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="thePAY">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title>thePAY</title>
+<link rel="stylesheet" href="./common/css/default.css">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="./images/favicon.ico">
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+    <!-- WRAP -->
+    <div id="WRAP">
+        <!-- HEADER -->
+        <div id="HEADER">
+            <header>
+                <h1 class="head__text">thePAY</h1>
+                <button class="head__back"><img src="./images/i_back.png" alt="뒤로"></button>
+            </header>
+        </div>
+        <!-- //HEADER -->
+
+
+
+        <!-- CONTAINER -->
+        <div id="CONTAINER">
+            <div id="FORM_PAGE">
+                <div id="FORM_PAGE__CONTENT">
+
+                    <form action="">
+                        <fieldset>
+                            <div class="l__inner l__inner_top">
+                                <div class="FT__title"><strong>필수 이용약관 및 개인정보 활용 동의</strong></div>
+                            </div>
+
+                            <div class="line__bot2"></div>
+
+                            <div class="l__inner">
+                                <div class="form-group">
+                                    <div class="int_consent">
+                                        <div class="int_consent_row int_consent_top">
+                                            <input type="checkbox" id="form_agree_all"><label for="form_agree_all"><span></span> <strong>전체 동의</strong></label>
+                                        </div>
+                                        <div class="int_consent_box">
+                                            <div class="int_consent_row">
+                                                <input type="checkbox" id="form_agree_1"><label for="form_agree_1"><span></span> 이용약관</label>
+                                                <a href="javascript:;" class="btn_agree_link"><img src="./images/ic-more.png" alt="보기"></a>
+                                            </div>
+                                            <div class="int_consent_row">
+                                                <input type="checkbox" id="form_agree_2"><label for="form_agree_2"><span></span> 개인정보취급방침</label>
+                                                <a href="javascript:;" class="btn_agree_link"><img src="./images/ic-more.png" alt="보기"></a>
+                                            </div>
+                                            <div class="int_consent_row bot">
+                                                <input type="checkbox" id="form_agree_3"><label for="form_agree_3"><span></span> 문자수신동의</label>
+                                                <a href="javascript:;" class="btn_agree_link"><img src="./images/ic-more.png" alt="보기"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="l__inner fixed_btn">
+                                <div class="fixed_height2"></div>
+                                <div class="form-btns nomg_t">
+                                    <input type="submit" value="NEXT" class="type_btn" id="SUMBIT">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <br>
+
+                </div><!-- //LOGIN_PAGE__CONTENT -->
+            </div>
+        </div>
+        <!-- //CONTAINER -->
+
+
+
+    </div>
+    <!-- //WRAP -->
+<script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.tab_menu li').on('click', function() {
+            $(this).toggleClass('on');
+        });
+    });
+</script>
+</body>
+</html>
