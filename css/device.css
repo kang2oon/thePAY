@@ -1,4 +1,4 @@
-*{font-family: 'Noto Sans KR', sans-serif;font-size:18px;box-sizing:border-box;}
+*{font-family: 'Noto Sans KR', sans-serif;font-size:16px;box-sizing:border-box;}
 html,body{position:relative;width:100%;height:100%;margin:0;padding:0;}
 .clearfix:before,.clearfix:after{content:"";display:block}.clearfix:after{clear:both;visibility:hidden;line-height:0;height:0}.clearfix{*zoom:1}
 img{max-width:100%;line-height:0;}
@@ -21,10 +21,39 @@ input+input{margin-top:5px;}
 input:focus{border-color:#6c6c6c;outline: 0 none;}
 input#vc_number{display:none;}
 
+.agree-wrap{margin-top:10px;}
+.agree-wrap li{position:relative;padding:18px 13px;}
+	.agree-wrap li+li{border-top:1px solid #ededed;}
+	.agree-wrap li .cst_input{
+		display:block;position:relative;padding-left:35px;cursor:pointer;font-size:15px;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select:none;
+		user-select:none;
+	}
+	.agree-wrap li .cst_input input{position:absolute;opacity:0;cursor:pointer;width:0;height:0;}
+	.agree-wrap li .cst_input .checkmark{position:absolute;top:0;left:0;width:23px;height:23px;border:2px solid #bdbbbc;border-radius:3px;}
+	.agree-wrap li .cst_input:hover input ~ .checkmark{border-color:#666;}
+	.agree-wrap li .cst_input .checkmark:after{content:"";position:absolute;display:none;}
+	.agree-wrap li .cst_input input:checked ~ .checkmark{background:#0ab9b2;border-color:#0ab9b2;}
+	.agree-wrap li .cst_input input:checked ~ .checkmark:after{
+		display:block;
+		left:6px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;
+		-webkit-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		transform:rotate(45deg);
+	}
+	.agree-wrap li .btn{
+		position:absolute;top:13px;right:13px;
+		font-size:13px;color:#7c7c7c;background:#fff;padding:5px 13px;border:1px solid #e4e4e4;border-raidus:3px;
+		box-shadow: 0 0 3px #ccc;
+	}
+
 
 .btn{padding:14px 5px;border:none;}
 .ty_ok{background:#ef5350;color:#fff;}
 .ty_send{background:#0ab9b2;color:#fff;}
 .full{width:100%;}
 .fixed_bottom{position:fixed;left:0;bottom:0;font-size:21px;padding:18px 5px;}
+.box-wrap{border:1px solid #bfbfbf;}
 	
