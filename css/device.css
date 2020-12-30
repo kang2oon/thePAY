@@ -25,7 +25,7 @@ input#vc_number{display:none;}
 .agree-wrap li{position:relative;padding:18px 13px;}
 	.agree-wrap li+li{border-top:1px solid #ededed;}
 	.agree-wrap li .cst_input{
-		display:block;position:relative;padding-left:35px;cursor:pointer;font-size:15px;
+		display:block;position:relative;padding-left:35px;cursor:pointer;font-size:15px;line-height:23px;
 		-webkit-user-select:none;
 		-moz-user-select:none;
 		-ms-user-select:none;
