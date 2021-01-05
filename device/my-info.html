@@ -43,6 +43,15 @@
 			<div>예금주</div>
 			<div>thePAY(텔레센트로)</div>
 		</div>
+		<div class="row">
+			<div>
+				<select>
+					<option value="bank1">111</option>
+					<option value="bank2">222</option>
+				</select>
+			</div>
+			<div><button class="btn ty_change">은행변경</button></div>
+		</div>
 	</div>
 	<div class="sub-title">
 		<h2>등록된 카드</h2>
@@ -50,9 +59,13 @@
 </div>
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script src="/js/jquery.custom-select.js"></script>
 <script>
 	$(document).ready(function(){
 		
+	});
+	$('select').customSelect({
+		search: true
 	});
 </script>
 </body>

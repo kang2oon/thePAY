@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=1080, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="thePAY" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="thePAY">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title>thePAY</title>
+<link rel="stylesheet" href="./common/css/default.css">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="./images/favicon.ico">
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+    <!-- WRAP -->
+    <div id="WRAP">
+        <!-- HEADER -->
+        <div id="HEADER">
+            <header>
+                <h1 class="head__text">선불폰 충전</h1>
+                <button class="head__back"><img src="./images/i_back.png" alt="뒤로"></button>
+            </header>
+        </div>
+        <!-- //HEADER -->
+
+
+
+        <!-- CONTAINER -->
+        <div id="CONTAINER">
+            <div id="FORM_PAGE">
+                <div id="FORM_PAGE__CONTENT">
+
+                    <div class="l__tabmenu">
+                        <ul class="column col2">
+                            <li class="on"><a href="javascript:;">일반 선불</a></li>
+                            <li><a href="javascript:;">월 정액</a></li>
+                        </ul>
+                    </div>
+
+                    <form action="">
+                        <fieldset>
+                            <div class="l__inner">
+                                <div class="form-group">
+                                    <label for="form_phone">충전 번호</label>
+                                    <div class="int_phone">
+                                        <input type="text" name="form_phone" id="form_phone" class="int" placeholder="숫자만 입력">
+                                        <a href="javascript:;" class="btn_Address" id=""><img src="./images/i_address.png" alt="전화부 아이콘"></a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form_certified">충전 상품</label>
+                                    <div class="tab_menu">
+                                        <ul class="column col_2">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="tabmenu_inner tabmenu_voice">
+                                                        <i></i>
+                                                        <div class="tabmenu_tit">
+                                                            <div class="l-table">
+                                                                <div class="l-cell">
+                                                                    Voice <br>(Regular)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="tabmenu_inner tabmenu_dataonly">
+                                                        <i></i>
+                                                        <div class="tabmenu_tit">
+                                                            <div class="l-table">
+                                                                <div class="l-cell">
+                                                                    Data Only
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" name="form_product" id="form_product" class="int" value="Voice (기본 음성 충전)">
+                                </div>
+                                <div class="form-group bot">
+                                    <label for="form_number">충전 번호</label>
+                                    <div class="int_select_inner">
+                                        <a href="javascript:;" class="int_select" id="btn_select">￦ 10,000</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="line__bot"></div>
+
+                            <div class="l__inner">
+                                <div class="BOX__line">
+                                    <div class="BOX__line_row top">
+                                        <dl class="details_guide_col col_2">
+                                            <dd class="details_col col1">
+                                                <div class="FT__title subcolor"><strong class="FW__M">Amount</strong></div>
+                                                <div class="FT__title3"><strong>￦ 10,000</strong></div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="BOX__line_row">
+                                        <dl class="details_guide_col col_2">
+                                            <dd class="details_col col1">
+                                                <div class="FT__desc3 subcolor"><strong class="FW__L">thePAY Cash</strong></div>
+                                                <div class="FT__title2">￦ 5,000</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="BOX__line_row bot tac">
+                                        <div class="FT__title subcolor">결제할 금액</div>
+                                        <div class="FT__title3"><strong class="point2">￦ 5,000</strong></div>
+                                        <div class="FT__desc3 subcolor">* 최소 결제 금액은 1,000원입니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-btns fixed_btn">
+                                <div class="fixed_height"></div>
+                                <input type="submit" value="충전" class="btn" id="SUMBIT">
+                            </div>
+                        </fieldset>
+                    </form>
+
+
+                    <div class="l__popup" id="POPUP_default">
+                        <div class="dim"></div>
+                        <div class="l-table">
+                            <div class="l-cell">
+                                <div class="popup__wrap">
+                                    <div class="popup__head">
+                                        <div class="popup__title tal">
+                                            충전 번호
+                                        </div>
+                                    </div>
+                                    <div class="popup__body">
+                                        <div class="default_select_inner">
+                                            <ul>
+                                                <li>
+                                                    <input type="radio" id="select1" name="select"><label for="select1"><span></span> ￦39,800 - THB 1,000</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="select2" name="select"><label for="select2"><span></span> ￦19,900 - THB 500</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="select3" name="select"><label for="select3"><span></span> ￦11,900 - THB 300</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="select4" name="select"><label for="select4"><span></span> ￦39,800 - THB 1,000</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="popup__foot popup_btns col2">
+                                        <a href="javascript:;" class="btn_ok popup__close">취소</a>
+                                        <a href="javascript:;" class="btn">확인</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- //LOGIN_PAGE__CONTENT -->
+            </div>
+        </div>
+        <!-- //CONTAINER -->
+
+
+
+    </div>
+    <!-- //WRAP -->
+<script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.tab_menu li').on('click', function() {
+            $(this).toggleClass('on');
+        });
+
+        // 팝업닫기
+        $('.popup__close').on('click', function() {
+            $('.l__popup').fadeOut();
+        });
+
+        // 셀렉 팝업열기
+        $('#btn_select').on('click', function() {
+            $('#POPUP_default').fadeIn();
+        });
+    });
+</script>
+</body>
+</html>
