@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta name="viewport" content="width=1080, user-scalable=0">
+<meta name="viewport" content="width=device-width, user-scalable=0">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="title" content="thePAY" />
 <meta name="description" content="" />
@@ -24,88 +24,101 @@
 <body>
     <!-- WRAP -->
     <div id="WRAP">
-        <!-- HEADER -->
-        <div id="HEADER">
-            <header>
-                <h1 class="head__text">선불폰 충전</h1>
-                <button class="head__back"><img src="./images/i_back.png" alt="뒤로"></button>
-            </header>
-        </div>
-        <!-- //HEADER -->
-
-
 
         <!-- CONTAINER -->
         <div id="CONTAINER">
             <div id="FORM_PAGE">
                 <div id="FORM_PAGE__CONTENT">
 
-                    <div class="l__tabmenu">
-                        <ul class="column col2">
-                            <li><a href="javascript:;">일반 선불</a></li>
-                            <li class="on"><a href="javascript:;">월 정액</a></li>
-                        </ul>
-                    </div>
-
                     <form action="">
                         <fieldset>
                             <div class="l__inner">
                                 <div class="form-group">
-                                    <label for="form_phone">충전 번호</label>
-                                    <div class="int_phone">
-                                        <input type="text" name="form_phone" id="form_phone" class="int" value="010-6672-4535">
-                                        <a href="javascript:;" class="btn_Address" id=""><img src="./images/i_address.png" alt="전화부 아이콘"></a>
-                                    </div>
+                                    <label for="form_country">Country</label>
+                                    <select name="form_country" id="form_country" class="int">
+                                        <option value="">E-load(Thailand)</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="form_news_agency">충전 가능 통신사</label>
-                                    <div class="int_select_inner">
-                                        <a href="javascript:;" class="int_select" id="btn_select">통신사 모름</a>
+                                    <label for="form_certified">충전 상품</label>
+                                    <div class="tab_menu">
+                                        <ul class="column col_2">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="tabmenu_inner tabmenu_card">
+                                                        <i></i>
+                                                        <div class="tabmenu_tit">
+                                                            <div class="l-table">
+                                                                <div class="l-cell FT__title">
+                                                                    Card
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="tabmenu_inner tabmenu_dataonly">
+                                                        <i></i>
+                                                        <div class="tabmenu_tit">
+                                                            <div class="l-table">
+                                                                <div class="l-cell FT__title">
+                                                                    Mobile
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="news_agency_img margin_t">
-                                        <img src="./images/news_agency_img.png" alt="이미지">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="form_amount">충전 금액</label>
-                                    <input type="text" name="form_amount" id="form_amount" class="int" value="￦ 10,000">
-                                    <div class="int_form margin_t">
-                                        <ul class="column col4">
+                                    <input type="text" name="form_product" id="form_product" class="int l__interval1" value="Card">
+                                    <div class="box_col">
+                                        <ul class="column col5">
                                             <li>
-                                                <select name="form_amount" id="form_amount" class="int">
-                                                    <option value="">~29,999</option>
-                                                </select>
+                                                <a href="javascript:;">
+                                                    <div class="tabmenu_inner tac tabmenu_img">
+                                                        <div class="tabmenu_image">
+                                                            <div class="l-table">
+                                                                <div class="l-cell">
+                                                                    <img src="./images/img-01.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </li>
                                             <li>
-                                                <select name="form_amount2" id="form_amount2" class="int">
-                                                    <option value="">￦36,300</option>
-                                                </select>
-                                            </li>
-                                            <li>
-                                                <select name="form_amount3" id="form_amount3" class="int">
-                                                    <option value="">~40,000</option>
-                                                </select>
-                                            </li>
-                                            <li>
-                                                <select name="form_amount4" id="form_amount4" class="int">
-                                                    <option value="">~50,000</option>
-                                                </select>
+                                                <a href="javascript:;">
+                                                    <div class="tabmenu_inner tac tabmenu_img">
+                                                        <div class="tabmenu_image">
+                                                            <div class="l-table">
+                                                                <div class="l-cell">
+                                                                    <img src="./images/img-02.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="form_provider">Provider</label>
+                                    <select name="form_provider" id="form_provider" class="int">
+                                        <option value="">TrueMoneyCard</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form_email">Email</label>
+                                    <input type="text" class="int" id="form_email" placeholder="Hint Recharge Number">
+                                </div>
                                 <div class="form-group bot">
-                                    <div class="BOX__line">
-                                        <div class="BOX__line_row">
-                                            <div class="FT__desc2 l__interval4"><strong class="FW__M">[월 정액 요금제 충전 방법]</strong></div>
-                                            <div class="FT__desc2">
-                                                * 통신사를 몰라도 요금제만 알면 충전 가능 <br>
-                                                * 충전 실패시 정확한 통신사/요금제 선택 <br>
-                                                * 충전 후 30일간 이용 가능 <br>
-                                                * 부가 서비스(국제/영상 등) 이용시 30일 전에 정지될 수 있음 <br>
-                                                * 자세한 요금 상담은 각 통신사의 고객센터(114)로 문의
-                                            </div>
-                                        </div>
+                                    <label for="form_amount">Recharge Amount</label>
+                                    <div class="int_select_inner">
+                                        <a href="javascript:;" class="int_select" id="btn_select">￦ 39,800 - THB 1000</a>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +158,6 @@
                         </fieldset>
                     </form>
 
-
                     <div class="l__popup" id="POPUP_default">
                         <div class="dim"></div>
                         <div class="l-table">
@@ -153,7 +165,7 @@
                                 <div class="popup__wrap">
                                     <div class="popup__head">
                                         <div class="popup__title tal">
-                                            충전 가능 통신사
+                                            Recharge Amount
                                         </div>
                                     </div>
                                     <div class="popup__body">
@@ -195,6 +207,11 @@
 <script type="text/javascript" src="./common/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
     $(function(){
+        $('.tab_menu li').on('click', function() {
+            $(this).toggleClass('on');
+        });
+
+
         // 팝업닫기
         $('.popup__close').on('click', function() {
             $('.l__popup').fadeOut();

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta name="viewport" content="width=1080, user-scalable=0">
+<meta name="viewport" content="width=device-width, user-scalable=0">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="title" content="thePAY" />
 <meta name="description" content="" />
@@ -24,30 +24,28 @@
 <body>
     <!-- WRAP -->
     <div id="WRAP">
-        <!-- HEADER -->
-        <div id="HEADER">
-            <header>
-                <h1 class="head__text">해외 모바일 충전 (E-load)</h1>
-                <button class="head__back"><img src="./images/i_back.png" alt="뒤로"></button>
-            </header>
-        </div>
-        <!-- //HEADER -->
-
-
 
         <!-- CONTAINER -->
         <div id="CONTAINER">
             <div id="FORM_PAGE">
                 <div id="FORM_PAGE__CONTENT">
 
+                    <div class="l__tabmenu">
+                        <ul class="column col2">
+                            <li class="on"><a href="javascript:;">일반 선불</a></li>
+                            <li><a href="javascript:;">월 정액</a></li>
+                        </ul>
+                    </div>
+
                     <form action="">
                         <fieldset>
                             <div class="l__inner">
                                 <div class="form-group">
-                                    <label for="form_country">Country</label>
-                                    <select name="form_country" id="form_country" class="int">
-                                        <option value="">E-load(Thailand)</option>
-                                    </select>
+                                    <label for="form_phone">충전 번호</label>
+                                    <div class="int_phone">
+                                        <input type="text" name="form_phone" id="form_phone" class="int" placeholder="숫자만 입력">
+                                        <a href="javascript:;" class="btn_Address" id=""><img src="./images/i_address.png" alt="전화부 아이콘"></a>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="form_certified">충전 상품</label>
@@ -55,12 +53,12 @@
                                         <ul class="column col_2">
                                             <li>
                                                 <a href="javascript:;">
-                                                    <div class="tabmenu_inner tabmenu_card">
+                                                    <div class="tabmenu_inner tabmenu_voice">
                                                         <i></i>
                                                         <div class="tabmenu_tit">
                                                             <div class="l-table">
-                                                                <div class="l-cell FT__title">
-                                                                    Card
+                                                                <div class="l-cell">
+                                                                    Voice <br>(Regular)
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -73,8 +71,8 @@
                                                         <i></i>
                                                         <div class="tabmenu_tit">
                                                             <div class="l-table">
-                                                                <div class="l-cell FT__title">
-                                                                    Mobile
+                                                                <div class="l-cell">
+                                                                    Data Only
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -83,52 +81,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <input type="text" name="form_product" id="form_product" class="int l__interval1" value="Card">
-                                    <div class="box_col">
-                                        <ul class="column col5">
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <div class="tabmenu_inner tac tabmenu_img">
-                                                        <div class="tabmenu_image">
-                                                            <div class="l-table">
-                                                                <div class="l-cell">
-                                                                    <img src="./images/img-01.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <div class="tabmenu_inner tac tabmenu_img">
-                                                        <div class="tabmenu_image">
-                                                            <div class="l-table">
-                                                                <div class="l-cell">
-                                                                    <img src="./images/img-02.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="form_provider">Provider</label>
-                                    <select name="form_provider" id="form_provider" class="int">
-                                        <option value="">TrueMoneyCard</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="form_email">Email</label>
-                                    <input type="text" class="int" id="form_email" placeholder="Hint Recharge Number">
+                                    <input type="text" name="form_product" id="form_product" class="int" value="Voice (기본 음성 충전)">
                                 </div>
                                 <div class="form-group bot">
-                                    <label for="form_amount">Recharge Amount</label>
+                                    <label for="form_number">충전 번호</label>
                                     <div class="int_select_inner">
-                                        <a href="javascript:;" class="int_select" id="btn_select">￦ 39,800 - THB 1000</a>
+                                        <a href="javascript:;" class="int_select" id="btn_select">￦ 10,000</a>
                                     </div>
                                 </div>
                             </div>
@@ -168,6 +126,7 @@
                         </fieldset>
                     </form>
 
+
                     <div class="l__popup" id="POPUP_default">
                         <div class="dim"></div>
                         <div class="l-table">
@@ -175,7 +134,7 @@
                                 <div class="popup__wrap">
                                     <div class="popup__head">
                                         <div class="popup__title tal">
-                                            Recharge Amount
+                                            충전 번호
                                         </div>
                                     </div>
                                     <div class="popup__body">
@@ -220,7 +179,6 @@
         $('.tab_menu li').on('click', function() {
             $(this).toggleClass('on');
         });
-
 
         // 팝업닫기
         $('.popup__close').on('click', function() {
