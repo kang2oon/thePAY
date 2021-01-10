@@ -7,6 +7,7 @@ a{text-decoration:none;color:inherit;}
 .fleft{float:left;}
 .fright{float:right;}
 .ag-right{text-align:right;}
+.mgtop10{margin-top:10px;}
 
 #main{
 	display:flex;justify-content:center;align-items:center;flex-direction:column;
@@ -40,6 +41,9 @@ input[readonly]{border:0;padding:0;}
 	.row .inner-btn{position:relative;top:3px;width:24px;}
 	.row .inner-btn img{width:24px;}
 	.row .btn{font-size:14px;padding:5px 21px;}
+	.row .setting{background:#ebebeb;width:32px;height:32px;border-radius:50%;padding:4px;}
+	.card_info{display:flex;align-items:center;}
+	.card_info .card_img{margin-right:5px;}
 .exchange-wrap{margin:-2.5% -2.5% 5%;padding:2.5%;color:#fff;background:#5f78f3;border-radius:0 0 16px 16px;}
 	.exchange-wrap h2{font-size:18px;margin:0;padding:10px;}
 	.exrate_money{
@@ -93,12 +97,22 @@ input[readonly]{border:0;padding:0;}
 	.trans_info .call_box .call_number{font-size:24px;font-weight:800;}
 	.trans_info .call_box .op_time{padding-left:42px;background:url(/images/ico_time.png) no-repeat 0 5px;font-size:14px;margin-top:10px;}
 .country_list{margin-top:20px;}	
+.add_card{display:flex;width:100%;border:1px solid #dfdfdf;border-radius:8px;padding:16px;align-items:center;}
+	.add_card div:nth-child(1){flex-grow:1;text-align:center;}
+	.add_card div:nth-child(2){flex-shrink:0;width:24px;}
+	.add_card .add{background:#f9d30a;width:24px;height:24px;border-radius:50%;}
+.card_num_wrap{border:1px solid #dfdfdf;margin-top:10px;background:url(/images/ico_card.png) no-repeat;background-position:calc(100% - 10px) 50%;}
+	.card_num_wrap div{float:left;}
+	.card_num_wrap div:nth-child(odd){width:20%;}
+	.card_num_wrap div:nth-child(even){text-align:center;line-height:50px;}
+	.card_num_wrap input{border:none;text-align:center;}
+.guide_msg{margin-top:10px;font-size:13px;color:#ef5350;}
 /* Sub Title */
 .sub-title{position:relative;margin:-2.5% -2.5% 0;padding:2.5%;background:#f3f3f5;}
 	.sub-title h2{font-size:14px;color:#777;font-weight:400;margin:5px 2.5%;}
 	.sub-title .btn{position:absolute;top:8px;right:5%;font-size:14px;padding:5px 21px;}
 /* Tab */
-.tab{margin:-2.5%;border-bottom:1px solid #dfdfdf;}
+.tab{margin:-2.5% -2.5% 0;border-bottom:1px solid #dfdfdf;}
 	.tab li{float:left;}
 	.tab li a{display:block;text-align:center;padding:16px 0;}
 	.tab li.active a{border-bottom:4px solid #000;}
@@ -113,6 +127,7 @@ input[readonly]{border:0;padding:0;}
 .box-wrap{border:1px solid #bfbfbf;}
 .btn_round{font-size:18px;border-radius:30px;}
 .ty_blue{background:#5f78f3;color:#fff;}
+.mbtn{padding:18px;font-size:16px;font-weight:300;}
 /* Custom Checkbox */
 .cst_input{
 		display:block;position:relative;padding-left:35px;cursor:pointer;font-size:15px;line-height:23px;
@@ -123,9 +138,10 @@ input[readonly]{border:0;padding:0;}
 	}
 	.cst_input input{position:absolute;opacity:0;cursor:pointer;width:0;height:0;}
 	.cst_input .checkmark{position:absolute;top:0;left:0;width:23px;height:23px;border:2px solid #bdbbbc;border-radius:3px;}
-	.cst_input:hover input ~ .checkmark{border-color:#666;}
-	.cst_input .checkmark:after{content:"";position:absolute;display:none;}
-	.cst_input input:checked ~ .checkmark{background:#0ab9b2;border-color:#0ab9b2;}
+	.cst_input .circle{position:absolute;top:0;left:0;width:23px;height:23px;border:2px solid #bdbbbc;border-radius:50%;}
+	.cst_input:hover input ~ .checkmark, .cst_input:hover input ~ .circle{border-color:#666;}
+	.cst_input .checkmark:after, .cst_input .circle:after{content:"";position:absolute;display:none;}
+	.cst_input input:checked ~ .checkmark, .cst_input input:checked ~ .circle{background:#0ab9b2;border-color:#0ab9b2;}
 	.cst_input input:checked ~ .checkmark:after{
 		display:block;
 		left:6px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;
@@ -133,7 +149,55 @@ input[readonly]{border:0;padding:0;}
 		-ms-transform:rotate(45deg);
 		transform:rotate(45deg);
 	}
-
+	.cst_input input:checked ~ .circle:after{
+		display:block;
+		background:#fff;width:13px;height:13px;border-radius:50%;top:3px;left:3px;
+	}
+.switch{position:relative;display:inline-block;width:48px;height:26px;}
+	.switch input{opacity:0;width:0;height:0;}
+	.switch .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#bdbbbc;-webkit-transition:.4s;transition:.4s;}
+	.switch .slider:before{position:absolute;content:"";width:20px;height:20px;left:3px;bottom:3px;background:#fff;-webkit-transition:.4s;transition:.4s;}
+	.switch input:checked + .slider{background:#0ab9b2;}
+	.switch input:checked + .slider:before{
+		-webkit-transform: translateX(22px);
+		-ms-transform: translateX(22px);
+		transform: translateX(22px);
+	}
+	.switch .slider.round{border-radius:15px;}
+	.switch .slider.round:before{border-radius:50%;}
+/* Select */
+select{
+	padding:14px;border:1px solid #999;background:#fff url(/images/down-arrow.png) no-repeat;background-position:calc(100% - 6px) 50%;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+            appearance: none;
+}
+select::-ms-expand {/*for IE11*/display:none;}
+/* image Select */
+.dg_select{
+	border:1px solid #dfdfdf;padding:8px;border-radius:3px;
+	background:url(/images/down-arrow.png) no-repeat;background-position: calc(100% - 3px) 50%;
+}
+	.dg_select img{max-height:29px;}
+	.wfix div:nth-child(1){flex-grow:1;}
+	.wfix div:nth-child(2){flex-shrink:0;width:100px;}
+	.wfix .btn{height:52px;}
+/* Modal */	
+.pop{display:none;}
+.modal-wrap{display:flex;justify-content:center;align-items:center;position:absolute;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.5);z-index:9999;}
+	.modal-wrap .modal{background:#fff;width:76%;}
+	.modal-wrap .modal .tit{border-bottom:2px solid #000;font-size:18px;font-weight:700;padding:20px;color::#181818;}
+	.modal-wrap .modal .mbtn_area{display:flex;border-top:2px solid #000;}
+	.modal-wrap .modal .mbtn_area.cnt2 input{width:50%;}
+	.modal-wrap .modal .mbtn_area input+input{margin:0;}
+	.mbtn.cancle{background:#fff;border:none;color:#181818;}
+	.mbtn.ok{background:#000;border:none;color:#fff;}
+	.modal-wrap .modal .mbody{padding:0 20px;max-height:300px;overflow-y:auto;}
+	.select_option li{padding:18px 0;border-bottom:1px solid #b9b9b9;}
+	.select_option li:last-child{border-bottom:none;}
+	.select_option li img{max-height:29px;}
+	.select_option li .circle{top:5px;}
+	
 @media screen and (min-width : 480px){
 	.container{padding:15px;}
 	.sub-title{margin:-15px -15px 0;padding:8px;}

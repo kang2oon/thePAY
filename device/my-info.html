@@ -43,12 +43,15 @@
 			<div>예금주</div>
 			<div>thePAY(텔레센트로)</div>
 		</div>
-		<div class="row">
+		<div class="row wfix">
 			<div>
-				<select>
+				<!--select>
 					<option value="bank1">111</option>
 					<option value="bank2">222</option>
-				</select>
+				</select-->
+				<div class="dg_select">
+					<img src="/images/img-bank.png" alt="" />
+				</div>
 			</div>
 			<div><button class="btn ty_change">은행변경</button></div>
 		</div>
@@ -56,16 +59,97 @@
 	<div class="sub-title">
 		<h2>등록된 카드</h2>
 	</div>
+	<div class="row-wrap">
+		<div class="row">
+			<div class="add_card">
+				<div>간편결제 추가</div>
+				<div class="add"><img src="/images/ico_plus.png" alt="" /></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="card_info">
+				<div class="card_img"><img src="/images/img_smp_card.png" alt="" /></div>
+				<div>1234-****-****-2133</div>
+			</div>
+			<div class="setting"><img src="/images/ico_setting.png" alt="" /></div>
+		</div>
+		<div class="row">
+			<div class="card_info">
+				<div class="card_img"><img src="/images/img_smp_card.png" alt="" /></div>
+				<div>9876-****-****-2485</div>
+			</div>
+			<div class="setting"><img src="/images/ico_setting.png" alt="" /></div>
+		</div>
+	</div>
+</div>
+
+<div class="pop">
+	<div class="modal-wrap">
+		<div class="modal">
+			<div class="tit">은행 선택</div>
+			<div class="mbody">
+				<ul class="select_option">
+					<li>
+						<label class="cst_input">
+							<img src="/images/img-bank.png" alt="" />
+							<input type="radio" name="bank">
+							<span class="circle"></span>
+						</label>
+					</li>
+					<li>
+						<label class="cst_input">
+							<img src="/images/img-bank.png" alt="" />
+							<input type="radio" name="bank">
+							<span class="circle"></span>
+						</label>
+					</li>
+					<li>
+						<label class="cst_input">
+							<img src="/images/img-bank.png" alt="" />
+							<input type="radio" name="bank">
+							<span class="circle"></span>
+						</label>
+					</li>
+					<li>
+						<label class="cst_input">
+							<img src="/images/img-bank.png" alt="" />
+							<input type="radio" name="bank">
+							<span class="circle"></span>
+						</label>
+					</li>
+					<li>
+						<label class="cst_input">
+							<img src="/images/img-bank.png" alt="" />
+							<input type="radio" name="bank">
+							<span class="circle"></span>
+						</label>
+					</li>
+					<li>
+						<label class="cst_input">
+							<img src="/images/img-bank.png" alt="" />
+							<input type="radio" name="bank">
+							<span class="circle"></span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="mbtn_area cnt2">
+				<input type="button" value="취소" class="mbtn cancle">
+				<input type="button" value="확인" class="mbtn ok">
+			</div>
+		</div>
+	</div>
 </div>
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
-<script src="/js/jquery.custom-select.js"></script>
 <script>
 	$(document).ready(function(){
-		
-	});
-	$('select').customSelect({
-		search: true
+		$('.dg_select').click(function(){
+			$('.pop').fadeIn();
+		});
+		$('.mbtn_area .cancle').click(function(){
+			$('.pop').fadeOut();
+		});
 	});
 </script>
 </body>

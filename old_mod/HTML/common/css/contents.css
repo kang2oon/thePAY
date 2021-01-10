@@ -208,9 +208,9 @@
 
 /*여권*/
 .details_passport {padding:10px 0;}
-.details_passport .details_image {width:216px;}
-.details_passport .details_title {height:150px;padding-left:25px;}
-.details_passport .details_title .l-table {padding-left:43px;border-bottom:1px solid #b9b9b9;}
+.details_passport .details_image {width:72px;}
+.details_passport .details_title {height:30px;padding-left:8px;box-sizing:border-box;}
+.details_passport .details_title .l-table {padding-left:13px;border-bottom:1px solid #b9b9b9;box-sizing:border-box;}
 
 
 
