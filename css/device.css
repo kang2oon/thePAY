@@ -119,17 +119,40 @@ input[readonly]{border:0;padding:0;}
 	.exdate_wrap .ex_tit{font-size:13px;margin-right:10px;}
 	.exdate_wrap input{border-style:none none solid;text-align:center;width:96px;}
 	.exdate_wrap div:nth-child(3){margin:0 6px;}
+.custom_value{display:none;align-items:center;margin-top:6px;}
+	.custom_value div:nth-child(1){flex-shrink:0;width:60px;text-align:right;padding-right:10px;}
+	.custom_value div:nth-child(2){flex-grow:1;}
 .ezpay_add{
 	position:relative;width:250px;height:140px;margin:0 auto;padding:10px 16px;border-radius:8px;text-align:left;font-size:13px;
-	background-color: rgb(149,226,254);
-	background-color: -moz-linear-gradient(-45deg, rgb(149,226,254) 0%, rgb(39,199,255) 100%);
-	background-color: -webkit-linear-gradient(-45deg, rgb(149,226,254) 0%,rgb(39,199,255) 100%);
-	background-color: linear-gradient(135deg, rgb(149,226,254) 0%,rgb(39,199,255) 100%);
+	background: rgb(149,226,254);
+	background: -moz-linear-gradient(-45deg, rgb(149,226,254) 0%, rgb(39,199,255) 100%);
+	background: -webkit-linear-gradient(-45deg, rgb(149,226,254) 0%,rgb(39,199,255) 100%);
+	background: linear-gradient(135deg, rgb(149,226,254) 0%,rgb(39,199,255) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95e2fe', endColorstr='#27c7ff',GradientType=1 );
-	background-image:url(/images/bg_ezpay1.png);background-position:calc(100% - 20px) calc(100% - 20px);background-repeat:no-repeat;
-	background-size:36px;box-shadow:0 0 8px rgba(0,0,0,.3);
+	box-shadow:0 0 8px rgba(0,0,0,.3);
 }
-	.ezpay_add h2{margin:0 0 10px;font-size:16px;}
+	.ezpay_add:before{
+		position:absolute;bottom:12px;right:12px;content:"";
+        background-image: url(/images/bg_ezpay1.png);
+        background-size:36px 36px;
+        width:36px;height:36px;
+        display:inline-block;}
+.secured_payment{
+	position:relative;width:250px;height:140px;margin:0 auto;padding:10px 16px;border-radius:8px;text-align:left;font-size:13px;
+	background: rgb(146,251,221);
+	background: -moz-linear-gradient(-45deg, rgb(146,251,221) 0%, rgb(49,212,167) 100%);
+	background: -webkit-linear-gradient(-45deg, rgb(146,251,221) 0%,rgb(49,212,167) 100%);
+	background: linear-gradient(135deg, rgb(146,251,221) 0%,rgb(49,212,167) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92fbdd', endColorstr='#31d4a7',GradientType=1 );
+	box-shadow:0 0 8px rgba(0,0,0,.3);
+}
+	.secured_payment:before{
+		position:absolute;bottom:12px;right:12px;content:"";
+        background-image: url(/images/bg_ezpay2.png);
+        background-size:36px 36px;
+        width:36px;height:36px;
+        display:inline-block;}
+	.ezpay_add h2, .secured_payment h2{margin:0 0 10px;font-size:16px;}
 /* Sub Title */
 .sub-title{position:relative;margin:-2.5% -2.5% 0;padding:2.5%;background:#f3f3f5;}
 	.sub-title h2{font-size:14px;color:#777;font-weight:400;margin:5px 2.5%;}
@@ -228,5 +251,5 @@ select::-ms-expand {/*for IE11*/display:none;}
 	.sub-title .btn{right:12px;}
 	.row-wrap{margin: 0 -15px 15px;}
 	.row{padding:10px 13px;}
-	.tab{margin:-15px;}
+	.tab{margin:-15px -15px 0;}
 }

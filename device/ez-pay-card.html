@@ -21,7 +21,7 @@
 			</div>
 			<div>
 				<label class="switch">
-					<input id="ezpay" type="checkbox">
+					<input id="ezpay" type="checkbox" checked>
 					<span class="slider round"></span>
 				</label>
 			</div>
@@ -30,8 +30,13 @@
 			<div class="full">
 				<label for="charge_amount">결제할 금액</label>
 				<select name="charge_amount" class="full mgtop10">
-					<option>￦ 10,000</option>
+					<option value="10000">￦ 10,000</option>
+					<option value="custom">직접입력(1,000~100,000)</option>
 				</select>
+				<div class="custom_value">
+					<div>￦</div>
+					<div><input type="number" placeholder="￦ 1,000 ~ ￦ 100,000"></div>
+				</div>
 			</div>
 		</div>		
 	</div>
@@ -105,6 +110,12 @@
 					지금등록하시겠습니까?
 				</div>
 				<div class="ag-center mgtop20">
+					<div class="secured_payment">
+						<h2>Secured Payment Registration</h2>
+						Increase the payment limit, get extra protection.
+					</div>
+				</div>
+				<div class="ag-center mgtop20">
 					<div class="ezpay_add">
 						<h2>간편결제 추가</h2>
 						더 안전하게, 더 빠르게, 더 편하게
@@ -148,10 +159,18 @@
 	}
 	
 	$(document).ready(function(){
-		
 		state();
 		$('#ezpay').click(function(){
 			state();
+		});
+		$('select[name=charge_amount]').change(function(){
+			var charge = $(this).val();
+			
+			if(charge == 'custom'){
+				$('.custom_value').css('display','flex');
+			}else{
+				$('.custom_value').css('display','none');
+			}
 		});
 	});
 </script>
