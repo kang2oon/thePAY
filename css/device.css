@@ -9,6 +9,7 @@ a{text-decoration:none;color:inherit;}
 .noborder{border:none!important;}
 .ag-center{text-align:center;}
 .ag-right{text-align:right;}
+.ls-1{letter-spacing:-1px;}
 .font13{font-size:13px;}
 .mgtop10{margin-top:10px;}
 .mgtop20{margin-top:20px;}
@@ -153,6 +154,12 @@ input[readonly]{border:0;padding:0;}
         width:36px;height:36px;
         display:inline-block;}
 	.ezpay_add h2, .secured_payment h2{margin:0 0 10px;font-size:16px;}
+.swiper-slide.card_wrap{position:relative;width:250px;border:1px solid #dfdfdf;border-radius:8px;box-shadow:0 0 8px rgba(0,0,0,.3);overflow:hidden;}
+	.swiper-slide.card_wrap .header{height:45px;}
+	.swiper-slide.card_wrap.ty_yellow .header{background:#eac200;}
+	.swiper-slide.card_wrap.ty_mint .header{background:#8ffadc;}
+	.swiper-slide.card_wrap .card_num{margin:20px auto 30px;width:200px;text-align:center;font-weight:700;font-size:20px;}
+	.swiper-slide.card_wrap .card_num .exp_priod{margin-top:15px;color:#909090;font-size:13px;font-weight:400;text-align:right;}
 /* Sub Title */
 .sub-title{position:relative;margin:-2.5% -2.5% 0;padding:2.5%;background:#f3f3f5;}
 	.sub-title h2{font-size:14px;color:#777;font-weight:400;margin:5px 2.5%;}

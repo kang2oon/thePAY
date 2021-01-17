@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no"/>
 	<title>thePAY</title>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/device.css" />
 </head>
 <body>
@@ -104,7 +105,7 @@
 	<div class="row-wrap" id="simp-on">
 		<div class="row noborder">
 			<div class="full">
-				<div class="ag-center font13">
+				<div class="ag-center font13 ls-1">
 					고객님, 아직 결제 등록 안하셨네요.<br/>
 					한 번만 등록하면 안전하고 편하게 결제하실 수 있어요.<br/>
 					지금등록하시겠습니까?
@@ -123,12 +124,39 @@
 				</div>
 			</div>
 		</div>
+		<div class="row noborder">
+			<div class="full">
+				<div class="ag-center">
+					등록하신 카드 정보 확인 후<br/>
+					비밀번호를 입력해주세요.
+				</div>
+				<div class="card-container mgtop20">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide card_wrap ty_yellow">
+							<div class="header"></div>
+							<div class="card_num">
+								****-****-****-1621
+								<div class="exp_priod">2020/12/28</div>
+							</div>
+						</div>
+						<div class="swiper-slide card_wrap ty_mint">
+							<div class="header"></div>
+							<div class="card_num">
+								****-****-****-1621
+								<div class="exp_priod">2020/12/28</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	
 	<button class="btn full fixed_bottom ty_ok">결제하기</button>
 </div>
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
 	function maxLengthCheck(object){
 		if (object.value.length > object.maxLength){
@@ -172,6 +200,13 @@
 				$('.custom_value').css('display','none');
 			}
 		});
+	});
+	
+	var cardslider = new Swiper('.card-container', {
+		slidesPerView: 'auto',
+		centeredSlides: true,
+		spaceBetween: 26,
+		loop: true
 	});
 </script>
 </body>
