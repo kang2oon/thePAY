@@ -8,199 +8,202 @@
 	<link rel="stylesheet" type="text/css" href="/css/newWebView.css" />
 </head>
 <body class="bg_gray">
-<div class="container bg_white">
-	<div class="form-wrap">
-        <div class="form-group">
-            <label for="form_phone">{{recharge_number}}</label>
-            <div class="input-box">
-                <input type="tel" name="form_phone" id="form_phone" class="int phone intFoc" autocomplete="off" nocache placeholder="{{hint_recharge_number}}" value="{{user.ANI}}" />
-                <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
-                <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+<div id="WRAP"></div>
+<div id="template">
+    <div class="container bg_white">
+        <div class="form-wrap">
+            <div class="form-group">
+                <label for="form_phone">{{recharge_number}}</label>
+                <div class="input-box">
+                    <input type="tel" name="form_phone" id="form_phone" class="int phone intFoc" autocomplete="off" nocache placeholder="{{hint_recharge_number}}" value="{{user.ANI}}" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                    <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="form_phone">{{recharge_goods}}</label>
-            <a href="javascript:;" class="btn_question posi_absol">?</a>
-            <div class="input-box">
-                <a href="javascript:;" class="int_select">SKT Data(100M) ￦2,000</a>
+            <div class="form-group">
+                <label for="form_phone">{{recharge_goods}}</label>
+                <a href="javascript:;" class="btn_question posi_absol">?</a>
+                <div class="input-box">
+                    <a href="javascript:;" class="int_select">SKT Data(100M) ￦2,000</a>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="form_phone">{{recharge_amount}}</label>
-            <div class="input-box">
-                <input type="text" name="form_amount" id="form_amount" class="int" value="￦ 2,000" readonly="readonly">
+            <div class="form-group">
+                <label for="form_phone">{{recharge_amount}}</label>
+                <div class="input-box">
+                    <input type="text" name="form_amount" id="form_amount" class="int" value="￦ 2,000" readonly="readonly">
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container bg_gray">
-    <div class="box-wrap box_shadow">
-        <div class="bg_white">
-            <dl>
-                <dt>{{amount}}</dt>
-                <dd><strong id="amount" class="fnsz25">￦ 2,000</strong></dd>
-            </dl>
-        </div>
-        <div class="bg_white spacer"><hr/></div>
-        <div class="bg_white">
-            <dl>
-                <dt>{{recharge_thepay_cash}}</dt>
-                <dd>￦ {{user.displayCash}}</dd>
-            </dl>
-            <div class="int_check">
-                <label for="use_cash" class="cst_input right">
-                    {{recharge_use}}
-                    <input id="use_cash" type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
+    <div class="container bg_gray">
+        <div class="box-wrap box_shadow">
+            <div class="bg_white">
+                <dl>
+                    <dt>{{amount}}</dt>
+                    <dd><strong id="amount" class="fnsz25">￦ 2,000</strong></dd>
+                </dl>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_thepay_cash}}</dt>
+                    <dd>￦ {{user.displayCash}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_cash" class="cst_input right">
+                        {{recharge_use}}
+                        <input id="use_cash" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_point}}</dt>
+                    <dd>ⓟ {{user.displayPoint}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_point" class="cst_input right">
+                        {{recharge_use}}
+                        <input id="use_point" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="bg_lightgray flex_colum txt_center">
+                <div class="stit">{{recharge_pay_amount}}</div>
+                <strong id="payment_amount">￦ 0</strong>
+                <div class="decs">{{payment_min_amount}}</div>
             </div>
         </div>
-        <div class="bg_white spacer"><hr/></div>
-        <div class="bg_white">
-            <dl>
-                <dt>{{recharge_point}}</dt>
-                <dd>ⓟ {{user.displayPoint}}</dd>
-            </dl>
-            <div class="int_check">
-                <label for="use_point" class="cst_input right">
-                    {{recharge_use}}
-                    <input id="use_point" type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-        </div>
-        <div class="bg_lightgray flex_colum txt_center">
-            <div class="stit">{{recharge_pay_amount}}</div>
-            <strong id="payment_amount">￦ 0</strong>
-            <div class="decs">{{payment_min_amount}}</div>
-        </div>
+        <div class="fixed_buffer"></div>
     </div>
-    <div class="fixed_buffer"></div>
-</div>
-<div class="fixed_btn">
-    <input type="submit" value="{{btn_recharge}}" class="btn" id="btn_recharge">
-</div>
+    <div class="fixed_btn">
+        <input type="submit" value="{{btn_recharge}}" class="btn" id="btn_recharge">
+    </div>
 
-<div class="popup-wrap" id="POPUP_question">
-    <div class="popup_box">
-        <div class="popup_header">
-            <div class="popup_title">{{alert_title_confirm}}</div>
-        </div>
-        <div class="popup_body">
-            {{alert_msg_sklite_guide}}
-        </div>
-        <div class="popup_footer">
-            <a href="javascript:;" class="btn_ok popup_close">{{btn_confirm}}</a>
-        </div>
-    </div>
-</div>
-<div class="popup-wrap" id="POPUP_dataCheck">
-    <div class="popup_box">
-        <div class="popup_body">
-            <div class="product_list">
-                <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
-                    <div class="cst_input2">
-                        <div class="radiomark"></div>
-                    </div>
-                    <div class="product_info">
-                        <div class="thumb">
-                            <div class="product_img"><img src="/images/newWebView/skt_data_100mb2.png" alt=""/></div>
-                            <div class="product_nm">
-                                <div class="title">SKT Data(100M) ￦2,000</div>
-                                <div class="amount">￦2,000</div>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <font color="blue"><b>【SKT 100M Data Coupon】</b></font><br>
-                            ▶<font color="purple"><b> Only for SKT LTE subscriber.s</b></font> <br>
-                            ▶ Automatically activated after your basic data balance is over.<br>
-                        </div>
-                    </div>
-                </a>
-                <a href="javascript:;" data-id="" data-amount="" data-name="">
-                    <div class="cst_input2">
-                        <div class="radiomark"></div>
-                    </div>
-                    <div class="product_info">
-                        <div class="thumb">
-                            <div class="product_img"><img src="/images/newWebView/skt_data_500mb2.png" alt=""/></div>
-                            <div class="product_nm">
-                                <div class="title">SKT Data(500M) ￦10,000</div>
-                                <div class="amount">￦10,000</div>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <font color="blue"><b>【SKT 500M Data Coupon】</b></font><br>
-                            ▶ Can be used for 1 year after registration. <br>
-                            ▶ Automatically activated after your basic data balance is over. <br>
-                        </div>
-                    </div>
-                </a>
-                <a href="javascript:;" data-id="" data-amount="" data-name="">
-                    <div class="cst_input2">
-                        <div class="radiomark"></div>
-                    </div>
-                    <div class="product_info">
-                        <div class="thumb">
-                            <div class="product_img"><img src="/images/newWebView/skt_data_1gb2.png" alt=""/></div>
-                            <div class="product_nm">
-                                <div class="title">SKT Data(1G) ￦15,000</div>
-                                <div class="amount">￦15,000</div>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <font color="blue"><b>【SKT 1G Data Coupon】</b></font><br>
-                            ▶ 32% cheaper than normal rate. <br>
-                            ▶  Can be used for 1 year after registration.<br>
-                            ▶ (Automatically activated after your basic data balance is over.) <br>
-                        </div>
-                    </div>
-                </a>
-                <a href="javascript:;" data-id="" data-amount="" data-name="">
-                    <div class="cst_input2">
-                        <div class="radiomark"></div>
-                    </div>
-                    <div class="product_info">
-                        <div class="thumb">
-                            <div class="product_img"><img src="/images/newWebView/skt_data_2gb2.png" alt=""/></div>
-                            <div class="product_nm">
-                                <div class="title">SKT Data(2G) ￦19,000</div>
-                                <div class="amount">￦19,000</div>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <font color="blue"><b>【SKT 2G Data Coupon】</b></font><br>
-                            ▶ 57% cheaper than normal rate.<br>
-                            ▶ Can be used for 1 year after registration. <br>
-                            ▶ Automatically activated after your basic data balance is over. <br>
-                        </div>
-                    </div>
-                </a>
-                <a href="javascript:;" data-id="" data-amount="" data-name="">
-                    <div class="cst_input2">
-                        <div class="radiomark"></div>
-                    </div>
-                    <div class="product_info">
-                        <div class="thumb">
-                            <div class="product_img"><img src="/images/newWebView/skt_data_5gb2.png" alt=""/></div>
-                            <div class="product_nm">
-                                <div class="title">SKT Data(5G) ￦33,000</div>
-                                <div class="amount">￦33,000</div>
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <font color="blue"><b>【SKT 5G Data Coupon】</b></font><br>
-                            ▶ 70% cheaper than normal rate.<br>
-                            ▶ Can be used for 1 year after registration.<br>
-                            ▶ Automatically activated after your basic data balance is over. <br>
-                        </div>
-                    </div>
-                </a>
+    <div class="popup-wrap" id="POPUP_question">
+        <div class="popup_box">
+            <div class="popup_header">
+                <div class="popup_title">{{alert_title_confirm}}</div>
+            </div>
+            <div class="popup_body">
+                {{alert_msg_sklite_guide}}
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_confirm}}</a>
             </div>
         </div>
-        <div class="popup_footer">
-            <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
-            <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+    </div>
+    <div class="popup-wrap" id="POPUP_dataCheck">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="product_info">
+                            <div class="thumb">
+                                <div class="product_img"><img src="/images/newWebView/skt_data_100mb2.png" alt=""/></div>
+                                <div class="product_nm">
+                                    <div class="title">SKT Data(100M) ￦2,000</div>
+                                    <div class="amount">￦2,000</div>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <font color="blue"><b>【SKT 100M Data Coupon】</b></font><br>
+                                ▶<font color="purple"><b> Only for SKT LTE subscriber.s</b></font> <br>
+                                ▶ Automatically activated after your basic data balance is over.<br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="product_info">
+                            <div class="thumb">
+                                <div class="product_img"><img src="/images/newWebView/skt_data_500mb2.png" alt=""/></div>
+                                <div class="product_nm">
+                                    <div class="title">SKT Data(500M) ￦10,000</div>
+                                    <div class="amount">￦10,000</div>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <font color="blue"><b>【SKT 500M Data Coupon】</b></font><br>
+                                ▶ Can be used for 1 year after registration. <br>
+                                ▶ Automatically activated after your basic data balance is over. <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="product_info">
+                            <div class="thumb">
+                                <div class="product_img"><img src="/images/newWebView/skt_data_1gb2.png" alt=""/></div>
+                                <div class="product_nm">
+                                    <div class="title">SKT Data(1G) ￦15,000</div>
+                                    <div class="amount">￦15,000</div>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <font color="blue"><b>【SKT 1G Data Coupon】</b></font><br>
+                                ▶ 32% cheaper than normal rate. <br>
+                                ▶  Can be used for 1 year after registration.<br>
+                                ▶ (Automatically activated after your basic data balance is over.) <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="product_info">
+                            <div class="thumb">
+                                <div class="product_img"><img src="/images/newWebView/skt_data_2gb2.png" alt=""/></div>
+                                <div class="product_nm">
+                                    <div class="title">SKT Data(2G) ￦19,000</div>
+                                    <div class="amount">￦19,000</div>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <font color="blue"><b>【SKT 2G Data Coupon】</b></font><br>
+                                ▶ 57% cheaper than normal rate.<br>
+                                ▶ Can be used for 1 year after registration. <br>
+                                ▶ Automatically activated after your basic data balance is over. <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="product_info">
+                            <div class="thumb">
+                                <div class="product_img"><img src="/images/newWebView/skt_data_5gb2.png" alt=""/></div>
+                                <div class="product_nm">
+                                    <div class="title">SKT Data(5G) ￦33,000</div>
+                                    <div class="amount">￦33,000</div>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <font color="blue"><b>【SKT 5G Data Coupon】</b></font><br>
+                                ▶ 70% cheaper than normal rate.<br>
+                                ▶ Can be used for 1 year after registration.<br>
+                                ▶ Automatically activated after your basic data balance is over. <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
         </div>
     </div>
 </div>
