@@ -27,12 +27,6 @@
                     <a href="javascript:;" class="int_select">SKT Data(100M) ￦2,000</a>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="form_phone">{{recharge_amount}}</label>
-                <div class="input-box">
-                    <input type="text" name="form_amount" id="form_amount" class="int" value="￦ 2,000" readonly="readonly">
-                </div>
-            </div>
         </div>
     </div>
     <div class="container bg_gray">
@@ -50,10 +44,12 @@
                     <dd>￦ {{user.displayCash}}</dd>
                 </dl>
                 <div class="int_check">
-                    <label for="use_cash" class="cst_input right">
+                    <label for="use_cash" class="cst_input enter">
+                        <div>
+                            <input id="use_cash" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
                         {{recharge_use}}
-                        <input id="use_cash" type="checkbox">
-                        <span class="checkmark"></span>
                     </label>
                 </div>
             </div>
@@ -64,10 +60,12 @@
                     <dd>ⓟ {{user.displayPoint}}</dd>
                 </dl>
                 <div class="int_check">
-                    <label for="use_point" class="cst_input right">
+                    <label for="use_point" class="cst_input enter">
+                        <div>
+                            <input id="use_point" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
                         {{recharge_use}}
-                        <input id="use_point" type="checkbox">
-                        <span class="checkmark"></span>
                     </label>
                 </div>
             </div>
