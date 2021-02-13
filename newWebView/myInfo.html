@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>thePAY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/newWebView.css" />
+</head>
+<body class="">
+<div id="WRAP"></div>
+<div id="template">
+    <div class="container">
+        <div class="stit_wrap">
+            <h3>{{mypage_title_my_info}}</h3>
+            <button id="btn_change">{{btn_change}}</button>
+        </div>
+        <div class="row_wrap">
+            <div class="row">
+                <h4>{{com_my_mobile}}</h4>
+                <div>{{user.ANI}}</div>
+            </div>
+            <div class="row">
+                <h4>{{com_my_id}}</h4>
+                <div>{{user.USER_ID}}</div>
+            </div>
+            <div class="row">
+                <h4>{{com_my_cash}}</h4>
+                <div>{{won}} {{user.cash}}</div>
+            </div>
+        </div>
+        <div class="stit_wrap">
+            <h3>{{mypage_title_pay_info}}</h3>
+        </div>
+        <div class="row_wrap">
+            <div class="row">
+                <h4>{{com_my_bank}}</h4>
+                <div class="bank"><img src="../images/img-bank.png" alt="" /></div>
+            </div>
+            <div class="row">
+                <h4>{{com_my_account}}</h4>
+                <div>0624-0002-0376-79 <a href="javascript:void(0);" class="copy_account"><img src="../images/ico_copy.png" alt="" /></a></div>
+            </div>
+            <div class="row">
+                <h4>{{com_my_depositor}}</h4>
+                <div>{{company_depositer}}</div>
+            </div>
+            <div class="row stretch">
+                <div class="input-box change_bank">
+                    <a href="javascript:;" class="int_select">{{recharge_select_bank}}</a>
+                </div>
+                <button id="btn_change_bank">{{btn_account_change}}</button>
+            </div>
+        </div>
+        <div class="stit_wrap">
+            <h3>Registered cards</h3>
+        </div>
+        <div class="row_wrap">
+            <div class="row">
+                <div class="add_card">
+                    <div>간편결제 추가</div>
+                    <div class="add"><img src="/images/ico_plus.png" alt=""></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card_info">
+                    <div class="card_img"><img src="/images/img_smp_card.png" alt=""></div>
+                    <div>1234-****-****-2133</div>
+                </div>
+                <div class="setting"><img src="/images/ico_setting.png" alt=""></div>
+            </div>
+            <div class="row">
+                <div class="card_info">
+                    <div class="card_img"><img src="/images/img_smp_card.png" alt=""></div>
+                    <div>9876-****-****-2485</div>
+                </div>
+                <div class="setting"><img src="/images/ico_setting.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="popup-wrap" id="POPUP_default">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_bank">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-wrap ty_full" id="POPUP_certified">
+        <div class="container">
+            <div class="form-wrap">
+                <div class="form-group">
+                    <div class="input-box">
+                        <input type="tel" id="form_phone" class="int" value="{{user.ANI}}">
+                    </div>
+                    <button class="type_btn btn_certified">{{btn_send_auth}}</button>
+                    <div class="input-box" id="send_after" style="display:none;">
+                        <input type="text" id="form_certicord" class="int" placeholder="{{hint_input_auth}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed_btn">
+            <input type="submit" value="{{btn_confirm}}" class="btn btn_change_confirm" id="SUMBIT">
+        </div>
+    </div>
+</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script>
+	$(document).ready(function(){
+		$('div:has(.copy_account)').addClass('pst_up');
+
+        $('.change_bank, #POPUP_default .popup_close').click(function(){
+            $('#POPUP_default').toggleClass('show');
+        });
+        $('.product_list a').click(function(){
+            $('.product_list a').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('#btn_change, #POPUP_certified #SUMBIT').click(function(){
+            $('#send_after').hide();
+            $('#POPUP_certified').toggleClass('show');
+        });
+        $('.btn_certified').click(function(){
+            $('#send_after').show();
+        });
+	});
+</script>
+</body>
+</html>
