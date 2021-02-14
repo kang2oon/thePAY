@@ -65,7 +65,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .product_list .product_info .product_nm{letter-spacing:-1px;font-size:15px;}
     .product_list .product_info .product_nm .amount{text-align:right;color:#0051f7;margin-top:5px;}
     .product_list .product_info .desc{margin-top:8px;font-size:15px;font-weight:300;text-align:left;}
-    .product_list .bank_info{max-height:35px;}
+    .product_list .bank_info{height:35px;}
 .stit_wrap{display:flex;justify-content:space-between;align-items:center;background:#f3f3f3;margin:0 -3%;padding:3%;}
     .stit_wrap:first-child{margin:-3% -3% 0;}
     .stit_wrap h3{font-size:14px;color:#777;font-weight:400;margin:0;}
