@@ -21,7 +21,18 @@ input, button{-webkit-appearance:none;border-radius:0;}
 .no_scroll{overflow:hidden;}
 
 .container{position:relative;width:100%;padding:3%;}
-    
+
+/* Position */
+.fix_pst{position:fixed;z-index:3000;}
+.margin_m3{margin:-3% -3% 0;}
+.width_full{width:100%;}
+
+/* Tab */
+.tab_menu{display:flex;}
+    .tab_menu li{background:#000;color:#fff;text-align:center;padding:16px 0;cursor:pointer;}
+    .tab_menu li.on{background:#fff;color:#000;}
+    .tab_menu li{flex-grow:1;}
+
 /* Form */
 .form-wrap{display:block;}
     .form-wrap .form-group{position:relative;display:block;margin-bottom:16px;}
@@ -58,6 +69,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .product_list a > div:nth-child(2){flex-grow:1;}
     .product_list a .radiomark{position:relative;margin-top:14px;}
     .product_list.ty_bank a .radiomark{margin-top:9px;}
+    .product_list.ty_txt a .radiomark{margin-top:1px;}
     .product_list a.on .radiomark:after{display:block;background:#181818;width:13px;height:13px;border-radius:50%;top:3px;left:3px;}
     .product_list .product_info .thumb{display:flex;}
     .product_list .product_info .thumb > div:nth-child(1){flex-shrink:0;width:80px;margin-right:10px;}
@@ -77,9 +89,9 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .row .bank{border:1px solid #dfdfdf;padding:3px;max-width:30%;line-height:1;}
     .row .copy_account{position:relative;top:5px;display:inline-block;width:24px;line-height:0;}
     .row .pst_up{position:relative;top:-3px;}
-    .row .input-box{border:1px solid #7f8f9a;flex-grow:1;margin-right:10px;}
+    .row .input-box{border:1px solid #7f8f9a;flex-grow:1;}
     .row .input-box a{line-height:0;}
-    .row button#btn_change_bank{flex-shrink:0;max-width:100px;word-break:break-all;}
+    .row button#btn_change_bank{flex-shrink:0;max-width:100px;word-break:break-all;margin-left:10px;}
     .row .add_card{display:flex;align-items:center;width:100%;border:1px solid #dfdfdf;border-radius:8px;padding:16px;cursor:pointer;}
     .row .add_card div:nth-child(1){flex-grow:1;text-align:center;}
     .row .add_card div:nth-child(2){flex-shrink:0;width:24px;}
@@ -87,6 +99,21 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .row .card_info{display:flex;align-items:center;}
     .row .card_info .card_img{margin-right:5px;}
     .row .setting{background:#ebebeb;width:32px;height:32px;border-radius:50%;padding:4px;cursor:pointer;}
+.tab_conts{margin:-3% -3% 0;}
+    #ccard{margin-top:134px;}
+    #account{margin-top:57px;}
+.custom_value{display:none;align-items:center;margin-top:6px;}
+    .custom_value.show{display:flex;}
+	.custom_value div:nth-child(1){flex-shrink:0;width:60px;text-align:right;padding-right:10px;}
+	.custom_value div:nth-child(2){flex-grow:1;}
+.card_num_wrap{border:1px solid #dfdfdf;margin-top:10px;background:url(/images/ico_card.png) no-repeat;background-position:calc(100% - 10px) 50%;}
+	.card_num_wrap div{float:left;}
+	.card_num_wrap div:nth-child(odd){width:20%;}
+	.card_num_wrap div:nth-child(even){text-align:center;line-height:50px;}
+	.card_num_wrap input{border:none;text-align:center;}
+.card_wrap{position:relative;}
+	.card_save{position:absolute;top:0;right:0;}
+		.card_save input{display:none;}
 
 /* Custom Checkbox */
 .cst_input{
@@ -113,6 +140,18 @@ input, button{-webkit-appearance:none;border-radius:0;}
 .cst_input2{display:block;position:relative;}
     .cst_input2 .radiomark{width:23px;height:23px;border:2px solid #bdbbbc;border-radius:50%;}
     .cst_input2 .radiomark:after{content:"";position:absolute;}
+.switch{position:relative;display:inline-block;width:48px;height:26px;}
+	.switch input{opacity:0;width:0;height:0;}
+	.switch .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#bdbbbc;-webkit-transition:.4s;transition:.4s;}
+	.switch .slider:before{position:absolute;content:"";width:20px;height:20px;left:3px;bottom:3px;background:#fff;-webkit-transition:.4s;transition:.4s;}
+	.switch input:checked + .slider{background:#0ab9b2;}
+	.switch input:checked + .slider:before{
+		-webkit-transform: translateX(22px);
+		-ms-transform: translateX(22px);
+		transform: translateX(22px);
+	}
+	.switch .slider.round{border-radius:15px;}
+	.switch .slider.round:before{border-radius:50%;}
 
 /* Button */
 .fixed_btn{position:fixed;display:flex;width:100%;bottom:0;}
