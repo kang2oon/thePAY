@@ -18,6 +18,42 @@
                     <input type="tel" name="form_phone" id="form_phone" class="int phone intFoc" autocomplete="off" nocache placeholder="{{hint_recharge_number}}" value="{{user.ANI}}" />
                     <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
                     <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+                    <div class="history">
+                        <ul>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-8886-1810</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-2589-6836</div>
+                            </li>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-1234-5678</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-5678-1234</div>
+                            </li>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-8886-1810</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-2589-6836</div>
+                            </li>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-1234-5678</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-5678-1234</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -218,6 +254,12 @@
         $('.product_list a').click(function(){
             $('.product_list a').removeClass('on');
             $(this).addClass('on');
+        });
+        $('#form_phone').focusin(function(){
+            $('.history').show();
+        });
+        $('#form_phone').focusout(function(){
+            $('.history').hide();
         });
 	});
 </script>
