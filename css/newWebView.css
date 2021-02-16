@@ -45,7 +45,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .sub_tab li.on{border:2px solid #000;padding:5px;}
     .sub_tab.ty2 li{display:block;text-align:center;padding:10px;font-weight:700;font-size:20px;color:#d8d8d8;}
     .sub_tab.ty2 li.on, .sub_tab.ty2 li.rate, .sub_tab.ty2 li.rate.on{color:#000;}
-    .sub_tab.ty2 li.rg2, .sub_tab.ty2 li.rg2.on{color:#ee534f;}
+    .sub_tab.ty2 li.rg2.on{color:#ee534f;}
     .sub_tab li .tit{font-size:14px;color:#7f8f9a;font-weight:300;line-height:1.2;letter-spacing:-.5px;}
     .sub_tab li.on .tit{color:#000;font-weight:400;}
     .sub_tab li i{display:block;width:20px;height:100%;flex-shrink:0;margin-right:5px;background-repeat:no-repeat;background-position:50% 50%;background-size:contain;}
