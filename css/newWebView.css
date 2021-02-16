@@ -242,7 +242,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
 	.switch .slider.round:before{border-radius:50%;}
 
 /* Button */
-.fixed_btn{position:fixed;display:flex;width:100%;bottom:0;}
+.fixed_btn{position:fixed;display:flex;width:100%;bottom:0;left:0;}
     .fixed_btn .btn{flex:1;background:#ee534f;color:#fff;font-size:21px;text-align:center;border:none;outline:none;padding:15px 0;margin:0;}
     .fixed_btn .btn.second{background:#00f;}
 .btn_certified{background:#0ab9b2;color:#fff;width:100%;padding:14px 5px;border:none;border-radius:3px;margin:8px 0;}
