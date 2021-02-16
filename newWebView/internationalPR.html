@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>thePAY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/newWebView.css" />
+</head>
+<body class="bg_gray">
+<div id="WRAP"></div>
+<div id="template">
+    <div class="container bg_white">
+        <div class="form-wrap">
+            <div class="form-group">
+                <label for="form_phone">{{recharge_number}}</label>
+                <div class="input-box">
+                    <input type="tel" name="form_phone" id="form_phone" class="int phone intFoc rico1" autocomplete="off" nocache placeholder="{{hint_recharge_number}}" value="{{user.ANI}}" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                    <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+                    <div class="history">
+                        <ul>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-8886-1810</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-2589-6836</div>
+                            </li>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-1234-5678</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-5678-1234</div>
+                            </li>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-8886-1810</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-2589-6836</div>
+                            </li>
+                            <li>
+                                <div class="flag kr"></div>
+                                <div class="phone_num">010-1234-5678</div>
+                            </li>
+                            <li>
+                                <div class="flag us"></div>
+                                <div class="phone_num">010-5678-1234</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">{{recharge_goods}}</label>
+                <ul class="sub_tab ty2">
+                    <li class="rg1 on">00796</li>
+                    <li class="rg2">00301</li>
+                    <li class="rate">RATE</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">{{arslanguage_kt}}</label>
+                <div class="input-box">
+                    <a href="javascript:;" class="int_select language">English</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">{{recharge_amount}}</label>
+                <div class="input-box">
+                    <a href="javascript:;" class="int_select amount">￦ 10,000</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container bg_gray">
+        <div class="box-wrap box_shadow">
+            <div class="bg_white">
+                <dl>
+                    <dt>{{amount}}</dt>
+                    <dd><strong id="amount" class="fnsz25">￦ 2,000</strong></dd>
+                </dl>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_thepay_cash}}</dt>
+                    <dd>￦ {{user.displayCash}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_cash" class="cst_input enter">
+                        <div>
+                            <input id="use_cash" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        {{recharge_use}}
+                    </label>
+                </div>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_point}}</dt>
+                    <dd>ⓟ {{user.displayPoint}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_point" class="cst_input enter">
+                        <div>
+                            <input id="use_point" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        {{recharge_use}}
+                    </label>
+                </div>
+            </div>
+            <div class="bg_lightgray flex_colum txt_center">
+                <div class="stit">{{recharge_pay_amount}}</div>
+                <strong id="payment_amount">￦ 0</strong>
+                <div class="decs">{{payment_min_amount}}</div>
+            </div>
+        </div>
+        <div class="fixed_buffer"></div>
+    </div>
+    <div class="fixed_btn">
+        <input type="submit" value="{{btn_recharge}}" class="btn" id="btn_recharge">
+    </div>
+
+    <div class="popup-wrap" id="POPUP_language">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">English</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Sri Lankan</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Nepail</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Bahasa</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">한국어</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrap" id="POPUP_amount">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 10,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 5,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 15,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 20,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 30,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 50,000</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script>
+	$(document).ready(function(){
+        $('.int_select.language, #POPUP_language .popup_close, #POPUP_language .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_language').toggleClass('show');
+        });
+        $('.int_select.amount, #POPUP_amount .popup_close, #POPUP_amount .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_amount').toggleClass('show');
+        });
+        $('.product_list a').click(function(){
+            $('.product_list a').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('#form_phone').focusin(function(){
+            $('body').addClass('no_scroll');
+            $('.history').show();
+        });
+        $('#form_phone').focusout(function(){
+            $('body').removeClass('no_scroll');
+            $('.history').hide();
+        });
+
+        $('.sub_tab li').click(function(){
+            $('.sub_tab li').removeClass('on');
+            $(this).addClass('on');
+        });
+	});
+</script>
+</body>
+</html>
