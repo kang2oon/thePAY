@@ -141,6 +141,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .product_list.ty_bank a .radiomark{margin-top:9px;}
     .product_list.ty_txt a .radiomark{margin-top:1px;}
     .product_list.ty_country a .radiomark{margin-top:5px;}
+    .product_list.ty_carrier a .radiomark{margin-top:0;}
     .product_list a.on .radiomark:after{display:block;background:#181818;width:13px;height:13px;border-radius:50%;top:3px;left:3px;}
     .product_list .product_info .thumb{display:flex;}
     .product_list .product_info .thumb > div:nth-child(1){flex-shrink:0;width:80px;margin-right:10px;}
