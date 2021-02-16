@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>thePAY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/newWebView.css" />
+</head>
+<body class="bg_gray">
+<div id="WRAP"></div>
+<div id="template">
+    <div class="container bg_white">
+        <div class="form-wrap">
+            <div class="form-group">
+                <label for="form_phone">{{title_activity_sel_nation}}</label>
+                <div class="input-box">
+                    <a href="javascript:;" class="int_select country"><i class="flag np"></i><div class="cty_nm">E-load(Nepal)</div></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">{{recharge_goods}}</label>
+                <ul class="sub_tab">
+                    <li class="regular on"><i></i><div class="tit">Mobile Topup</div></li>
+                    <li class="special"><i></i><div class="tit">Smart Cell</div></li>
+                    <li class="internet"><i></i><div class="tit">SUBISU</div></li>
+                    <li class="payment"><i></i><div class="tit">Utility Payment</div></li>
+                    <li class="electric"><i></i><div class="tit">Electicity</div></li>
+                    <li class="internet on_btn2"><i></i><div class="tit">Internet / Wi-Fi</div></li>
+                    <li class="google"><i></i><div class="tit">Google</div></li>
+                    <li class="game"><i></i><div class="tit">Game</div></li>
+                    <li class="data"><i></i><div class="tit">Data Pack</div></li>
+                    <li class="game"><i></i><div class="tit">Mobile Legend</div></li>
+                    <li class="data"><i></i><div class="tit">Voice Package</div></li>
+                    <li class="game"><i></i><div class="tit">Bigo Live</div></li>
+                </ul>
+                <div class="input-box">
+                    <input type="text" name="form_itemName" id="form_itemName" class="int" value="" readonly>
+                </div>
+                <div class="mgtop10">
+                    <img src="/images/newWebView/nepal_utilitypayment2.png" alt="" />
+                    <img src="/images/newWebView/thepay_eload_MobileLegend_npl.png" alt="" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Provider</label>
+                <div class="input-box">
+                    <a href="javascript:;" class="int_select provider">DishHome TV</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Branch</label>
+                <div class="input-box">
+                    <a href="javascript:;" class="int_select branch">AANBU DC</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">SCNo</label>
+                <div class="input-box">
+                    <input type="text" name="" id="" class="int phone intFoc rico2" autocomplete="off" nocache placeholder="013.01.001KA" value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Customer ID</label>
+                <div class="input-box">
+                    <input type="text" name="" id="" class="int phone intFoc rico2" autocomplete="off" nocache placeholder="" value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Customer(Game) ID</label>
+                <div class="input-box">
+                    <input type="text" name="" id="" class="int phone intFoc rico2" autocomplete="off" nocache placeholder="Input all ID number" value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">User Name</label>
+                <div class="input-box">
+                    <input type="text" name="" id="" class="int phone intFoc rico2" autocomplete="off" nocache placeholder="Input your user name" value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">CAS ID/CID</label>
+                <div class="input-box">
+                    <input type="text" name="" id="" class="int phone intFoc rico2" autocomplete="off" nocache placeholder="Input CAS ID/CID" value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Account number</label>
+                <div class="input-box">
+                    <input type="text" name="" id="" class="int phone intFoc rico2" autocomplete="off" nocache placeholder="Input account number or ID" value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Recharge Number</label>
+                <div class="input-box">
+                    <input type="tel" value="977" class="country_code" readonly />
+                    <input type="tel" name="form_phone" id="form_phone" class="int phone intFoc rico3" autocomplete="off" nocache placeholder="Input recharge number" value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                    <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Email</label>
+                <div class="input-box">
+                    <input type="tel" name="" id="" class="int phone intFoc rico1" autocomplete="off" nocache placeholder="Input e-mail to get card No." value="" />
+                    <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                    <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_phone">Recharge amount</label>
+                <div class="input-box">
+                    <a href="javascript:;" class="int_select amount">￦22,000 - 2,000Rs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container bg_gray">
+        <div class="box-wrap box_shadow">
+            <div class="bg_white">
+                <dl>
+                    <dt>{{amount}}</dt>
+                    <dd><strong id="amount" class="fnsz25">￦ 2,000</strong></dd>
+                </dl>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_thepay_cash}}</dt>
+                    <dd>￦ {{user.displayCash}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_cash" class="cst_input enter">
+                        <div>
+                            <input id="use_cash" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        {{recharge_use}}
+                    </label>
+                </div>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_point}}</dt>
+                    <dd>ⓟ {{user.displayPoint}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_point" class="cst_input enter">
+                        <div>
+                            <input id="use_point" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        {{recharge_use}}
+                    </label>
+                </div>
+            </div>
+            <div class="bg_lightgray flex_colum txt_center">
+                <div class="stit">{{recharge_pay_amount}}</div>
+                <strong id="payment_amount">￦ 0</strong>
+                <div class="decs">{{payment_min_amount}}</div>
+            </div>
+        </div>
+        <div class="fixed_buffer"></div>
+    </div>
+    <div class="fixed_btn">
+        <input type="submit" value="{{btn_recharge}}" class="btn" id="btn_recharge">
+        <input type="submit" value="SEARCH" class="btn second" id="btn_search" style="display:none;">
+    </div>
+
+    <div class="popup-wrap" id="POPUP_country">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_country">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag np"></i><div class="cty_nm">E-load(Nepal)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag kr"></i><div class="cty_nm">Google Play Gift(Korea)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag ru"></i><div class="cty_nm">dsfsdf</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag bd"></i><div class="cty_nm">E-load(Bangladesh)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag kh"></i><div class="cty_nm">E-load(Chabodia)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag mn"></i><div class="cty_nm">E-load(Mongolia)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag id"></i><div class="cty_nm">E-load(Indonesia)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag mm"></i><div class="cty_nm">E-load(Myanmar)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag pk"></i><div class="cty_nm">E-load(Pakistan)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag ph"></i><div class="cty_nm">E-load(Philippines)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag lk"></i><div class="cty_nm">E-load(Srilanka)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag th"></i><div class="cty_nm">E-load(Thailand)</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag uz"></i><div class="cty_nm">PayNET O'zbekiston</div>
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="country_info">
+                            <i class="flag vn"></i><div class="cty_nm">E-load(Vietnam)</div>
+                        </div>
+                    </a>
+                    
+                    
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrap" id="POPUP_amount">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦22,000 - 2,000Rs</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦11,200 - 1,000Rs</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦5,450 - 500Rs</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦3,550 - 300Rs</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦2,000 - 150Rs</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦1,500 - 100Rs</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrap" id="POPUP_provider">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">DishHome TV</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Sim TV</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">NTC ADSL Unlimit</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">NTFTTH</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">NTC Land-line</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrap" id="POPUP_branch">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">AANBU DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">ACHHAM DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">AMUWA DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">ANARMANI DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">ARGHAKHACHI DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">ARUGHAT DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">ATTARIYA DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">BADEGAUN SDC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">BAGLUNG DC</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">BAITADI DC</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script>
+	$(document).ready(function(){
+		$('.int_select.country, #POPUP_country .popup_close, #POPUP_country .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_country').toggleClass('show');
+        });
+        $('.int_select.amount, #POPUP_amount .popup_close, #POPUP_amount .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_amount').toggleClass('show');
+        });
+        $('.int_select.provider, #POPUP_provider .popup_close, #POPUP_provider .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_provider').toggleClass('show');
+        });
+        $('.int_select.branch, #POPUP_branch .popup_close, #POPUP_branch .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_branch').toggleClass('show');
+        });
+        $('.product_list a').click(function(){
+            $('.product_list a').removeClass('on');
+            $(this).addClass('on');
+        });
+        
+        $('.sub_tab li').click(function(){
+            $('.sub_tab li').removeClass('on');
+            $(this).addClass('on');
+            if($(this).hasClass('on_btn2')){
+                $('#btn_recharge').hide();
+                $('#btn_search').show();
+            }else{
+                $('#btn_recharge').show();
+                $('#btn_search').hide();
+            }
+        });
+	});
+</script>
+</body>
+</html>

@@ -310,9 +310,11 @@
         });
 
         $('.int_select.amount, #POPUP_amount .popup_close, #POPUP_amount .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
             $('#POPUP_amount').toggleClass('show');
         });
         $('.int_select.selbank, #POPUP_bank .popup_close, #POPUP_bank .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
             $('#POPUP_bank').toggleClass('show');
         });
         $('.product_list a').click(function(){

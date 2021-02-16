@@ -246,9 +246,11 @@
 <script>
 	$(document).ready(function(){
 		$('.btn_question, #POPUP_question .popup_close').click(function(){
+            $('body').toggleClass('no_scroll');
             $('#POPUP_question').toggleClass('show');
         });
         $('.int_select, #POPUP_dataCheck .popup_close, #POPUP_dataCheck .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
             $('#POPUP_dataCheck').toggleClass('show');
         });
         $('.product_list a').click(function(){

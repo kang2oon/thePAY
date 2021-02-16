@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>thePAY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/newWebView.css" />
+</head>
+<body class="bg_gray">
+<div id="WRAP"></div>
+<div id="template">
+    <div class="container bg_white pdbot_zero">
+        <div class="fix_pst margin_m3 width_full">
+            <ul class="tab_menu">
+                <li data-tab="pps" >{{tab_title_charge_normal}}</li>
+                <li data-tab="mthRate" class="on">{{tab_title_charge_monthly}}</li>
+            </ul>
+        </div>
+        <div class="tab_conts" id="pps">
+            <div class="container bg_white">
+                <div class="form-wrap">
+                    <div class="form-group">
+                        <label for="form_phone">{{recharge_number}}</label>
+                        <div class="input-box">
+                            <input type="tel" name="form_phone" id="form_phone" class="int phone intFoc rico1" autocomplete="off" nocache placeholder="{{hint_recharge_number}}" value="" />
+                            <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                            <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+                            <div class="history">
+                                <ul>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-8886-1810</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-2589-6836</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-1234-5678</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-5678-1234</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-8886-1810</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-2589-6836</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-1234-5678</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-5678-1234</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_phone">{{recharge_goods}}</label>
+                        <ul class="sub_tab">
+                            <li class="regular on"><i></i><div class="tit">Voice<br/>(Regular)</div></li>
+                            <li class="special"><i></i><div class="tit">Voice<br/>(Special)</div></li>
+                            <li class="data"><i></i><div class="tit">Data Only</div></li>
+                        </ul>
+                        <div class="input-box">
+                            <input type="text" name="form_ppsName" id="form_ppsName" class="int" value="" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_number">{{recharge_amount}}</label>
+                        <div class="input-box">
+                            <a href="javascript:;" class="int_select amount">￦ 10,000</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab_conts" id="mthRate">
+            <div class="container bg_white">
+                <div class="form-wrap">
+                    <div class="form-group">
+                        <label for="form_phone">{{recharge_number}}</label>
+                        <div class="input-box">
+                            <input type="tel" name="form_phone" id="form_phone1" class="int phone intFoc rico1" autocomplete="off" nocache placeholder="{{hint_recharge_number}}" value="" />
+                            <a href="javascript:;" class="btn_History2" id=""><img src="/images/newWebView/i_address2.png" alt="이전번호"></a>
+                            <a href="javascript:;" class="btn_Address" id=""><img src="/images/newWebView/i_address.png" alt="전화번호부"></a>
+                            <div class="history">
+                                <ul>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-8886-1810</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-2589-6836</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-1234-5678</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-5678-1234</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-8886-1810</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-2589-6836</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag kr"></div>
+                                        <div class="phone_num">010-1234-5678</div>
+                                    </li>
+                                    <li>
+                                        <div class="flag us"></div>
+                                        <div class="phone_num">010-5678-1234</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_number">{{montly_plan_select_telecom_title}}</label>
+                        <div class="input-box">
+                            <a href="javascript:;" class="int_select telecom">Unknown carrier</a>
+                        </div>
+                        <div class="mgtop10"><img src="/images/newWebView/news_agency_img.png" alt="" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_number">{{recharge_amount}}</label>
+                        <div class="input-box">
+                            <input type="text" name="form_amount" id="form_amount" class="int" value="" readonly>
+                        </div>
+                        <div class="recharge_amt_list mgtop10">
+                            <div class="input-box"><a href="javascript:;" class="int_select gchgamt">~29,999</a></div>
+                            <div class="input-box"><a href="javascript:;" class="int_select gchgamt">￦36,300</a></div>
+                            <div class="input-box"><a href="javascript:;" class="int_select gchgamt">40,000~</a></div>
+                            <div class="input-box"><a href="javascript:;" class="int_select gchgamt">50,000~</a></div>
+                        </div>
+                        <div class="info-box mgtop10">
+                            <b>[How to recharge prepaid monthly plan ]</b><br>
+                            ▷ No need to know your telecom, just the recharge amount. <br>
+                            ▷ In case of failure select your telecom and recharge amount.<br>
+                            ▷ Available for 30 days after recharge. <br>
+                            ▷ If you use additional services(int. call, video call) it may finish before a month is over. <br>
+                            ▷ For detailed information about your subscribed plan please call 114
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+
+    <div class="container bg_gray">
+        <div class="box-wrap box_shadow">
+            <div class="bg_white">
+                <dl>
+                    <dt>{{amount}}</dt>
+                    <dd><strong id="amount" class="fnsz25">￦ 2,000</strong></dd>
+                </dl>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_thepay_cash}}</dt>
+                    <dd>￦ {{user.displayCash}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_cash" class="cst_input enter">
+                        <div>
+                            <input id="use_cash" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        {{recharge_use}}
+                    </label>
+                </div>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>{{recharge_point}}</dt>
+                    <dd>ⓟ {{user.displayPoint}}</dd>
+                </dl>
+                <div class="int_check">
+                    <label for="use_point" class="cst_input enter">
+                        <div>
+                            <input id="use_point" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        {{recharge_use}}
+                    </label>
+                </div>
+            </div>
+            <div class="bg_white spacer"><hr/></div>
+            <div class="bg_white">
+                <dl>
+                    <dt>Agree to get notifications about the next recharge date</dt>
+                </dl>
+                <div class="int_check">
+                    <label for="recharge_alarm" class="cst_input enter">
+                        <div>
+                            <input id="recharge_alarm" type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        {{recharge_use}}
+                    </label>
+                </div>
+            </div>
+            <div class="bg_lightgray flex_colum txt_center">
+                <div class="stit">{{recharge_pay_amount}}</div>
+                <strong id="payment_amount">￦ 0</strong>
+                <div class="decs">{{payment_min_amount}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed_buffer bg_gray"></div>
+    <div class="fixed_btn">
+        <input type="submit" value="{{btn_recharge}}" class="btn" id="btn_recharge">
+    </div>
+
+    <div class="popup-wrap" id="POPUP_amount">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 10,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 20,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 30,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 36,300</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 40,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 50,000</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrap" id="POPUP_telecom">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Unknown carrier</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Smartel</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Eyagi</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">U+mobile</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Myworld</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Eyes</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">FreeT</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Mobing</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Snowman</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Code Mobile(EG)</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">7mobile</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Joytel</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">YEOYOU</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">OneTelecom</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">WHOM</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Dream Mobile</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">KTM-mobile</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Well</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Niztelecom</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Valuecomm(LGT)</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Asiamobile</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">Voice(Special)</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrap" id="POPUP_gchgamt">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_txt">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 10,900</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 12,900</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 17,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 19,800</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 21,500</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 24,200</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 25,000</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 28,500</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 28,800</div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="">￦ 29,700</div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script>
+	$(document).ready(function(){
+		$('.tab_conts').hide();
+        var tab = $('.tab_menu li.on').attr('data-tab');
+        $('#'+tab).show();
+
+        $('.tab_menu li').each(function(){
+            $(this).click(function(){
+                $('.tab_menu li').removeClass('on');
+                $(this).addClass('on');
+                $('.tab_conts').hide();
+                var stab =  $(this).attr('data-tab');
+                $('#'+stab).show();
+            });
+        });
+
+        $('#form_phone, #form_phone1').focusin(function(){
+            $('body').addClass('no_scroll');
+            $('.history').show();
+        });
+        $('#form_phone, #form_phone1').focusout(function(){
+            $('body').removeClass('no_scroll');
+            $('.history').hide();
+        });
+
+        $('.sub_tab li').click(function(){
+            $('.sub_tab li').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('.int_select.amount, #POPUP_amount .popup_close, #POPUP_amount .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_amount').toggleClass('show');
+        });
+        $('.int_select.telecom, #POPUP_telecom .popup_close, #POPUP_telecom .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_telecom').toggleClass('show');
+        });
+        $('.int_select.gchgamt, #POPUP_gchgamt .popup_close, #POPUP_gchgamt .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_gchgamt').toggleClass('show');
+        });
+        
+        $('.product_list a').click(function(){
+            $('.product_list a').removeClass('on');
+            $(this).addClass('on');
+        });
+        
+	});
+</script>
+</body>
+</html>
