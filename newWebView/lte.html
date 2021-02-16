@@ -256,9 +256,11 @@
             $(this).addClass('on');
         });
         $('#form_phone').focusin(function(){
+            $('body').addClass('no_scroll');
             $('.history').show();
         });
         $('#form_phone').focusout(function(){
+            $('body').removeClass('no_scroll');
             $('.history').hide();
         });
 	});
