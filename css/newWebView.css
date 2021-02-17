@@ -97,9 +97,6 @@ input, button{-webkit-appearance:none;border-radius:0;}
     }
     .history li{display:flex;align-items:center;padding:10px 16px;cursor:pointer;}
     .history li+li{border-top:1px dashed #7f8f9a;}
-/*    .history li .flag{width:40px;height:30px;background:url(/images/img_flag.png) no-repeat;margin-right:8px;}
-    .history li .flag.kr{background-position:0 0;}
-    .history li .flag.us{background-position:-50px 0;}*/
     .recharge_amt_list{display:flex;}
     .recharge_amt_list .input-box{flex:1;}
     .recharge_amt_list .input-box+.input-box{border-left:none;}
@@ -191,6 +188,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
 	.card_save{position:absolute;top:0;right:0;}
 		.card_save input{display:none;}
 .guide_msg{margin-top:10px;font-size:13px;color:#ef5350;}
+.guide_msg.second{color:#7f8f9a;}
 .exdate_wrap{display:flex;align-items:center;}
 	.exdate_wrap .ex_tit{font-size:13px;margin-right:10px;}
     .exdate_wrap div:nth-child(3){margin:0 6px;}
@@ -205,6 +203,8 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .label_move_wrap input:focus{padding-bottom:6px;font-weight:700;border-image:linear-gradient(to right, #ef5350, #eb7775);border-image-slice:1;}
     .label_move_wrap input:focus ~ label{position:absolute;top:0;display:block;transition:.2s;font-size:11px;color:#ef5350;font-weight:700;}
 .info-box{border:1px solid #7f8f9a;padding:11px;font-weight:300;}
+.confirm_ammount{text-align:right;color:#ef5350;font-size:24px;}
+.confirm_ammount_inner{color:#ef5350;}
 
 /* Custom Checkbox */
 .cst_input{
