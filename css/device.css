@@ -254,6 +254,7 @@ select::-ms-expand {/*for IE11*/display:none;}
 	.select_option li:last-child{border-bottom:none;}
 	.select_option li img{max-height:29px;}
 	.select_option li .circle{top:5px;}
+	.select_option.second li{padding:0;border:none;}
 .popup-full{background:#fff;position:fixed;top:0;right:0;bottom:0;left:0;display:none;overflow:auto;}
 	
 	

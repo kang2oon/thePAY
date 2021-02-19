@@ -85,7 +85,7 @@
 	<button class="btn full fixed_bottom ty_ok">Transfer</button>
 </div>
 
-<div class="pop">
+<div class="pop first">
 	<div class="modal-wrap">
 		<div class="modal">
 			<div class="mbody">
@@ -307,18 +307,183 @@
 		</div>
 	</div>
 </div>
+
+<div class="pop second">
+	<div class="modal-wrap">
+		<div class="modal">
+			<div class="mbody bg_gray">
+				<ul class="select_option second">
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag us"></div>
+								US(USD)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag ch"></div>
+								CH(CNY)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag vn"></div>
+								VN(VND)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag th"></div>
+								TH(THB)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag uz"></div>
+								UZ(UZS)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag mm"></div>
+								MM(MMK)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag kh"></div>
+								KH(KHR)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag mn"></div>
+								MN(MNT)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag id"></div>
+								ID(IDR)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag lk"></div>
+								LK(LKR)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag np"></div>
+								NP(NPR)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag ru"></div>
+								RU(RUB)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag bd"></div>
+								BD(BDT)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag ph"></div>
+								PH(PHP)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag pk"></div>
+								PK(PKR)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+					<li>
+						<div class="exrate_money clearfix">
+							<div class="fleft">
+								<div class="flag la"></div>
+								LA(LAK)
+							</div>
+							<div class="fright">1,000</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mbtn_area cnt2">
+				<input type="button" value="취소" class="mbtn cancle">
+				<input type="button" value="확인" class="mbtn ok">
+			</div>
+		</div>
+	</div>
+</div>
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
 <script>
 	$(document).ready(function(){
-		$('.target_country, .pop input[type="button"]').click(function(){
+		$('.target_country, .pop.first input.cancle').click(function(){
 			$('body').toggleClass('no_scroll');
-			$('.pop').toggleClass('show');
+			$('.pop.first').toggleClass('show');
+		});
+
+		$('.pop.first input.ok, .pop.second input[type="button"]').click(function(){
+			$('body').toggleClass('no_scroll');
+			$('.pop.first').removeClass('show');
+			$('.pop.second').toggleClass('show');
 		});
 		
-		$('.country_list .exrate_money').each(function(){
+		$('.select_option.second .exrate_money').each(function(){
 		$(this).click(function(){
-			$('.country_list .exrate_money').removeClass('active');
+			$('.select_option.second .exrate_money').removeClass('active');
 			$(this).addClass('active');
 		});
 	});
