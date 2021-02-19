@@ -56,25 +56,26 @@ input[readonly]{border:0;padding:0;}
 		background:#fff;color:#000;border-radius:8px;padding:6px 12px;margin:10px 0;box-shadow:0 2px 3px rgba(0,0,0,.2);
 	}
 	.exrate_money.active{background:#fcd303;}
-	.exrate_money .fleft{display:flex;align-items:center;font-size:14px;}
-	.exrate_money .flag{width:40px;height:30px;background:url(/images/img_flag.png) no-repeat;margin-right:8px;}
-	.exrate_money .flag.kr{background-position:0 0;}
-	.exrate_money .flag.us{background-position:-50px 0;}
-	.exrate_money .flag.ch{background-position:-100px 0;}
-	.exrate_money .flag.vn{background-position:-150px 0;}
-	.exrate_money .flag.th{background-position:-200px 0;}
-	.exrate_money .flag.uz{background-position:-250px 0;}
-	.exrate_money .flag.mm{background-position:0 -40px;}
-	.exrate_money .flag.kh{background-position:-50px -40px;}
-	.exrate_money .flag.mn{background-position:-100px -40px;}
-	.exrate_money .flag.id{background-position:-150px -40px;}
-	.exrate_money .flag.lk{background-position:-200px -40px;}
-	.exrate_money .flag.np{background-position:-250px -40px;}
-	.exrate_money .flag.ru{background-position:0 -80px;}
-	.exrate_money .flag.bd{background-position:-50px -80px;}
-	.exrate_money .flag.ph{background-position:-100px -80px;}
-	.exrate_money .flag.pk{background-position:-150px -80px;}
-	.exrate_money .flag.la{background-position:-200px -80px;}
+	.exrate_money .fleft, .popex_momey .fleft{display:flex;align-items:center;font-size:14px;}
+	.popex_momey .fright{margin-right:10px;}
+	.flag{width:40px;height:30px;background:url(/images/img_flag.png) no-repeat;margin-right:8px;}
+	.flag.kr{background-position:0 0;}
+	.flag.us{background-position:-50px 0;}
+	.flag.ch{background-position:-100px 0;}
+	.flag.vn{background-position:-150px 0;}
+	.flag.th{background-position:-200px 0;}
+	.flag.uz{background-position:-250px 0;}
+	.flag.mm{background-position:0 -40px;}
+	.flag.kh{background-position:-50px -40px;}
+	.flag.mn{background-position:-100px -40px;}
+	.flag.id{background-position:-150px -40px;}
+	.flag.lk{background-position:-200px -40px;}
+	.flag.np{background-position:-250px -40px;}
+	.flag.ru{background-position:0 -80px;}
+	.flag.bd{background-position:-50px -80px;}
+	.flag.ph{background-position:-100px -80px;}
+	.flag.pk{background-position:-150px -80px;}
+	.flag.la{background-position:-200px -80px;}
 	.exrate_money .sel_money{position:relative;width:20px;height:20px;background:#5f78f3;border-radius:50%;margin-left:8px;}
 	.exrate_money .sel_money .check{
 		position:absolute;display:block;
@@ -239,11 +240,12 @@ select::-ms-expand {/*for IE11*/display:none;}
 	.wfix .btn{height:52px;}
 /* Modal */	
 .pop{display:none;}
+.pop.show{display:block;}
 .modal-wrap{display:flex;justify-content:center;align-items:center;position:absolute;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.5);z-index:9999;}
-	.modal-wrap .modal{background:#fff;width:76%;}
+	.modal-wrap .modal{background:#fff;width:94%;}
 	.modal-wrap .modal .tit{border-bottom:2px solid #000;font-size:18px;font-weight:700;padding:20px;color:#181818;}
 	.modal-wrap .modal .mbtn_area{display:flex;border-top:2px solid #000;}
-	.modal-wrap .modal .mbtn_area.cnt2 input{width:50%;}
+	.modal-wrap .modal .mbtn_area.cnt2 input{width:50%;cursor:pointer;}
 	.modal-wrap .modal .mbtn_area input+input{margin:0;}
 	.mbtn.cancle{background:#fff;border:none;color:#181818;}
 	.mbtn.ok{background:#000;border:none;color:#fff;}
@@ -253,7 +255,7 @@ select::-ms-expand {/*for IE11*/display:none;}
 	.select_option li img{max-height:29px;}
 	.select_option li .circle{top:5px;}
 .popup-full{background:#fff;position:fixed;top:0;right:0;bottom:0;left:0;display:none;overflow:auto;}
-	.popup-full.show{display:block;}
+	
 	
 @media screen and (min-width : 480px){
 	.container{padding:15px;}
