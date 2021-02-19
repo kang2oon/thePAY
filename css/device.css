@@ -13,6 +13,7 @@ a{text-decoration:none;color:inherit;}
 .font13{font-size:13px;}
 .mgtop10{margin-top:10px;}
 .mgtop20{margin-top:20px;}
+.no_scroll{overflow:hidden;}
 
 #main{
 	display:flex;justify-content:center;align-items:center;flex-direction:column;
@@ -83,6 +84,7 @@ input[readonly]{border:0;padding:0;}
 		transform:rotate(45deg);
 	}
 	.exrate_money .fright{font-weight:700;line-height:29px;color:#ec6d6d;}
+	.exrate_money .target_country{cursor:pointer;}
 	.trans_info{margin:20px 0 80px;}
 	.trans_info .info{
 		position:relative;border-radius:8px;padding:40px 20px 20px;margin-top:40px;
@@ -250,6 +252,8 @@ select::-ms-expand {/*for IE11*/display:none;}
 	.select_option li:last-child{border-bottom:none;}
 	.select_option li img{max-height:29px;}
 	.select_option li .circle{top:5px;}
+.popup-full{background:#fff;position:fixed;top:0;right:0;bottom:0;left:0;display:none;overflow:auto;}
+	.popup-full.show{display:block;}
 	
 @media screen and (min-width : 480px){
 	.container{padding:15px;}
