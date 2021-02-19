@@ -475,9 +475,13 @@
 			$('.pop.first').toggleClass('show');
 		});
 
-		$('.pop.first input.ok, .pop.second input[type="button"]').click(function(){
-			$('body').toggleClass('no_scroll');
+		$('.pop.first input.ok').click(function(){
 			$('.pop.first').removeClass('show');
+			$('.pop.second').toggleClass('show');
+		});
+
+		$('.pop.second input[type="button"]').click(function(){
+			$('body').toggleClass('no_scroll');
 			$('.pop.second').toggleClass('show');
 		});
 		
