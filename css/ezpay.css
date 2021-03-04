@@ -127,12 +127,17 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .row{display:flex;justify-content:space-between;align-items:center;padding:3%;border-bottom:1px solid #dfdfdf;}
     .row .card_info{display:flex;align-items:center;}
     .row .card_info .card_img{margin-right:5px;}
+    .row .add_card{display:flex;align-items:center;width:100%;border:1px solid #dfdfdf;border-radius:8px;padding:16px;cursor:pointer;}
+    .row .add_card div:nth-child(1){flex-grow:1;text-align:center;}
+    .row .add_card div:nth-child(2){flex-shrink:0;width:24px;}
+    .row .add_card .add{background:#f9d30a;width:24px;height:24px;border-radius:50%;}
+    .row .setting{background:#ebebeb;width:32px;height:32px;border-radius:50%;padding:4px;cursor:pointer;}
 .custom_value{display:none;align-items:center;margin-top:6px;}
     .custom_value.show{display:flex;}
 	.custom_value div:nth-child(1){flex-shrink:0;width:60px;text-align:right;padding-right:10px;}
 	.custom_value div:nth-child(2){flex-grow:1;}
 
-/** 이곳까지는 공통으로 사용되는 영역 **/
+/** 이곳까지는 공통으로 사용되는 영역 + 기존에 사용된 영역 [newWebView.css]  **/
 
 .ezpay_tab_mgtop{margin-top:130px;}
 .ezpay_add{
@@ -169,3 +174,11 @@ input, button{-webkit-appearance:none;border-radius:0;}
 	.swiper-slide.card_wrap .card_num .exp_priod{margin-top:15px;padding-right:5px;color:#909090;font-size:13px;font-weight:400;text-align:right;}
 .confirm_ammount{text-align:right;color:#ef5350;font-size:24px;}
 
+.row .setting.on{width:auto;background:transparent;display:none;}
+.row .card_info .period{display:block;font-size:13px;color:rgba(0,0,0,.3);}
+.row .audit{display:block;font-size:13px;text-align:center;color:#dc5f5e;margin-top:-3px;}
+.row .remove{background:#f9d30a;width:24px;height:24px;border-radius:50%;text-align:center;font-size:36px;line-height:22px;cursor:pointer;display:none;}
+
+.popup_box .popup_body .pop_card_info{border:1px solid #c4c4c4;}
+    .popup_box .popup_body .pop_card_info .card_num{margin:30px 0 10px;}
+    .popup_box .popup_body .pop_card_info .card_exp{text-align:right;}
