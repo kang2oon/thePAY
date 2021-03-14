@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>thePAY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/ezpay.css" />
+</head>
+<body class="">
+<div id="WRAP"></div>
+<div id="template">
+    <div class="container">
+        <div class="fix_pst margin_m3 width_full">
+            <ul class="tab_menu ty2">
+                <li data-tab="step1" class="on">STEP1</li>
+                <li data-tab="step2">STEP2</li>
+                <li data-tab="step3">STEP3</li>
+                <li data-tab="step4">STEP4</li>
+            </ul>
+        </div>
+        <div id="inputbefore" class="row_wrap ezpay_tab_mgtop2">
+            <div class="row flex_colum noborder">
+                <div class="step_tit">인증번호 입력</div>
+                <div class="pwinput_box mgtop50">
+                    결제에 사용할 비밀번호를 입력해주세요.
+                    <div class="pw_box mgtop30">
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div id="inputafter" class="row_wrap ezpay_tab_mgtop2" style="display:none;">
+            <div class="row flex_colum noborder">
+                <div class="step_tit">비밀번호 등록이 완료되었습니다!</div>
+                <div class="txt_right width_full mgtop50">다시보기</div>
+                <div class="pwinput_box mgtop10">
+                    <div class="pw_box">
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                        <input type="password" maxlength="1" />
+                    </div>
+                </div>
+                <div class="width_full mgtop20">
+                    등록하신 비밀번호는 꼭 기억해주세요.<br/>
+                    비밀번호 분실 시 간편결제 다시 등록하셔야 합니다.
+                </div>
+            </div>
+        </div>        
+
+        <div class="fixed_buffer"></div>
+    </div>
+
+    <div class="fixed_btn">
+        <input type="submit" value="다음" class="btn" id="">
+    </div>
+
+</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script>
+	$(document).ready(function(){
+		$('.fixed_btn input').click(function(){
+            $('#inputbefore').hide();
+            $('#inputafter').show();
+        });
+	});
+</script>
+</body>
+</html>
