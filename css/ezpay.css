@@ -89,6 +89,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .fixed_btn .btn{flex:1;background:#ee534f;color:#fff;font-size:21px;text-align:center;border:none;outline:none;padding:15px 0;margin:0;}
     .fixed_btn .btn.second{background:#00f;}
     .fixed_btn .btn.third{background:#0ab9b2;}
+    .fixed_btn .btn.confirm{background:#8375ff;}
 
 /* Popup */
 .popup-wrap{
@@ -111,6 +112,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .product_list a > div:nth-child(2){flex-grow:1;}
     .product_list a .radiomark{position:relative;margin-top:14px;}
     .product_list.ty_txt a .radiomark{margin-top:1px;}
+    .product_list.ty_bank a .radiomark{margin-top:8px;}
     .product_list a.on .radiomark:after{display:block;background:#181818;width:13px;height:13px;border-radius:50%;top:3px;left:3px;}
 
 /* Form */
@@ -124,6 +126,7 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .form-wrap .form-group .input-box input.rico2{width:calc(100% - 46px);}
     .form-wrap .form-group .input-box input.rico3{width:calc(100% - 144px);}
     .form-wrap .form-group .input-box input.growx{flex-grow:0;}
+    .form-wrap .form-group .input-box.change_bank a{padding:0 11px;}
     .form-wrap .form-group .input-box a{line-height:0;margin:10px;width:26px;flex-shrink:0;}
     .form-wrap .form-group .input-box a + a{margin:10px 10px 10px 0;}
     .form-wrap .form-group .input-box img{height:26px;}
@@ -175,6 +178,17 @@ input, button{-webkit-appearance:none;border-radius:0;}
 }
 	.secured_payment:before{background-image: url(/images/bg_ezpay2.png);}
     .ezpay_add h2{margin:0 0 10px;font-size:16px;}
+.ezpay_add_comp{
+        position:relative;width:260px;height:150px;margin:0 auto;border-radius:8px;text-align:center;
+        background: rgb(1,179,227);box-shadow:3px 3px 5px rgba(0,0,0,.2);color:#005670;font-size:18px;line-height:150px;
+}
+    .ezpay_add_comp:before{
+        position:absolute;top:16px;left:16px;content:"";
+        background-image: url(/images/ezpay/ico_check-mark.png);
+        background-size:cover;
+        width:36px;height:36px;
+        display:inline-block;
+    }
 .card-container{margin:20px -3% 0;overflow:hidden;padding:0 0 5px;}
 .swiper-slide.card_wrap{position:relative;width:260px;border:1px solid #dfdfdf;border-radius:8px;box-shadow:3px 3px 5px rgba(0,0,0,.2);overflow:hidden;}
 	.swiper-slide.card_wrap .header{height:45px;}
@@ -195,10 +209,16 @@ input, button{-webkit-appearance:none;border-radius:0;}
 
 .input_wrap{position:relative;height:calc(100% - 75vw);text-align:center;}
     .input_wrap .guide{padding:15vw 0 20px;}
+    .input_wrap .guide strong{font-size:18px;display:inline-block;margin-bottom:8px;}
+    .input_wrap .guide span{color:#6d6d6d;}
     .input_wrap .input_field{display:flex;justify-content:space-evenly;width:80vw;margin:0 auto;}
+    .input_wrap .input_field.bank_auth{padding:10px 20px;border:2px solid #000;width:84vw;}
     .input_wrap .input_field input{text-align:center;width:11vw;height:11vw;background:#fff;border:none;font-size:21px;}
+    .input_wrap .input_field input:disabled{background:transparent;font-size:32px;line-height:11vw;}
+    .input_wrap .input_field.bank_auth input{font-size:28px;width:10vw;height:10vw;line-height:10vw;}
     .input_wrap .state{position:absolute;right:5vw;bottom:5vw;}
 .keypad_wrap{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;justify-content:space-between;background:#002b6a;}
+    .keypad_wrap.hide{display:none;}
     .keypad_wrap button, .keypad_wrap div{width:25vw;height:25vw;background:transparent;border:none;color:#fff;font-size:21px;}
 
 .guide_tit{font-size:21px;text-align:center;margin:30px auto;}
@@ -239,3 +259,8 @@ input, button{-webkit-appearance:none;border-radius:0;}
     .label_move_wrap input:focus{padding-bottom:6px;font-weight:700;border-image:linear-gradient(to right, #ef5350, #eb7775);border-image-slice:1;}
     .label_move_wrap input:focus ~ label{position:absolute;top:0;display:block;transition:.2s;font-size:11px;color:#ef5350;font-weight:700;}
 .s3_guide{align-items:flex-start;}
+.product_list .bank_info{height:35px;}
+.bank_auth_guide img{max-width:60vw;margin-bottom:10px;}
+.bank_auth_guide h2{font-size:18px;margin:10px 0;}
+.bank_auth_guide ol{margin-left:20px;}
+.bank_auth_guide ol li{list-style: decimal;}

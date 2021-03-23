@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>thePAY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/ezpay.css" />
+</head>
+<body class="">
+<div id="WRAP"></div>
+<div id="template">
+    <div class="container">
+        <div class="fix_pst margin_m3 width_full">
+            <ul class="tab_menu ty2">
+                <li data-tab="step1">STEP1</li>
+                <li data-tab="step2">STEP2</li>
+                <li data-tab="step3">STEP3</li>
+                <li data-tab="step4" class="on">STEP4</li>
+            </ul>
+        </div>
+        <div class="row_wrap ezpay_tab_mgtop2">
+            <div class="form-wrap row flex_colum noborder">
+                <div class="step_tit width_full">결제정보 입력</div>
+                <div class="form-group width_full mgtop30">
+                    <div class="card_wrap">
+                        <label>예금주</label>
+                        <div class="input-box">
+                            <input type="text" id="account_holder" placeholder="은행 통장에 등록된 이름">                            
+                        </div>
+                    </div>
+                    <div class="mgtop20">
+                        <label>내 은행</label>
+                        <div class="input-box change_bank">
+                            <a href="javascript:;" class="int_select"><img src="/images/img-bank.png"></a>
+                        </div>
+                    </div>
+                    <div class="mgtop20">
+                        <label>은행계좌</label>
+                        <div class="input-box">
+                            <input type="number" placeholder="'-'표시 제외 숫자만 입력하세요" class="rico2" >
+                            <a href="javascript:;" class="btn_preview" id=""><img src="/images/ezpay/ico_eye.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row_wrap mgtop20 bg_gray">
+            <div class="row flex_colum noborder s3_guide">
+                <div>
+                    본인인증용 은행정보로 반드시 본인명의를 정확하게 입력해주세요.<br/>
+                    (타인계좌 불법이용 시 법적 처벌 받을 수 있음)
+                </div>
+            </div>
+            <div class="fixed_buffer"></div>
+        </div>      
+    </div>
+
+    <div class="fixed_btn">
+        <input type="submit" value="다음" class="btn" id="">
+    </div>
+
+    <div class="popup-wrap" id="POPUP_bank">
+        <div class="popup_box">
+            <div class="popup_body">
+                <div class="product_list ty_bank">
+                    <a href="javascript:;" data-id="" data-amount="" data-name="" class="on">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="javascript:;" data-id="" data-amount="" data-name="">
+                        <div class="cst_input2">
+                            <div class="radiomark"></div>
+                        </div>
+                        <div class="bank_info">
+                            <img src="../images/img-bank.png" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <a href="javascript:;" class="btn_ok popup_close">{{btn_cancel}}</a>
+                <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" ></script>
+<script>
+	$(document).ready(function(){
+        $('.int_select, #POPUP_bank .popup_close, #POPUP_bank .btn_sel').click(function(){
+            $('body').toggleClass('no_scroll');
+            $('#POPUP_bank').toggleClass('show');
+        });
+        $('.product_list a').click(function(){
+            $('.product_list a').removeClass('on');
+            $(this).addClass('on');
+        });
+	});
+</script>
+</body>
+</html>
