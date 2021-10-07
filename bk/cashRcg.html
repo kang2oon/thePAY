@@ -1,0 +1,1460 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=1080, user-scalable=0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="thePAY" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="thePAY">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title>thePAY</title>
+<link rel="stylesheet" href="/assets/common/css/default.css?v=<?=date('YmdHis')?>">
+<link rel="stylesheet" href="/assets/common/css/contents.css?v=<?=date('YmdHis')?>">
+<link rel="stylesheet" href="/assets/common/css/custom.css?v=<?=date('YmdHis')?>">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+<!--[if lt IE 9]>
+    <script src="/assets/common/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+    .hidden { display: none; }
+    .valid_thru { 
+        line-height: 48px !important;
+        margin-top: 12px;
+    }
+    #form_card_num { text-align: left; }
+
+    #POPUP_pg_confirm .popup__body,
+    #POPUP_vbank_finish .popup__body,
+    #POPUP_card_dialog .popup__body,
+    #POPUP_notice .popup__body,
+    #POPUP_confirm .popup__body,
+    #POPUP_vbank_confirm .popup__body { height: auto; padding: 60px 60px; }
+
+    .red { color: red !important; }
+
+    .copy_group { position: relative;}
+    .copy_group #btn_copy {
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+    }
+    .copy_group #btn_copy img { width: 60px; }
+
+    .int_bank_text img {width: 350px;}
+    .int_pass {
+        -webkit-text-security: disc;
+        -moz-webkit-text-security: disc;
+        -moz-text-security: disc;
+    }
+    input[type=password].int::-webkit-input-placeholder { overflow: visible; }
+
+    .safe_card_box { padding: 10px 40px; }
+    .details_payment_link {padding: 0;}
+    .details_payment .details_image { width: 150px;}
+    .details_payment .details_title { height: 105px; }
+
+    .int_birth .btn_calender { z-index: 2; }
+    .fixed_btn .btn { z-index: 3; }
+
+    .MNG .valid_thru { width:100%; margin-bottom: 15px; }
+
+    .card_area { position: relative; }
+    .card_area .card_img { position: absolute; right: 10px; top:20px; height: 80px; }
+    .card_area .card_img img { height: 100%; }
+</style>
+</head>
+<body>
+<!-- WRAP -->
+<div id="WRAP">
+</div>
+<!-- //WRAP -->
+
+<div id="template" class="hidden">
+    <!-- HEADER -->
+    <div id="HEADER" class="hidden">
+        <header>
+            <h1 class="head__text">{{title_activity_pay_phone}}</h1>
+            <button class="head__back"><img src="/assets/images/i_back.png" alt="뒤로"></button>
+        </header>
+    </div>
+    <!-- //HEADER -->
+
+    <!-- CONTAINER -->
+    <div id="CONTAINER">
+        <div id="FORM_PAGE">
+            <div id="FORM_PAGE__CONTENT">
+                <div class="l__tabmenu">
+                    <ul class="column col2">
+                        <li data-tab="card" class="on"><a href="javascript:;">{{tab_creditcard}}</a></li>
+                        <li data-tab="bank"><a href="javascript:;">{{tab_account}}</a></li>
+                    </ul>
+                </div>
+
+                <fieldset class="tab tab_card">
+                    <div class="l__inner safe_card_box">
+                        <div class="l__guide">
+                            <a href="/safeCard.html?mode=p" style="display: inline-block; vertical-align: middle; width: 100%; cursor: pointer;">
+                                <dl class="details_guide details_payment details_payment_link">
+                                    <dt class="blind">{{btn_safe_card_registration}}</dt>
+                                    <dd class="details_image"><img src="/assets/images/ill-card-01.png" alt="카트 디폴트 이미지"></dd>
+                                    <dd class="details_title">
+                                        <div class="l-table">
+                                            <div class="l-cell">
+                                                <div class="FT__title">{{btn_safe_card_registration}}</div>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                    <dd class="details_more">
+                                        <div class="i_more">
+                                            <img src="/assets/images/ic-more2.png" alt="더보기">
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="line__bot"></div>
+
+                    <div class="l__inner payment_box">
+                        <!-- <dl class="details_guide_col col_2">
+                            <dd class="details_col col1">
+                                <div class="FT__title subcolor"><strong class="FW__M">{{recharge_pay_amount}}</strong></div>
+                                <div class="FT__title3" style="text-align: right;"><strong id="amount" class="form_amount point2"></strong></div>
+                            </dd>
+                        </dl> -->
+                        <div class="form-group bot">
+                            <label for="form_amount">{{recharge_pay_amount}}</label>
+                            <select name="form_amount" id="form_amount" class="int form_amount">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="line__bot"></div>
+
+                    <div class="l__inner">
+                        <div class="form-group">
+                            <div class="form-group_top">
+                                <label for="form_phone">{{recharge_card_number}}</label>
+                                <div class="int_save form-group_top_right">
+                                    <input type="checkbox" id="form_save"><label for="form_save"><span></span> {{recharge_card_number_save}}</label>
+                                </div>
+                            </div>
+                            <div class="int_form margin_t">
+                                <!-- <input id="form_card_num" type="text" class="int tal"> -->
+                                <ul class="column col_4">
+                                    <!-- <li>
+                                        <input id="form_card_no1" type="number" class="int tac form_card_no">
+                                    </li>
+                                    <li>
+                                        <input id="form_card_no2" type="number" class="int tac form_card_no">
+                                    </li>
+                                    <li>
+                                        <input id="form_card_no3" type="number" class="int tac form_card_no">
+                                    </li>
+                                    <li>
+                                        <input id="form_card_no4" type="number" class="int tac form_card_no">
+                                    </li> -->
+
+                                    <li style="width: 100%;" class="card_area">
+                                        <input id="form_card_display" type="tel" class="int tal form_card_no_v2">
+                                        <input id="form_card_no" type="hidden" class="int tal form_card_no">
+                                        <span class="card_img"><img src="/assets/images/card_logo/ic_card.png"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="int_form_desc margin_t">
+                                {{recharge_card_number_exp}}
+                                <br/>
+                                <span id="recharge_card_save">{{recharge_card_number_save_false}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_expire">{{recharge_card_exp_date}}</label>
+                            <div class="int_card_text">
+                                <span class="lbl left valid_thru">{{valid_thru}}</span> <input type="number" pattern="[0-9]*" inputmode="numeric" class="int tac int_pass" id="form_month" placeholder="MONTH" autocomplete="off"> <input type="number" class="int tac int_pass" id="form_year" placeholder="YEAR" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-pwd" style="display:none">
+                            <label for="form_expire">{{recharge_card_pwd}}</label>
+                            <div class="int_card_text">
+                                <input type="number" pattern="[0-9]*" inputmode="numeric" class="int tac int_pass" id="form_cardnumber" autocomplete="off"> <span class="lbl right">X X</span>
+                            </div>
+                        </div>
+                        <div class="form-group bot form-group-birth" style="display:none">
+                            <label for="form_int_birth">{{recharge_card_birthday}} <span class="FT__desc2 FW__M"></span></label>
+                            <div class="int_birth">
+                                <input type="number" class="int" id="form_int_birth" autocomplete="off">
+                                <div>
+                                    <a href="javascript:;" class="btn_calender"><img src="/assets/images/ic-calender.png" alt="캘린더"></a>
+                                </div>
+                            </div>
+                            <div class="int_form_desc margin_t">
+                                {{recharge_card_birthday_exp}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line__bot"></div>
+
+                    <div class="l__inner">
+                        <div class="form-group bot">
+                            <div class="int_form_desc">
+                                {{card_use_warning}}
+                            </div>
+                            <div class="form-img_card tac">
+                                <img id="bill_img" src="/assets/images/img-card.jpg" alt="카드 이미지">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-btns fixed_btn">
+                        <div class="fixed_height"></div>
+                        <input type="submit" value="{{btn_pay}}" class="btn" id="btn_payment">
+                    </div>
+                </fieldset>
+
+                <fieldset class="tab tab_bank" style="display:none;">
+                    <div class="l__inner">
+                        <div class="form-group form-group_col">
+                            <label for="form_namebank">{{recharge_bank_name}}</label>
+                            <div class="int_bank">
+                                <!-- <div class="int_select int_bank_text"> -->
+                                <a href="javascript:;" class="int_select int_bank_text"><img src="/assets/images/img-bank.png" alt=""></a>
+                                <!-- </div> -->
+                                <!-- <select name="form_namebank" id="form_namebank" class="int">
+                                    <option value=""></option>
+                                </select> -->
+                                <!-- <div class="int_select_inner">
+                                    <a href="javascript:;" class="int_select"></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="form-group copy_group">
+                            <label for="form_banknumber">{{recharge_bank_account}}</label>
+                            <input type="text" class="int" id="form_banknumber" readonly disabled>
+                            <a href="javascript:;" id="btn_copy"><img src="/assets/images/ic-copy.png" alt="복사"></a>
+                            <input type="hidden" value="" id="form_bankcode" class="" style="display:none;">
+                        </div>
+                        <div class="form-group">
+                            <label for="form_depositor">{{recharge_depositor}}</label>
+                            <input type="text" class="int" id="form_depositor" value="" readonly disabled>
+                        </div>
+                        <!-- 
+                        <div class="form-group">
+                            <label for="form_ctn">{{com_my_mobile}}</label>
+                            <input type="text" class="int" id="form_ctn" value="{{user.ANI}}">
+                        </div> -->
+
+                        <div class="form-group bot">
+                            <div class="int_form_desc margin_t">
+                                {{cash_account_guide}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-btns fixed_btn">
+                        <div class="fixed_height"></div>
+                        <input type="submit" value="{{btn_confirm}}" class="btn" id="btn_vbank">
+                    </div>
+                </fieldset>
+
+                <!-- pg confirm -->
+                <div class="l__popup" id="POPUP_pg_confirm">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__head">
+                                    <div class="popup__title">
+                                        {{alert_title_confirm}}
+                                    </div>
+                                </div>
+                                <div class="popup__body">
+                                    <div class="l-table">
+                                        <div class="l-cell">
+                                            <div class="popup__desc FT__desc2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns col2">
+                                    <a href="javascript:;" class="btn_ok popup__close">{{btn_cancel}}</a>
+                                    <a href="javascript:;" class="btn btn_pg_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // pg confirm -->
+
+                <div class="l__popup" id="POPUP_vbank_finish">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__head">
+                                    <div class="popup__title">
+                                        {{alert_title_confirm}}
+                                    </div>
+                                </div>
+                                <div class="popup__body">
+                                    <div class="l-table">
+                                        <div class="l-cell">
+                                            <div class="popup__desc FT__desc2">
+                                                <strong>
+                                                1.{{recharge_bank_name}}: <span id="pop_bankCode" class="red"></span><br/>
+                                                2.{{recharge_bank_account}}: <span id="pop_bankAccount" class="red"></span><br/>
+                                                3.{{recharge_pay_amount}}: <span id="pop_pay_amount" class="red"></span><br/>
+                                                <br><br>
+                                                {{alert_msg_request_amount_progress}}
+                                                </strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns">
+                                    <a href="javascript:;" class="btn btn_vbank_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l__popup" id="POPUP_vbank_change">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__head">
+                                    <div class="popup__title">
+                                        {{alert_title_confirm}}
+                                    </div>
+                                </div>
+                                <div class="popup__body">
+                                    <div class="l-table">
+                                        <div class="l-cell">
+                                            <div class="popup__desc FT__desc2">
+                                                {{alert_msg_change_account_preview}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns col2">
+                                    <a href="javascript:;" class="btn_ok popup__close">{{btn_cancel}}</a>
+                                    <a href="javascript:;" class="btn btn_vbank_change_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l__popup" id="POPUP_notice">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__head">
+                                    <div class="popup__title">
+                                        {{alert_title_confirm}}
+                                    </div>
+                                </div>
+                                <div class="popup__body">
+                                    <div class="l-table">
+                                        <div class="l-cell">
+                                            <div class="popup__desc FT__desc2">
+                                                <strong>
+                                                </strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns">
+                                    <a href="javascript:;" class="btn btn_notice_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l__popup" id="POPUP_dataCheck">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__body">
+                                    <div class="l__guide">
+                                        
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns col2">
+                                    <a href="javascript:;" class="btn_ok popup__close">{{btn_cancel}}</a>
+                                    <a href="javascript:;" class="btn btn_sel">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l__popup" id="POPUP_card_dialog">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__body">
+                                    <div class="l__guide">
+                                        {{recharge_card_number_save_dialog}}
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns col2">
+                                    <a href="javascript:;" class="btn_ok popup__close">{{btn_cancel}}</a>
+                                    <a href="javascript:;" class="btn btn_set_card_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l__popup" id="POPUP_confirm">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__head">
+                                    <div class="popup__title">
+                                    </div>
+                                </div>
+                                <div class="popup__body">
+                                    <div class="l-table">
+                                        <div class="l-cell">
+                                            <div class="popup__desc FT__desc2">
+                                                <strong>
+                                                </strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns">
+                                    <a href="javascript:;" class="btn popup__close">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l__popup" id="POPUP_vbank_confirm">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__head">
+                                    <div class="popup__title">
+                                        {{alert_title_confirm}}
+                                    </div>
+                                </div>
+                                <div class="popup__body">
+                                    <div class="l-table">
+                                        <div class="l-cell">
+                                            <div class="popup__desc FT__desc2">
+                                                <strong>
+                                                </strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns">
+                                    <a href="javascript:;" class="btn vbank_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- //LOGIN_PAGE__CONTENT -->
+        </div>
+    </div>
+    <!-- //CONTAINER -->
+</div>
+
+<form id="send_form">
+    <input type="hidden" id="mvnoId" name="mvnoId" value="">
+    <input type="hidden" id="amt" name="amt" value="">
+    <input type="hidden" id="payAmt" name="payAmt" value="">
+    <input type="hidden" id="useCash" name="useCash" value="0">
+    <input type="hidden" id="usePoint" name="usePoint" value="0">
+    <input type="hidden" id="rcgType" name="rcgType" value="CASH">
+    <input type="hidden" id="rcgSeq" name="rcgSeq" value="">
+    <input type="hidden" id="opCode" name="opCode" value="">
+    <input type="hidden" id="creditBillType" name="creditBillType" value="18">
+    <input type="hidden" id="orderNum" name="orderNum" value="">
+    <input type="hidden" id="pgId" name="pgId" value="">
+    <input type="hidden" id="noticeContent" name="noticeContent" value="">
+    <input type="hidden" id="rcgCardUsable" name="rcgCardUsable" value="">
+    <input type="hidden" id="limiteSeq" name="limiteSeq" value="">
+    <input type="hidden" id="ctn" name="ctn" value="">
+    <input type="hidden" id="title" name="title" value="title_activity_charge_preview_cash">
+</form>
+
+<!-- 페이지 로딩시 LANG 처리하기 위하여 상단에서 로딩 -->
+<script type="text/javascript" src="/assets/common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/common/js/util.js?v=<?=date('YmdHis')?>"></script>
+<script type="text/javascript" src="/assets/common/js/const.js?v=<?=date('YmdHis')?>"></script>
+<script type="text/javascript" src="/assets/common/js/moment.js"></script>
+<script>
+var date = moment().format('HHmmss');
+var commonPath = '/assets/common/js/common.js?v=' + date;
+var apiPath = '/assets/common/js/api.js?v=' + date;
+var bridgePath = '/assets/common/js/bridge.js?v=' + date;
+util.loadDynamicScript(commonPath);
+util.loadDynamicScript(bridgePath);
+util.loadDynamicScript(apiPath);
+</script>
+<script type="text/javascript" src="/assets/common/js/mustache.min.js"></script>
+<script type="text/javascript">
+function ajax_page_info() {
+    var params = {
+        opCode: 'cashList',
+        ANI: COMM_DATA.ANI,
+        USER_ID: COMM_DATA.USER_ID,
+        pinNumber:COMM_DATA.pinNumber,
+        LANG: COMM_DATA.LANG,
+        TELCOM: COMM_DATA.TELCOM,
+        MODEL: COMM_DATA.MODEL,
+        APP_VER: COMM_DATA.APP_VER
+    };
+
+    api.subPreloadingAdr(params, function(res) {
+        if (typeof res == 'string') res = JSON.parse(res);
+
+        console.log(COMM_DATA, res);
+
+        if (res['O_CODE'] == '0000') {
+            var data = res['O_DATA'];
+            renderCash(data['mvnoList']['cashList']);
+        } else {
+            alert(res['O_MSG']);
+        }
+    });
+}
+
+function ajax_get_bank() {
+    // Lang set
+    var jsonPath = '/assets/json/bankList.json';
+
+    // ajax 동기 호출
+    $.ajaxSetup({
+        async: false
+    });
+
+    $.post(jsonPath).done(function(res) {
+        renderBank(res.bankList);
+    });
+}
+
+function renderBillType(type) {
+    // 카 유 비 생
+    if (type == 13) {
+        $('.form-group-pwd, .form-group-birth').show();
+        $('#bill_img').attr('src', '/assets/images/img-card.jpg');
+    } 
+    // 카 유
+    else if (type == 18) {
+        $('.form-group-pwd, .form-group-birth').hide();
+        $('#bill_img').attr('src', '/assets/images/card/'+ LANG_CARD_CODE[COMM_DATA.LANG] +'/creditcard_sample.png');
+    }
+}
+
+// 추후 공통으로 뺴도 될듯
+function ajax_page_remains() {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    bridge.callEncParams({ ENC_DATE: eDate }, 
+    function () {
+        var params = {
+            pinNumber: COMM_DATA.pinNumber,
+            ANI: COMM_DATA.ANI,
+            USER_ID: COMM_DATA.USER_ID,
+            LANG: COMM_DATA.LANG,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256
+        };
+
+        api.remains(params, function(res) {
+            if (res['O_CODE'] == '0000') {
+                var data = res['O_DATA'];
+
+                COMM_DATA.cash = data.cash;
+                COMM_DATA.point = data.point;
+                COMM_DATA.virAccountId = data.virAccountId;
+                COMM_DATA.bankCode = data.bankCode;
+                COMM_DATA.bankImg = data.imgNm;
+
+                ajax_get_bank();
+            } else {
+                alert(res['O_MSG']);
+            }
+        });
+    });
+}
+
+// PG 유효성 체크
+function ajax_pg_rcg() {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    bridge.callEncParams({ ENC_DATE: eDate },
+    function() {
+        var ctn = $('#ctn').val();
+        var mvnoId = $('#mvnoId').val();
+        var rcgType = $('#rcgType').val();
+        var rcgAmt = parseInt(util.getNum($('#amt').val()));
+        // var useCash = parseInt(util.getNum($('#useCash').val()));
+        // var usePoint = parseInt(util.getNum($('#usePoint').val()));
+        var payAmt =  rcgAmt; //- useCash - usePoint; // parseInt(util.getNum($('#payAmt').val()));
+        var billType = $('#creditBillType').val();
+        // 임시 처리
+        var opCode = rcgType == 'P' ? 'NOTICE': 'CASH';
+        if (!ctn) ctn = COMM_DATA.ANI;
+
+        var params = {
+            opCode: 'CASH', 
+            pinNumber: COMM_DATA.pinNumber,
+            CTN: ctn,
+            ANI: COMM_DATA.ANI,
+            LANG: COMM_DATA.LANG,
+            osLang: COMM_DATA.osLang,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256,
+            rcgType: '',// rcgType,
+            mvnoId: '',//mvnoId,
+            rcgAmt: '',//rcgAmt,
+            useCash: '',
+            usePoint: '',
+            payAmt: ''//payAmt,
+        };
+
+        api.rcgV2(params, function(res) {
+            if (typeof res == 'string') res = JSON.parse(res);
+
+            if (res['O_CODE'] == '0000') {
+                var data = res['O_DATA'];
+                var popup = $('#POPUP_pg_confirm');
+
+                // 리턴 결과 값에 따라서 변동
+                $('#ctn').val(data['O_CTN']);
+
+                $('#rcgSeq').val(data['O_RCG_SEQ']);
+                $('#opCode').val(data['O_OP_CODE']);
+                $('#creditBillType').val(data['O_CREDIT_BILL_TYPE']);
+                $('#orderNum').val(data['O_ORDERNUM']);
+                $('#pgId').val(data['O_PG_ID']);
+                $('#noticeContent').val(data['O_NOTIECE_CONTENT']);
+
+                if ((data['O_CREDIT_BILL_TYPE'] == 11 || data['O_CREDIT_BILL_TYPE'] == 12)) { 
+                    bridgeDaou();
+                    return false;
+                }
+
+                else if (billType != data['O_CREDIT_BILL_TYPE']) {
+                    // console.log(data['O_CREDIT_BILL_TYPE'], '여기');
+                    renderBillType(data['O_CREDIT_BILL_TYPE']);
+                    $('#form_cardnumber').focus();
+                }
+
+                // renderBillType(18)
+                // renderBillType(13);
+                // 팝업 값 셋팅
+                popup.find('.popup__desc').html(data['O_NOTIECE_CONTENT']);
+
+                $('#WRAP').show();
+                
+            } else {
+                alert(res['O_MSG']);
+                // history.back();
+            }
+        });
+    });
+}
+
+function bridgeDaou(data) {
+
+    var rcgSeq = $('#rcgSeq').val();
+    var billType = $('#creditBillType').val();
+    var opCode = $('#opCode').val();
+    var orderNum = $('#orderNum').val();
+    var pgId = $('#pgId').val();
+    var noticeContent = $('#noticeContent').val();
+    var mobileOS = util.getMobileOS();
+    var obj = {
+        pinNumber: COMM_DATA.pinNumber,
+        CTN: COMM_DATA.ANI,
+        USER_ID: COMM_DATA.USER_ID,
+        LANG: COMM_DATA.LANG,
+        SESSION_ID: COMM_DATA.SESSION_ID,
+        ENC_DATE: moment().format('YY-MM-DD HH:mm:ss'),
+        OS: (mobileOS == 'and' ? 'ADR':'IOS'),
+        appType: 'thePAY',
+        ANI: COMM_DATA.ANI,
+        opCode: opCode,
+        rcgSeq: rcgSeq,
+        rcgType: '',
+        rcgAmt: '',
+        payAmt: '',
+        CREDIT_BILL_TYPE: billType,
+        ORDERNUM: orderNum,
+        PG_ID: pgId,
+        noti_content: noticeContent
+    };
+    var urlParams = Object.keys(obj).map(function(k) {
+                return (k) + '=' + (obj[k]);
+            }).join('&');
+    // console.log(urlParams);
+
+    bridge.callGetEncDaouParams({ params: urlParams }, ajax_pg_daou);
+}
+
+function ajax_pg_daou(res) {
+    // alert('callback');
+    // testConsole(JSON.stringify(params))
+    // copyClipboard(res.params);
+    api.authCardPaymentDaou(res.params);
+}
+
+function ajax_card_limit_test() {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    var cardNoList = [];
+    $('.form_card_no').each(function() { cardNoList.push(util.getNum($(this).val())); });
+    var fullCardNo = cardNoList.join('');
+    var month = $('#form_month').val();
+    var year = $('#form_year').val();
+    var pwd = $('#form_cardnumber').val();
+    var birth = $('#form_int_birth').val();
+
+    bridge.callEncParams({ 
+        ENC_DATE: eDate,
+        cardNum: fullCardNo,
+        cardExpireYY: year,
+        cardExpireMM: month,
+        cardPsswd: pwd,
+        userSecureNum: birth
+    },
+    function() {
+        var billType = $('#creditBillType').val();
+        var rcgSeq = $('#rcgSeq').val();
+        var rcgType = $('#rcgType').val();
+        var rcgAmt = parseInt(util.getNum($('#amt').val()));
+        var useCash = 0;//parseInt(util.getNum($('#useCash').val() || 0));
+        var usePoint = 0;////parseInt(util.getNum($('#usePoint').val() || 0));
+        var payAmt = rcgAmt - (useCash + usePoint);
+        var params = {
+            rcgSeq: rcgSeq, // null,
+            pinNumber: COMM_DATA.pinNumber,
+            ANI: COMM_DATA.ANI,
+            USER_ID: COMM_DATA.USER_ID,
+            LANG: COMM_DATA.LANG,
+            CARDNUM: _ENC.cardNum,
+            cardExpireYY: _ENC.cardExpireYY,
+            cardExpireMM: _ENC.cardExpireMM,
+            cardPsswd: billType == 18 ? '':_ENC.cardPsswd,
+            userSecureNum: billType == 18 ? '':_ENC.userSecureNum,
+            rcgAmt: payAmt,
+            payAmt: payAmt,
+            rcgType: null,// rcgType,
+            O_CREDIT_BILL_TYPE: billType,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256
+        }
+
+        api.rcgCardLimte(params, function(res) {
+            if (res['O_CODE'] == '0000') {
+                var d = res['O_DATA'];
+
+                if (d.rcgCardUsable) {
+                    $('#rcgCardUsable').val(d.rcgCardUsable);
+                }
+
+                if (d.limiteSeq) {
+                    $('#limiteSeq').val(d.limiteSeq);
+                }
+                // alert('card limte =>' + JSON.stringify(d));
+
+                if (d.rcgCardUsable == 'Y') {
+                    if (billType != d['O_CREDIT_BILL_TYPE'] && d['O_CREDIT_BILL_TYPE']) {
+                        $('#creditBillType').val(d['O_CREDIT_BILL_TYPE']);
+                        renderBillType(d['O_CREDIT_BILL_TYPE']);
+                        $('#form_cardnumber').focus();
+                        return false;
+                    }
+
+                    ajax_card_ccd();
+                } else {
+                    var popup = $('#POPUP_confirm');
+
+                    popup.find('.popup__title').html(d['rcgCardTitle']);
+                    popup.find('.popup__desc').html(d['rcgCardContents']);
+                    setPop(popup, true);
+                }
+                
+            } else {
+                alert(res['O_MSG']);
+            }
+        });
+    });
+}
+
+function ajax_card_ccd() {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    var cardNoList = [];
+    $('.form_card_no').each(function() { cardNoList.push(util.getNum($(this).val())); });
+    var fullCardNo = cardNoList.join('');
+    var month = $('#form_month').val();
+    var year = $('#form_year').val();
+    var pwd = $('#form_cardnumber').val();
+    var birth = $('#form_int_birth').val();
+    var billType = $('#creditBillType').val();
+
+    bridge.callEncParams({ 
+        ENC_DATE: eDate,
+        cardNum: fullCardNo,
+        cardExpireYY: year,
+        cardExpireMM: month,
+        cardPsswd: pwd,
+        userSecureNum: birth
+    },
+    function() {
+        var rcgSeq = $('#rcgSeq').val();
+        var rcgType = $('#rcgType').val();
+        var opCode = $('#opCode').val();
+        var limiteSeq = $('#limiteSeq').val();
+        var rcgAmt = parseInt(util.getNum($('#amt').val()));
+        var useCash = parseInt(util.getNum($('#useCash').val() || 0));
+        var usePoint = parseInt(util.getNum($('#usePoint').val() || 0));
+        var payAmt = rcgAmt - (useCash + usePoint);
+
+        // if (!rcgSeq) return false;
+
+        // alert('enc params =>' +JSON.stringify({ 
+        //     ENC_DATE: eDate,
+        //     cardNum: fullCardNo,
+        //     cardExpireYY: year,
+        //     cardExpireMM: month,
+        //     cardPsswd: pwd,
+        //     userSecureNum: birth,
+        // }))
+        // alert('callback enc params =>' +JSON.stringify(_ENC))
+
+        var params = {
+            rcgSeq: 'CASH',//rcgSeq,
+            rcgMode: 'CCD',
+            opCode: 'CASH', //opCode, 
+            rcgType: 'CASH',//rcgType,
+            pinNumber: COMM_DATA.pinNumber,
+            CTN: COMM_DATA.ANI,
+            ANI: COMM_DATA.ANI,
+            rcgAmt: rcgAmt,
+            payAmt: payAmt,
+            cardName: '',
+            cardNum: _ENC.cardNum,
+            cardExpireYY: _ENC.cardExpireYY,
+            cardExpireMM: _ENC.cardExpireMM,
+            cardCvc: '',
+            cardPsswd: billType == 18 ? '':_ENC.cardPsswd,
+            userSecureNum: billType == 18 ? '':_ENC.userSecureNum,
+            LANG: COMM_DATA.LANG,
+            osLang: COMM_DATA.osLang,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256,
+            limiteSeq: limiteSeq
+        };
+
+        api.rcgCardCCD(params, function (res) {
+            setPop($('#POPUP_pg_confirm'), false);
+
+            if (res['O_CODE'] == '0000') {
+                var d = res['O_DATA'];
+
+                // alert('[임시 알림] 충전 성공!\n(충전내역 구현 후 내역 페이지으로 이동 처리)');
+                // location.href = '/rcgHistory.html?tab_type=1';
+                goBack();
+            } else {
+                var popup = $('#POPUP_notice');
+                popup.find('.FT__desc2 strong').html(res['O_MSG']);
+                setPop(popup, true);
+                // alert(res['O_MSG'].replace(/<br\/>/gim, '\n'));
+            }
+        });
+    });
+}
+
+function ajax_vbank() {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    bridge.callEncParams({ ENC_DATE: eDate },
+    function() {
+        var rcgSeq = $('#rcgSeq').val();
+        var rcgType = $('#rcgType').val();
+        var opCode = $('#opCode').val();
+        var rcgAmt = parseInt(util.getNum($('#amt').val()));
+        var useCash = parseInt(util.getNum($('#useCash').val() || 0));
+        var usePoint = parseInt(util.getNum($('#usePoint').val() || 0));
+        var payAmt = rcgAmt - (useCash + usePoint);
+        if (!rcgSeq) return false;
+
+        var params = {
+            rcgSeq: rcgSeq,
+            rcgMode: 'VBA',
+            opCode: opCode, 
+            rcgType: rcgType,
+            pinNumber: COMM_DATA.pinNumber,
+            CTN: COMM_DATA.ANI,
+            ANI: COMM_DATA.ANI,
+            rcgAmt: rcgAmt,
+            payAmt: payAmt,
+            LANG: COMM_DATA.LANG,
+            osLang: COMM_DATA.osLang,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256
+        };
+
+        api.rcgVBA(params, function (res) {
+            if (res['O_CODE'] == '0000') {
+                var d = res['O_DATA'];
+
+                $('#POPUP_pg_confirm').hide();
+                var popup = $('#POPUP_vbank_finish');
+                var desc = popup.find('.popup__desc').html();
+
+                popup.find('#pop_bankCode').text(COMM_DATA.bankCode);
+                popup.find('#pop_bankAccount').text(COMM_DATA.virAccountId);
+                popup.find('#pop_pay_amount').text(_LANG.won + ' ' + util.comma(payAmt));
+                setPop(popup, true);
+            } else {
+                alert(res['O_MSG']);
+            }
+        });
+    });
+}
+
+// 가상 계좌 발급
+function ajax_user_vbank(bankCd) {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    bridge.callEncParams({ ENC_DATE: eDate },
+        function() {
+
+        var params = {
+            ANI: COMM_DATA.ANI,
+            USER_ID: COMM_DATA.USER_ID,
+            pinNumber: COMM_DATA.pinNumber,
+            bankCd: bankCd,
+            LANG: COMM_DATA.LANG,
+            osLang: COMM_DATA.osLang,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256
+        };
+
+        api.userVAccount(params, function (res) {
+            // console.log(res);
+            if (res['O_CODE'] == '0000') {
+                var d = res['O_DATA'];
+
+                COMM_DATA.virAccountId = d.virAccountId;
+                COMM_DATA.bankCode = d.bankCode;
+                COMM_DATA.bankImg = d.imgNm;
+
+                $('#form_banknumber').val(d.virAccountId);
+                $('#form_bankcode').val(d.bankCode);
+                $('#form_depositor').val(_LANG.company_depositer);
+
+                alert(_LANG.alert_msg_change_account + '<br/>' + _LANG.alert_msg_request_amount_progress);
+            } else {
+                alert(res['O_MSG']);
+            }
+        });
+    });
+}
+
+function renderBank(bankList) {
+    if ($.isArray(bankList)) {
+        // console.log(bankList);
+        var target = $('#POPUP_dataCheck').find('.l__guide');
+        var html = [];
+        var tpl = '<a data-id="{{bankCode}}" data-account="{{virAccountId}}" data-img="{{imgNm}}" href="javascript:;" class="select_item {{addClass}}">\
+                        <dl class="details_guide">\
+                            <dd class="details_check"><div class="checkbox"></div></dd>\
+                            <dd class="details_title">\
+                                <div class="l-table">\
+                                    <div class="l-cell">\
+                                        <div class="FT__desc maincolor"><img src="{{imgNm}}" alt="카트 디폴트 이미지"></div>\
+                                    </div>\
+                                </div>\
+                            </dd>\
+                        </dl>\
+                    </a>';
+
+        bankList.forEach(function(v, i) {
+            if (v.bankCode == COMM_DATA.bankCode) {
+                v.addClass = 'on';
+                v.virAccountId = COMM_DATA.virAccountId;
+            } else {
+                v.addClass = '';
+                v.virAccountId = '';
+            }
+
+            html.push(util.setTemplateObj(tpl, v));
+        });
+
+        if (html.length) {
+            target.html(html);
+
+            // 기본 아이템 설정
+            var item = target.find('.select_item.on');
+            // if (!item.length) item = target.find('.select_item').eq(0).addClass('on');
+
+            selectItem(item);
+        } else target.empty();
+    }
+}
+
+function renderCash(cashList) {
+    if ($.isArray(cashList)) {
+        var target = $('#form_amount');
+        var html = [];
+        var tpl = '<option value="{{amounts}}">{{cashName}}</option>';
+
+        cashList.forEach(function(v, i) {
+            html.push(util.setTemplateObj(tpl, v));
+        });
+
+        if (html.length) {
+            target.html(html);
+            $('#amt').val(cashList[0].amounts);
+        } else target.empty();
+    }
+}
+
+function selectItem(item) {
+    if (item.length) {
+        var bankCode = item.data('id');
+        var account = item.data('account') || '';
+        var img = item.data('img');
+
+        console.log(bankCode, account, img);
+
+        $('.int_bank_text').html('<img src="'+img+'" alt="">');
+
+        if (account) {
+            $('#form_banknumber').val(account);
+            $('#btn_copy').show();
+        }
+        if (bankCode) $('#form_bankcode').val(bankCode);
+        if (account && bankCode) $('#form_depositor').val(_LANG.company_depositer);
+    } else {
+        $('#form_banknumber').val('');
+        $('#form_bankcode').val('');
+        $('#btn_copy').hide();
+        $('#form_depositor').val('');
+        $('.int_bank_text').html('<span>'+_LANG.recharge_select_bank+'</span>');
+    }
+}
+
+function setCardNum(params) {
+    // alert('setCardNum' + JSON.stringify(params));
+    if (params && params['cardNum']) {
+
+        var cardNum = params.cardNum;
+        // var cardNo1 = cardNum.substr(0, 4);
+        // var cardNo2 = cardNum.substr(4, 4);
+        // var cardNo3 = cardNum.substr(8, 4);
+        // var cardNo4 = cardNum.substr(12, 4);
+        // $('#form_card_no1').val(cardNo1);
+        // $('#form_card_no2').val(cardNo2);
+        // $('#form_card_no3').val(cardNo3);
+        // $('#form_card_no4').val(cardNo4);
+
+        $('#form_card_display').val(creditCardFormat(cardNum));
+        $('#form_save').prop('checked', true);
+        $('#recharge_card_save').text(_LANG.recharge_card_number_save_true);
+    } else {
+        $('#form_save').prop('checked', false);
+        $('#recharge_card_save').text(_LANG.recharge_card_number_save_false);
+    }
+}
+
+function copyClipboard(url) {
+    var urlTxt = document.createElement("input");
+
+    $("body").append(urlTxt);
+    $(urlTxt).val(url).select();
+    document.execCommand("copy");
+    $(urlTxt).remove();
+}
+
+function pageLoadInit() {
+    // 모든 기능은 App으로 부터 기본 정보를 받은 후 진행
+    bridge.callCommonParams(function() {
+        commonInit(); // XML LANG load
+
+        if (COMM_DATA.LANG == 'KOR') {
+            $('.safe_card_box').hide();
+        }
+
+        bridge.callSetWebViewTitle({
+            title: _LANG.title_activity_charge_preview_cash
+        });
+
+        // mustache render
+        pageInit(); // 공통 INIT
+        $('#WRAP').hide();
+
+        ajax_page_info();
+        // ajax_page_remains();
+
+        renderBillType('18');
+        // after mustache render
+        pageActionInit();
+
+        bridge.callGetCardNum(); // 저장된 카드값 가져오기
+
+        ajax_pg_rcg();
+    });
+}
+
+// 페이지 이벤트 구현부
+function pageActionInit() {
+    // 뒤로 가기
+    $('.head__back').on('click', function() {
+        history.back();
+    });
+
+    // 팝업닫기
+    $('.popup__close,.btn_notice_confirm, .dim').on('click', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        setPop($('.l__popup'), false);
+    });
+
+    // 탭 
+    $('.l__tabmenu li').on('click', function() {
+        $(this).addClass('on').siblings().removeClass('on');
+        var tab = $(this).data('tab');
+
+        $('.tab_'+tab).fadeIn(150).siblings('.tab').hide();
+
+        if (tab == 'bank') ajax_page_remains();
+    });
+
+    $('.details_payment_link').on('click', function() {
+        location.href = '/safeCard.html?mode=p';
+    });
+
+    $('#form_card_display').on('keyup input', function(e) {
+        var $this = $(this);
+        var cardNo = creditCardFormat($this.val());
+        var cardType = getCardCorp(cardNo);
+
+        $this.val(cardNo);
+
+        var cardNo = $this.val().replace(/[^0-9*]/gi, '');
+        var cardLen = cardNo.length;
+
+        if (cardLen >= cardType.max) {
+             $('#form_month').focus();
+        }
+    });
+
+    var _isInput2 = false;
+    var _inputTimeout2 = null;
+    $('#form_month').on('keyup keypress keydown input', function(e) {
+        var $this = $(this);
+        var v = util.getNum($this.val());
+
+        if (v.length > 2) {
+            v = v.substr(0, 2);
+        }
+
+        $(this).val(v);
+
+        // if (v.length == 2) {
+        //     $('#form_year').focus();
+        // }
+        if (e.type == 'keyup') {
+            if (_inputTimeout2) clearTimeout(_inputTimeout2);
+            _inputTimeout2 = setTimeout(function() {
+                var v = util.getNum($this.val());
+                if (v.length == 2) {
+                    $('#form_year').focus();
+                }
+            }, 100);
+        }
+    });
+
+    var _isInput3 = false;
+    var _inputTimeout3 = null;
+    $('#form_year').on('keyup keypress keydown input', function(e) {
+        var $this = $(this);
+        var v = util.getNum($this.val());
+
+        if (v.length > 2) {
+            v = v.substr(0, 2);    
+        }
+
+        $(this).val(v);
+
+        // if (v.length == 2) {
+        //     $('#form_cardnumber').focus();
+        // }
+
+        if (e.type == 'keyup') {
+            if (_inputTimeout3) clearTimeout(_inputTimeout3);
+            _inputTimeout3 = setTimeout(function() {
+                var v = util.getNum($this.val());
+                if (v.length == 2) {
+                    $('#form_cardnumber').focus();
+                }
+            }, 100);
+        }
+    });
+
+    var _isInput4 = false;
+    var _inputTimeout4 = null;
+    $('#form_cardnumber').on('keyup keypress keydown input', function(e) {
+        var $this = $(this);
+        var v = util.getNum($(this).val());
+
+        if (v.length > 2) {
+            v = v.substr(0, 2);    
+        }
+
+        $(this).val(v);
+
+        // if (v.length == 2) {
+        //     $('#form_int_birth').focus();
+        // }
+
+        if (e.type == 'keyup') {
+            if (_inputTimeout4) clearTimeout(_inputTimeout4);
+            _inputTimeout4 = setTimeout(function() {
+                var v = util.getNum($this.val());
+                if (v.length == 2) {
+                    $('#form_int_birth').focus();
+                }
+            }, 100);
+        }
+    });
+
+    $('#form_int_birth').on('keyup keypress keydown input', function() {
+        var v = util.getNum($(this).val());
+
+        if (v.length > 6) {
+            v = v.substr(0, 6);    
+        }
+
+        $(this).val(v);
+    });
+
+    // 카드 충전 진행
+    $('#btn_payment').on('click', function() {
+        var cardNoList = [];
+        $('.form_card_no').each(function() { cardNoList.push(util.getNum($(this).val())); });
+        var fullCardNo = cardNoList.join('');
+        var regExp = /((5[1-5]\d{14})|(4\d{12}(\d{3})?)|(3[47]\d{13})|(6011\d{12})|((30[0-5]|3[68]\d)\d{11}))/gim;
+
+        var month = $('#form_month').val();
+        var year = $('#form_year').val();
+        var pwd = $('#form_cardnumber').val();
+        var birth = $('#form_int_birth').val();
+        var billType = $('#creditBillType').val();
+
+        if (!fullCardNo) {
+            alert(_LANG.toast_empty_card_number);
+            return;
+        }
+
+		// 카드번호에 상관없이 결제유도하기 위해 주석처리함.
+//        if (!fullCardNo.match(regExp)) {
+//            alert(_LANG.toast_cardnumber_length);
+//            return ;
+//        }
+
+        if (!month) {
+            alert(_LANG.toast_empty_card_mm);
+            return ;
+        }
+
+        if (!year) {
+            alert(_LANG.toast_empty_card_yy);
+            return ;
+        }
+
+        if (billType == '13') {
+            if (!pwd) {
+                alert(_LANG.toast_empty_card_pwd);
+                return ;
+            }
+
+            if (!birth) {
+                alert(_LANG.toast_empty_card_birth);
+                return ;
+            }
+        }
+
+        var popup = $('#POPUP_pg_confirm');
+        var tab = $('.l__tabmenu li.on').data('tab');
+        if (tab == 'card') {
+            // daou 호출
+            if (billType == 11 || billType == 12) {
+                bridgeDaou();
+            } else ajax_card_limit_test();
+        } else {
+            setPop(popup, true);
+        }
+    });
+
+    // 카드 결제
+    $('.btn_pg_confirm').on('click', function() {
+        var tab = $('.l__tabmenu li.on').data('tab');
+
+        if (tab == 'card') {
+            ajax_card_ccd();
+        } else {
+            // ajax_vbank();
+            alert(_LANG.alert_msg_request_amount_progress);
+            return false;
+        }
+    });
+
+    // 은행 결제 확인 팝업
+    $('.btn_vbank_confirm').on('click', function() {
+        setPop($('.l__popup'), false);
+    });
+
+    // 은행 상품 선택
+    $('.int_select.int_bank_text').on('click', function() {
+        setPop($('#POPUP_dataCheck'), true);
+    });
+
+    // 추가팝업 선택
+    $(document).on('click', '#POPUP_dataCheck a.select_item',function(e) {
+        e.preventDefault();e.stopPropagation();
+        $('#POPUP_dataCheck a.select_item').removeClass('on');
+        $(this).addClass('on')
+            .find('input').prop('checked', true);
+    });
+
+    $('#POPUP_dataCheck .btn_sel').on('click', function() {
+        var sel = $('.select_item.on');
+        selectItem(sel);
+        setPop($('.l__popup'), false);
+    });
+
+    // $('#POPUP_vbank_change .btn_vbank_change_confirm').on('click', function() {
+    //     setPop($('.l__popup'), false);
+    //     var backCode = $('#form_banknumber').val()
+    //     ajax_user_vbank(backCode);
+    // });
+
+    $('#btn_vbank').on('click', function() {
+        var bankCode = $('#form_bankcode').val();
+
+        if (!bankCode) {
+            return alert(_LANG.toast_empty_select_bank);
+        }
+
+        if (!COMM_DATA.bankCode || bankCode != COMM_DATA.bankCode) {
+            // var popup = $('#POPUP_vbank_change');
+            // setPop(popup, true);
+            if (confirm(_LANG.alert_msg_change_account_preview)) {
+                ajax_user_vbank(bankCode);
+            }
+        } else {
+            alert(_LANG.alert_msg_request_amount_progress);
+        }
+        return false;
+    });
+
+    // 카드 번호 저장
+    $('#form_save').on('click', function(e) {
+        var isChecked = $(this).prop('checked');
+        var cardNo = $('#form_card_no').val();
+        var cardType = getCardCorp(cardNo);
+
+        if (isChecked) {
+            if(!cardNo)
+            {
+                alert(_LANG.toast_empty_card_number);
+                return false;
+            }
+
+            if(cardNo.length < cardType.max)
+            {
+                alert(_LANG.toast_cardnumber_length);
+                return false;
+            }
+
+            bridge.callSetCardNum({ cardNum: cardNo });
+            $('#recharge_card_save').text(_LANG.recharge_card_number_save_true);
+        } else {
+            e.preventDefault(); e.stopPropagation();
+            setPop($('#POPUP_card_dialog'), true);
+        }
+    });
+
+    $('.btn_set_card_confirm').on('click', function() {
+        setPop($('#POPUP_card_dialog'), false);
+        $('#recharge_card_save').text(_LANG.recharge_card_number_save_false);
+        $('#form_save').prop('checked', false);
+        bridge.callSetCardNum({ cardNum: '' });
+    });
+
+    $('#btn_copy').on('click', function() {
+        copyClipboard(COMM_DATA.virAccountId);
+        alert(_LANG.toast_virtual_account_copy_paste);
+    });
+
+    $('#form_amount').on('change', function() {
+        var amount = $(this).find('option:selected').val();
+        $('#amt').val(amount);
+    });
+
+    // 인풋 입력시 타겟의 위치의 절반 만큼 스크롤 이동
+    // 이부분은 페이지 마다 엘리먼트 속성의 차이로 개별 구현함
+    $(document).on('focus', '.form-group', function(e) {
+        var formGroup = $(this);
+        if (!formGroup.length) return false;
+        var offsetTop  = formGroup.prop('offsetTop');
+
+        // testConsole(offsetTop + '/' + $(window).scrollTop());
+        if ($(e.target).hasClass('btn_calender')) return false;
+        $(window).scrollTop(offsetTop/2 - 100);
+    });
+
+    // 달력 팝업 표시
+    $('.btn_calender').on('click', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        var birthDate = util.getNum($('#form_int_birth').val());
+
+        bridge.callGetBirthDate({
+            birthDate: birthDate
+        }, function(res) {
+            if (res.birthDate.length) {
+                $('#form_int_birth').val(res.birthDate);
+            }
+        });
+    });
+
+    $('.vbank_confirm').on('click', function() {
+        location.replace('/rcgHistory.html');
+    });
+}
+
+$(function(){
+    pageLoadInit();
+});
+</script>
+</body>
+</html>

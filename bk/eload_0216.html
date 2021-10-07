@@ -1,0 +1,1786 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="title" content="thePAY" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="image" content="" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="thePAY">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<title>thePAY</title>
+<link rel="stylesheet" href="/assets/common/css/default.css?v=<?=date('YmdHis')?>">
+<link rel="stylesheet" href="/assets/common/css/contents.css?v=<?=date('YmdHis')?>">
+<link rel="stylesheet" href="/assets/common/css/custom.css?v=<?=date('YmdHis')?>">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+<!--[if lt IE 9]>
+    <script src="/assets/common/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+    .hidden { display: none; }
+
+    #POPUP_pg_confirm .popup__body { height: auto; padding: 60px 60px; }
+
+    .phone { padding-left: 60px; font-family:"Nanum Gothic", "khmer" , "Roboto" ,"Zawgyi-One", "notosans" , "AppleSDGothcNeo","AppleGothic", sans-serif; font-weight:300; font-size:16px;}
+
+    .int_prefix { padding-left: 130px; }
+
+    .country_code, .prefix {
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        margin-top: 16px;
+    }
+
+    .select_item .off { display: inline-block; }
+    .select_item .on { display: none; }
+
+    .select_item.active .on { display: inline-block; }
+    .select_item.active .off { display: none; }
+
+    .item_img_list li a { padding: 0; }
+    .item_img_list li a img { width: 100%; }
+
+    #btn_search { background-color: blue; }
+
+    .box_col li a { border-left: 1px solid #7f8f9a; }
+
+    .int_select_inner.sel_spinner .int_select,
+    #form_itemName { 
+        white-space: nowrap; overflow: hidden; 
+        text-overflow: ellipsis;
+        max-width: 940px;
+        padding-right: 65px;
+    }
+
+    .default_select_inner li { text-overflow: ellipsis; overflow: hidden; }
+    .default_select_inner input[type="radio"] + label { white-space: nowrap; }
+
+    .item_img_list a { border:none !important; user-select: none;appearance: none; -webkit-tap-highlight-color: rgba(0,0,0,0);  }
+
+    .popup__body .default_select_inner li { user-select: none;appearance: none; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+    .tabmenu_inner .tabmenu_tit {/* width: calc(100% - 18px);*/ }
+    .tabmenu_inner i { height: auto; vertical-align: middle; width: 18px;}
+    .tabmenu_inner i img { width: 100%; }
+    .tab_menu li a { padding: 7px; }
+    .tabmenu_inner .tabmenu_tit .FT__title { font-size: 13px;letter-spacing: -2px; }
+</style>
+</head>
+<body>
+<!-- WRAP -->
+<div id="WRAP" class="bg__gray">
+</div>
+<!-- //WRAP -->
+
+<div id="template" class="hidden">
+    <!-- HEADER -->
+    <div id="HEADER" class="hidden">
+        <header>
+            <h1 class="head__text">{{title_activity_charge_preview_eload}}</h1>
+            <button class="head__back"><img src="/assets/images/i_back.png" alt="뒤로"></button>
+        </header>
+    </div>
+    <!-- //HEADER -->
+
+    <!-- CONTAINER -->
+    <div id="CONTAINER">
+        <div id="FORM_PAGE">
+            <div id="FORM_PAGE__CONTENT">
+
+                <fieldset>
+                    <div class="l__inner bg__white">
+                        <div class="form-group">
+                            <label for="form_country">{{title_activity_sel_nation}}</label>
+                            <div class="int_select_inner country_select_inner">
+                                <a href="javascript:;" class="int_select"><img src="" class="select_country"> <span></span></a>
+                            </div>
+                            <input type="hidden" name="form_country" id="form_country" >
+                        </div>
+                        <div class="form-group">
+                            <label for="form_certified">{{recharge_goods}}</label>
+                            <div>
+                                <ul id="item_list" class="column col_3">
+                                </ul>
+                            </div>
+                            <input type="text" name="form_itemName" id="form_itemName" class="int l__interval1" value="" readonly disabled>
+                            <div class="box_col item_img_wrap" style="display: none;">
+                                <ul class="column item_img_list">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="eload_field">
+                        </div>
+                    </div>
+                    <!-- div class="line__bot"></div -->
+                    <div class="l__inner payment_box">
+                        <div class="BOX__line box__shadow bg__white">
+                            <div class="BOX__line_row top">
+                                <dl class="details_guide_col col_2">
+                                    <dd class="details_col col1">
+                                        <div class="FT__desc3 subcolor"><strong class="FW__L">{{amount}}</strong></div>
+                                        <div class="FT__title4"><strong id="amount">0</strong></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="padding_0 cash_top" style="display:none;">
+                                <div class="hr"></div>
+                            </div>
+                            <div class="BOX__line_row" style="display:none;">
+                                <dl class="details_guide_col col_2 checkbox_wrap">
+                                    <dd class="details_col col1">
+                                        <div class="FT__desc3 subcolor"><strong class="FW__L">{{recharge_thepay_cash}}</strong></div>
+                                        <div class="FT__title2" id="user_cash">￦ {{user.displayCash}}</div>
+                                    </dd>
+                                    <dd class="details_col col2 tar">
+                                        <div class="int_check">
+                                            <input type="checkbox" id="use_cash" class="use_checkbox"> <label for="use_cash">{{recharge_use}} <span></span></label>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="padding_0 point_top" style="display:none;">
+                                <div class="hr"></div>
+                            </div>
+                            <div class="BOX__line_row" style="display:none;">
+                                <dl class="details_guide_col col_2 checkbox_wrap">
+                                    <dd class="details_col col1">
+                                        <div class="FT__desc3 subcolor"><strong class="FW__L">{{recharge_point}}</strong></div>
+                                        <div class="FT__title2" id="user_point">ⓟ {{user.displayPoint}}</div>
+                                    </dd>
+                                    <dd class="details_col col2 tar">
+                                        <div class="int_check">
+                                            <input type="checkbox" id="use_point" class="use_checkbox"> <label for="use_point">{{recharge_use}} <span></span></label>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="BOX__line_row bot tac">
+                                <div class="FT__title subcolor pad">{{recharge_pay_amount}}</div>
+                                <div class="FT__title3 pad"><strong class="point2" id="payment_amount">0</strong></div>
+                                <div class="FT__desc3 subcolor pad">{{payment_min_amount}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fixed_btn">
+                        <div class="fixed_height"></div>
+                        <input type="submit" value="{{btn_recharge}}" class="btn" id="btn_recharge">
+                        <input type="submit" value="{{btn_search}}" class="btn" id="btn_search" style="display: none;">
+                    </div>
+                </fieldset>
+
+                <div class="l__popup" id="POPUP_dataCheck">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <!-- <div class="popup__head">
+                                    <div class="popup__title tal">
+                                        Recharge Amount
+                                    </div>
+                                </div> -->
+                                <div class="popup__body">
+                                    <div class="default_select_inner">
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns col2">
+                                    <a href="javascript:;" class="btn_ok popup__close">{{btn_cancel}}</a>
+                                    <a href="javascript:;" class="btn btn_spinner_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l__popup" id="POPUP_default">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <!-- 타이틀 사용 안하시면 "popup__head" 영역 숨김처리 -->
+                                <!-- <div class="popup__head">
+                                    <div class="popup__title tal">
+                                        국기 팝업
+                                    </div>
+                                </div> -->
+                                <div class="popup__body">
+                                    <div class="default_select_inner">
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns col2">
+                                    <a href="javascript:;" class="btn_ok popup__close">{{btn_cancel}}</a>
+                                    <a href="javascript:;" class="btn btn_sel_country">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- pg confirm -->
+                <div class="l__popup" id="POPUP_pg_confirm">
+                    <div class="dim"></div>
+                    <div class="l-table">
+                        <div class="l-cell">
+                            <div class="popup__wrap">
+                                <div class="popup__head">
+                                    <div class="popup__title">
+                                        {{alert_title_confirm}}
+                                    </div>
+                                </div>
+                                <div class="popup__body">
+                                    <div class="l-table">
+                                        <div class="l-cell">
+                                            <div class="popup__desc FT__desc2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup__foot popup_btns col2">
+                                    <a href="javascript:;" class="btn_ok popup__close">{{btn_cancel}}</a>
+                                    <a href="javascript:;" class="btn btn_pg_confirm">{{btn_confirm}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // pg confirm -->
+
+            </div><!-- //LOGIN_PAGE__CONTENT -->
+        </div>
+    </div>
+    <!-- //CONTAINER -->
+</div>
+
+<form id="send_form" method="GET" action="/recharge.html">
+    <input type="hidden" id="mvnoId" name="mvnoId" value="">
+    <input type="hidden" id="prodItem" name="prodItem" value="">
+    <input type="hidden" id="prodId" name="prodId" value="">
+    <input type="hidden" id="amt" name="amt" value="">
+    <input type="hidden" id="payAmt" name="payAmt" value="">
+    <input type="hidden" id="useCash" name="useCash" value="">
+    <input type="hidden" id="usePoint" name="usePoint" value="">
+    <input type="hidden" id="rcgType" name="rcgType" value="E">
+    <input type="hidden" id="rcgSeq" name="rcgSeq" value="">
+    <input type="hidden" id="opCode" name="opCode" value="eload">
+    <input type="hidden" id="creditBillType" name="creditBillType" value="">
+    <input type="hidden" id="ctn" name="ctn" value="">
+    <input type="hidden" id="orderNum" name="orderNum" value="">
+    <input type="hidden" id="pgId" name="pgId" value="">
+    <input type="hidden" id="noticeContent" name="noticeContent">
+    <input type="hidden" id="countryCode" name="countryCode" value="">
+    <input type="hidden" id="title" name="title" value="title_activity_charge_preview_eload">
+</form>
+
+<!-- 페이지 로딩시 LANG 처리하기 위하여 상단에서 로딩 -->
+<script type="text/javascript" src="/assets/common/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/common/js/util.js?v=<?=date('YmdHis')?>"></script>
+<script type="text/javascript" src="/assets/common/js/const.js?v=<?=date('YmdHis')?>"></script>
+<script type="text/javascript" src="/assets/common/js/moment.js"></script>
+<script>
+var date = moment().format('HHmmss');
+var commonPath = '/assets/common/js/common.js?v=' + date;
+var apiPath = '/assets/common/js/api.js?v=' + date;
+var bridgePath = '/assets/common/js/bridge.js?v=' + date;
+util.loadDynamicScript(commonPath);
+util.loadDynamicScript(bridgePath);
+util.loadDynamicScript(apiPath);
+</script>
+<script type="text/javascript" src="/assets/common/js/mustache.min.js"></script>
+<script type="text/javascript">
+var _countryList = [];
+var _itemList = [];
+var _spinner = {};
+var _eloadList = [];
+var _interface = [];
+
+var _isRechargeBtn = true;
+var _remoteEloadList = [];
+
+// 디폴트 값들
+var _defaultCountry,
+    _defaultProductType,
+    _defaultProviderId,
+    _defaultProviderName;
+
+function ajax_page_info() {
+    var params = {
+        opCode: 'eload',
+        ANI: COMM_DATA.ANI,
+        USER_ID: COMM_DATA.USER_ID,
+        pinNumber:COMM_DATA.pinNumber,
+        LANG: COMM_DATA.LANG,
+        TELCOM: COMM_DATA.TELCOM,
+        MODEL: COMM_DATA.MODEL,
+        APP_VER: COMM_DATA.APP_VER
+    };
+
+    api.subPreloadingAdr(params, function(res) {
+        if (typeof res == 'string') res = JSON.parse(res);
+
+        console.log(COMM_DATA, res);
+
+        if (res['O_CODE'] == '0000') {
+            var data = res['O_DATA'];
+
+            if (data['mvnoList']) {
+                _countryList = data['mvnoList']['eLoad'];
+                renderCountry(_countryList);
+            }
+
+        } else {
+            alert(res['O_MSG']);
+        }
+    });
+}
+
+function ajax_preloading_eloadV2() {
+    var mvnoId = $('#mvnoId').val();
+    var prodItem = $('#prodItem').val();
+    var params = {
+        ANI: COMM_DATA.ANI,
+        USER_ID: COMM_DATA.USER_ID,
+        pinNumber:COMM_DATA.pinNumber,
+        LANG: COMM_DATA.LANG,
+        mvnoId: mvnoId,
+        prodItem: prodItem
+    };
+
+    api.preloadingEloadV2(params, function(res) {
+        if (res['O_CODE'] == '0000') {
+            var data = res['O_DATA'];
+            renderEloadField(data);
+        } else {
+            // alert(res['O_MSG'])
+        }
+    });
+}
+
+function ajax_page_remains() {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    bridge.callEncParams({ ENC_DATE: eDate }, 
+    function () {
+        var params = {
+            pinNumber: COMM_DATA.pinNumber,
+            ANI: COMM_DATA.ANI,
+            USER_ID: COMM_DATA.USER_ID,
+            LANG: COMM_DATA.LANG,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256
+        };
+
+        api.remains(params, function(res) {
+            if (res['O_CODE'] == '0000') {
+                var data = res['O_DATA'];
+
+                COMM_DATA.cash = data.cash;
+                COMM_DATA.point = data.point;
+
+                /* 가지고 있는 포인트가 금액보다 크면 금액만큼만 표시 */
+                renderPoint();
+            } else {
+                alert(res['O_MSG']);
+                // history.back();
+            }
+        });
+    });
+}
+
+// PG 유효성 체크
+function ajax_pg_rcg() {
+    var mvnoId = $('#mvnoId').val();
+    var rcgType = $('#rcgType').val();
+    var prodId = $('#prodItem').val();
+    var rcgAmt = parseInt(util.getNum($('#amt').val()));
+    var useCash = parseInt(util.getNum($('#useCash').val()));
+    var usePoint = parseInt(util.getNum($('#usePoint').val()));
+    var payAmt =  rcgAmt - useCash - usePoint; // parseInt(util.getNum($('#payAmt').val()));
+
+    var apiParams = {};
+    var apiInfoList = filterArray(_interface, 'apiId', 'requestRechargePreview');
+    var isGetFailParams = false;
+
+    if (!apiInfoList.length) return false;
+
+    $.each(apiInfoList, function(i, apiInfo) {
+        $.each(apiInfo.apiKey, function(i, k) {
+            var v = apiInfo.apiValue[i];
+            var result = '';
+
+            if (isSearchApiValue(v)) {
+                result = getApiValue(v);
+                if (!result) {
+                    isGetFailParams = true;
+                    return false; // break;
+                }
+            } else {
+                result = v;
+            }
+            apiParams[k] = result;
+        });
+
+        if (isGetFailParams) return false; // break;
+    });
+
+    // console.log(apiParams, 'apiParams', isGetFailParams);
+    if (isGetFailParams) return false;
+
+    var apiKey = Object.keys(apiParams);
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    bridge.callEncParams({ ENC_DATE: eDate }, 
+    function () {
+        var params = {
+            opCode: 'NOTICE', 
+            pinNumber: COMM_DATA.pinNumber,
+            // CTN: CTN,
+            ANI: COMM_DATA.ANI,
+            LANG: COMM_DATA.LANG,
+            osLang: COMM_DATA.osLang,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256,
+            rcgType: rcgType,
+            mvnoId: mvnoId,
+            itemId: prodId,
+            merchantId: '',
+            regionId:'',
+            subCustomerId: '',
+            subRegionId: '',
+            rcgAmt: rcgAmt,
+            useCash: useCash,
+            usePoint: usePoint,
+            payAmt: payAmt
+        };
+
+        apiKey.forEach(function(k) {
+            params[k] = apiParams[k];
+        });
+
+        api.rcgEloadV3(params, function(res) {
+            if (typeof res == 'string') res = JSON.parse(res);
+
+            if (res['O_CODE'] == '0000') {
+                var data = res['O_DATA'];
+                var popup = $('#POPUP_pg_confirm');
+//                console.log(data);
+
+                // 리턴 결과 값에 따라서 변동
+                $('#ctn').val(data['O_CTN']);
+                $('#rcgSeq').val(data['O_RCG_SEQ']);
+                $('#opCode').val(data['O_OP_CODE']);
+                $('#creditBillType').val(data['O_CREDIT_BILL_TYPE']);
+                $('#orderNum').val(data['O_ORDERNUM']);
+                $('#pgId').val(data['O_PG_ID']);
+                $('#noticeContent').val(data['O_NOTIECE_CONTENT']);
+
+                // 팝업 값 셋팅
+                popup.find('.popup__desc').html(data['O_NOTIECE_CONTENT']);
+
+//                중복 저장로직으로 기존 O_CTN은 변경 후 사용하지 않음
+//                if (data['O_CTN']) {
+//                    bridge.callAddChargeNumHistory({
+//                        countryCode: $('#countryCode').val(),
+//                        countryNumber: $('.country_code').text(),
+//                        dataType:'num',
+//                        data:data['O_CTN']
+//                    });
+//                }
+
+                //globalphonenumber가 있을 경우 저장함. 독립적인 값이 없어 클래스로 대체함.
+                if($('.int.phone').val() != "")
+                {
+                    bridge.callAddChargeNumHistory({
+                        countryCode: $('#countryCode').val(),
+                        countryNumber: $('.country_code').text(),
+                        dataType:'num',
+                        data:$('.int.phone').val()
+                    });
+                }
+
+                // 충전값 저장. 
+                $('input[data-autocompletetype]').each(function() {
+                    var $this =  $(this);
+                    var type = $this.data('autocompletetype');
+                    var info = $(this).val();
+                    if (!type || !info.length) return true; // continue;
+
+                    // globalphonenumber가 없을 경우 countyCode값을 알수 없어 null값처리
+                    // app에서도 필수값처리 안하기 때문에 상관없음
+                    bridge.callAddChargeInfoHistory({
+                        countryCode: $('#countryCode').val(),
+                        countryNumber: '',
+                        dataType:type,
+                        data:info
+                    });
+                });
+
+                // 장애등 사유로 충전이 불가할때
+                // if (data['O_CHARGE_FLAG'] == 'N') {
+
+                // }
+
+                // DAOU 결제
+                if (payAmt > 0 && (data['O_CREDIT_BILL_TYPE'] == 11 || data['O_CREDIT_BILL_TYPE'] == 12)) { 
+                    bridgeDaou();
+                    return false;
+                }
+
+                // Y 면 즉시 충전, N 이면 PG 결제
+                if (data['O_PAY_FLAG'] == 'Y') {
+                    setPop(popup, true);
+                } else {
+                    $('#send_form').submit();
+                }
+            } else {
+                alert(res['O_MSG']);
+                // history.back();
+            }
+        });
+    });
+}
+
+
+function bridgeDaou(data) {
+    var rcgSeq = $('#rcgSeq').val();
+    var billType = $('#creditBillType').val();
+    var opCode = $('#opCode').val();
+    var orderNum = $('#orderNum').val();
+    var pgId = $('#pgId').val();
+    var noticeContent = $('#noticeContent').val();
+    var ctn = $('#ctn').val();
+    var mvnoId = $('#mvnoId').val();
+    var rcgType = $('#rcgType').val();
+    var rcgAmt = parseInt(util.getNum($('#amt').val()));
+    var useCash = parseInt(util.getNum($('#useCash').val()));
+    var usePoint = parseInt(util.getNum($('#usePoint').val()));
+    var payAmt =  rcgAmt - useCash - usePoint;
+    var mobileOS = util.getMobileOS();
+    var obj = {
+        pinNumber: COMM_DATA.pinNumber,
+        CTN: ctn,
+        USER_ID: COMM_DATA.USER_ID,
+        LANG: COMM_DATA.LANG,
+        SESSION_ID: COMM_DATA.SESSION_ID,
+        ENC_DATE: moment().format('YY-MM-DD HH:mm:ss'),
+        OS: (mobileOS == 'and' ? 'ADR':'IOS'),
+        appType: 'thePAY',
+        ANI: COMM_DATA.ANI,
+        opCode: opCode,
+        rcgSeq: rcgSeq,
+        rcgType: rcgType,
+        rcgAmt: rcgAmt,
+        payAmt: payAmt,
+        CREDIT_BILL_TYPE: billType,
+        ORDERNUM: orderNum,
+        PG_ID: pgId,
+        noti_content: noticeContent
+    };
+    var urlParams = Object.keys(obj).map(function(k) {
+                return (k) + '=' + (obj[k]);
+            }).join('&');
+//    console.log(urlParams);
+
+    bridge.callGetEncDaouParams({ params: urlParams }, ajax_pg_daou);
+}
+
+function ajax_pg_daou(res) {
+    // testConsole(JSON.stringify(params))
+    api.authCardPaymentDaou(res.params, function(res) {
+        if (res['O_CODE'] == '0000') {
+            goBack();
+        } else {
+            alert(res['O_MSG']);
+        }
+    });
+}
+
+// PG 캐시 충전
+function ajax_pg_cash() {
+    var eDate = moment().format('YYYYMMDDHHmmss');
+    bridge.callEncParams({ ENC_DATE: eDate }, function() {
+        var ctn = $('#ctn').val();
+        var mvnoId = $('#mvnoId').val();
+        var rcgType = $('#rcgType').val();
+        var rcgSeq = $('#rcgSeq').val();
+        var opCode = $('#opCode').val();
+        var rcgAmt = parseInt(util.getNum($('#amt').val()));
+        var useCash = parseInt(util.getNum($('#useCash').val()));
+        var usePoint = parseInt(util.getNum($('#usePoint').val()));
+        var payAmt =  0;
+        var params = {
+            rcgSeq: rcgSeq,
+            rcgMode: 'CASH',
+            opCode: opCode, 
+            pinNumber: COMM_DATA.pinNumber,
+            CTN: ctn,
+            ANI: COMM_DATA.ANI,
+            LANG: COMM_DATA.LANG,
+            osLang: COMM_DATA.osLang,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256,
+            rcgType: rcgType,
+            rcgAmt: rcgAmt,
+            payAmt: payAmt
+        };
+
+        api.rcgCash(params, function(res) {
+            if (res['O_CODE'] == '0000') {
+                // alert('[임시 알림] 충전 성공!\n(충전내역 구현 후 내역 페이지으로 이동 처리)');
+
+                // location.reload();
+                location.href = '/rcgHistory.html';
+            } else {
+                alert(res['O_MSG']);
+            }
+        });
+    });
+}
+
+// 이로드 리모트 뷰
+function ajax_eload_remote_view() {
+    var apiParams  = {};
+    var opCode = $('#opCode').val();
+    var mvnoId = $('#mvnoId').val();
+    var prodItemId = $('#prodItem').val();
+    var mobileOs = util.getMobileOS();
+    var apiInfoList = filterArray(_interface, 'apiId', 'requestRechargePreview');
+    var isGetFailParams = false;
+
+    if (!apiInfoList.length) return false;
+    $.each(apiInfoList, function(i, apiInfo) {
+        $.each(apiInfo.apiKey, function(i, k) {
+            var v = apiInfo.apiValue[i];
+            var result = '';
+
+            if (isSearchApiValue(v)) {
+                result = getApiValue(v);
+                if (!result) {
+                    isGetFailParams = true;
+                    return false; // break;
+                }
+            } else {
+                result = v;
+            }
+            apiParams[k] = result;
+        });
+
+        if (isGetFailParams) return false; // break;
+    });
+
+    console.log(apiParams, 'apiParams');
+    if (isGetFailParams) return false;
+
+    var apiKey = Object.keys(apiParams);
+    var eDate = moment().format('YYYYMMDDHHmmss');
+
+    bridge.callEncParams({ ENC_DATE: eDate }, 
+    function() {
+        var params = {
+            opCode: 'P', //opCode,
+            pinNumber: COMM_DATA.pinNumber,
+            ANI: COMM_DATA.ANI,
+            USER_ID: COMM_DATA.USER_ID,
+            // viewtype: 'spinner',
+            mvnoId: mvnoId,
+            itemId: prodItemId,
+            // merchantId: merchantId,
+            // CTN: searchKey,
+            // subId: null,
+            // subMod: 'nplspinnerUtility2Service',
+            // apiKey: null,
+            // searchKey: null,
+            TELCOM: COMM_DATA.TELCOM,
+            // MODEL: COMM_DATA.MODEL,
+            OS: (mobileOs == 'and' ? 'adr':'ios') +'@'+COMM_DATA.OS,
+            APP_VER: 'thePAY@'+COMM_DATA.APP_VER,
+            // osLang: COMM_DATA.osLang,
+            LANG: COMM_DATA.LANG,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256
+        }
+
+        apiKey.forEach(function(k) {
+            params[k] = apiParams[k];
+        });
+
+        // alert(JSON.stringify(params));
+
+        api.eloadRemoteView(params, function(res) {
+            if (res['O_CODE'] == '0000') {
+                var eloadList = res['O_DATA']['eloadList'];
+                var interface = res['O_DATA']['interface'];
+                var selSpinnerList = [];
+                var html = [];
+                var result = getEloadCustomHtml(eloadList);
+
+                interface[0].id = 'remote';
+                _interface.push(interface[0]);
+                _remoteEloadList = eloadList;
+                html = result.html;
+                selSpinnerList = result.selSpinnerList;
+
+                $('.eload_field').find('input[type=hidden]').off().on('change', remoteDel);
+                $('.eload_field').append(html);
+                // sortEloadHtml();
+
+                function remoteDel() {
+                    btnModeChange(false);
+                    $(this).off();
+                    //var idx = _interface.findIndex(function(v) { return v.id == 'remote' });
+
+                    // 낮은버전 코드수정
+                    var idx = -1;
+                    $.each(_interface, function(i,v) { 
+                        if(v.id == 'remote') { idx = i; return false; }
+                    });
+                    if (idx > -1) _interface.splice(idx, 1);
+
+//                    console.log('_interface', _interface, idx);
+                    eloadList.forEach(function(v) {           
+                        $('#form_' + v.id).off().parents('.form-group').remove();
+                    });
+                }
+                $('.eload_field').find('input[type!=hidden]').off().on('keyup input', remoteDel);
+
+                // btn change
+                btnModeChange(true);
+
+                if (selSpinnerList.length) {
+                    selSpinnerList.forEach(function(selObj) {
+                        selectSpinner(selObj);
+                    });
+                }
+            } else {
+                alert(res['O_MSG']);
+            }
+        });
+    });
+}
+
+
+// 이로드 동적 뷰
+function ajax_eload_dynamic_view(arg) {
+    var target;
+    var apiParams = {};
+    $.each(arg, function(i, v) {
+        if (v.target) target = $('#' + v.target);
+        if (v.param.length) {
+            v.param.forEach(function(d) {
+                var val = '';
+                // console.log(d);
+                if (isSearchApiValue(d.value)) {
+                    val = getApiValue(d.value);
+                } else {
+                    val = d.value;
+                }
+                apiParams[d.key] = val;
+            });
+        }
+    });
+
+//    console.log(apiParams, 'argParams');
+    var apiKey = Object.keys(apiParams);
+    var eDate = moment().format('YYYYMMDDHHmmss');
+
+    bridge.callEncParams({ ENC_DATE: eDate }, 
+    function() {
+        var params = {
+            pinNumber: COMM_DATA.pinNumber,
+            // ANI: COMM_DATA.ANI,
+            USER_ID: COMM_DATA.USER_ID,
+            // mvnoId: apiParams.mvnoId,
+            // subMod: apiParams.subMod,
+            // apiKey: apiParams.apiKey,
+            // viewtype: apiParams.viewtype,
+            // regionId: apiParams.regionId,
+            // merchantId: COMM_DATA.TELCOM,
+            // searchKey: '',
+            LANG: COMM_DATA.LANG,
+            SESSION_ID: COMM_DATA.SESSION_ID,
+            ENC_DATE: _ENC.ENC_DATE,
+            AES256: _ENC.AES256
+        }
+
+        apiKey.forEach(function(k) {
+            params[k] = apiParams[k];
+        });
+
+        api.eloadDynamicView(params, function(res) {
+            if (res['O_CODE'] == '0000') {
+                var eloadList = res['O_DATA']['eloadList'];
+
+                if ($.isArray(eloadList)) {
+                    var html = [];
+                    var result = getEloadCustomHtml(eloadList);
+                    html = result.html;
+
+                    // var target = $('#' + apiParams.subMod);
+                    $.each(eloadList, function(i, v) {
+                        var find = findArray(_eloadList, 'id', v.id);
+                        if (!find) _eloadList.push(v);
+                    });
+
+                    target.html(html);
+                }
+            } else {
+                alert(res['O_MSG']);
+            }
+        });
+    });
+}
+
+// 나라 선택
+function renderCountry(eloadList) {
+    if ($.isArray(eloadList)) {
+        console.log(eloadList);
+        var target = $('#POPUP_default').find('.default_select_inner ul');
+        var html = [];
+        var tpl = '<li data-id="{{mvnoId}}" class="{{addClass}}">\
+            <input type="radio" id="mvno_{{mvnoId}}" name="form_mvno">\
+            <label for="mvno_{{mvnoId}}"><span></span> \
+                <img src="/assets/images/nation/flag_{{countryCode}}.png" class="select_country"> {{mvnoName}}\
+            </label>\
+        </li>';
+
+        eloadList.forEach(function(v, i) {
+            v.addClass = '';
+            if ((!_defaultCountry && i == 0) || _defaultCountry == v.mvnoId) v.addClass = 'on';
+            html.push(util.setTemplateObj(tpl, v));
+        });
+
+        if (html.length) {
+            target.html(html);
+
+            selectCountry(target.find('li.on').eq(0));
+        } else target.empty();
+    }
+}
+
+// 충전 상품 그리기
+function renderItem(itemList) {
+    if ($.isArray(itemList)) {
+        _itemList = itemList;
+        // console.log(itemList);
+        var target = $('#item_list');
+        var html = [];
+        //var tpl = '<li data-id="{{itemId}}" data-name="{{itemName}}" class="select_item">\
+        //            <a href="javascript:;">\
+        //                <div class="tabmenu_inner">\
+        //                    <i class="off" ><img src="{{imageDefaultUrl}}"></i>\
+        //                    <i class="on" ><img src="{{imageSelectUrl}}"></i>\
+        //                    <div class="tabmenu_tit">\
+        //                        <div class="l-table">\
+        //                            <div class="l-cell FT__title">\
+        //                                {{title}}\
+        //                            </div>\
+        //                        </div>\
+        //                    </div>\
+        //                </div>\
+        //            </a>\
+        //        </li>';
+        var tpl = '<li data-id="{{itemId}}" data-name="{{itemName}}" class="select_item">\
+                    <a href="javascript:;">\
+                        <i class="off" ><img src="{{imageDefaultUrl}}"></i>\
+                        <i class="on" ><img src="{{imageSelectUrl}}"></i>\
+                        <div class="tabmenu_tit">\
+                            {{title}}\
+                        </div>\
+                    </a>\
+                </li>';
+
+        itemList.forEach(function(v, i) {
+            html.push(util.setTemplateObj(tpl, v));
+        });
+
+        if (html.length) {
+            target.html(html);
+
+            // 기본 아이템 설정
+            var item = target.find('.select_item[data-name='+_defaultProductType+']');
+
+            if (!item.length) item = target.find('.select_item').eq(0);
+            _defaultProductType = null; // 한번 설정 되면 초기화
+            selectItem(item);
+        } else target.empty();
+    }
+}
+
+function btnModeChange(isRecharge) {
+    _isRechargeBtn = isRecharge;
+    if (!isRecharge) {
+        $('#btn_recharge,.payment_box').hide();
+        $('#btn_search').show();
+    } else {
+        $('#btn_recharge,.payment_box').show();
+        $('#btn_search').hide();
+    }
+}
+
+// eLoad 별 필드 그리기
+function renderEloadField(data) {
+    var eloadList = data.eloadList;
+    var interface = data.interface;
+    _interface = interface; // 인터페이스 저장
+
+//    console.log(eloadList, 'eloadList');
+    if ($.isArray(eloadList)) {
+        _eloadList = eloadList;
+        _spinner = {}; // 스피너 초기화
+
+        var html = [];
+        var imgList = [];
+        var selSpinnerList = [];
+        var result = getEloadCustomHtml(eloadList);
+
+        html = result.html;
+        imgList = result.imgList;
+        selSpinnerList = result.selSpinnerList;
+
+        $('.eload_field').html(html);
+
+        if (imgList.length) {
+            $('.item_img_wrap').show().find('.item_img_list').html(imgList);
+            // 이미지 에러
+            $('.item_img_list img').off('error').on('error', function (e) {
+                $(this).parents('li').hide();
+            });
+        } else {
+            $('.item_img_wrap').hide().find('.item_img_list').empty();
+        }
+
+        if (selSpinnerList.length) {
+            selSpinnerList.forEach(function(selObj) {
+                selectSpinner(selObj);
+            });
+        }
+        // btnModeChange
+        btnModeChange(getIsAmtField());
+    }
+}
+
+// 아이템을 직접 받아서 렌더링
+function renderEloadCustomFieldV2(showList) {
+//    console.log('customV2 ', showList);
+    var selSpinnerList = [];
+
+    if ($.isArray(showList)) {
+        var html = [];
+        var fieldList = [];
+
+        $.each(showList, function(i, v) {
+            if (v.type == 'show') {
+                fieldList = fieldList.concat(v.arg);
+            }
+        });
+
+        if (fieldList.length) {
+            fieldList = fieldList.map(function(f) { 
+//                return _eloadList.find(function (item) { return item.id == f }) ;
+                // 낮은버전 코드수정
+                var result;
+                $.each(_eloadList, function(i,v) { 
+                    if(v.id == f) { result = _eloadList[i]; return false; }
+                });
+                return result;
+            });
+
+            fieldList = fieldList.filter(function(f) { return f });
+            fieldList.sort(function(a, b) { return a.sortNo > b.sortNo ? 1:-1 });
+            // console.log('fieldList', fieldList, _eloadList);
+
+            if (fieldList.length) {
+                var result = getEloadCustomHtml(fieldList, true);
+                html = result.html;
+                selSpinnerList = result.selSpinnerList;
+
+                // console.log('교체 전', html);
+
+                // 이미 존재하는 필드 인지 확인하여 제거
+                html.forEach(function(d) {
+                    var $this = $(d);
+                    var input = $this.find('input');
+                    var formId = input.attr('id');
+                    var search = $('#' + formId);
+
+//                    console.log('remove El eload', formId, search);
+
+                    if (search.length) {
+                        search.parents('.form-group').remove();
+                    }
+                });
+
+                $('.eload_field').append(html);
+                sortEloadHtml();
+            }
+        }
+    };
+    return selSpinnerList;
+}
+
+// Eload에 공통 사용
+function getEloadCustomHtml(eloadList, isShowHide) {
+    var html = [];
+    var imgList = [];
+    var selSpinnerList = [];
+    var baseTpl = '<div data-sort="{{sort}}" class="form-group">{{label}}{{input}}</div>';
+    var tplObj = { label: '', input: '' };
+    var tplCnt = 0;
+    var prefix;
+
+    $.each(eloadList, function(i, v) {
+//        alert("==="+JSON.stringify(v));
+        if (v.type == 'hide' && !isShowHide) {
+            return true;
+        }
+
+        if (v.viewtype == 'text') {
+            tplObj.label = util.setTemplateObj(getTemplate(v.viewtype), {
+                id: v.id.replace('_title', ''),
+                text: v.attr.text
+            });
+            tplObj.labelItem = v;
+            tplCnt++;
+        } else if (v.viewtype == 'edittext') {
+            var viewtype = v.viewtype;
+            var obj = {
+                id: v.id,
+                hint: v.attr.hint,
+                apiKey: v.apiKey.length ? v.apiKey[0]:'',
+                min: v.attr.min_val,
+                max: v.attr.max_val,
+                inputType: v.attr.inputType || 'text',
+                autoCompleteType: v.attr.autoCompleteType || ''
+            };
+
+            // prefix 처리
+            if (v.apiValue.length) {
+                $.each(v.apiValue, function(i, apiValue) {
+                    if (apiValue.indexOf('getPrefix') > -1) {
+                        viewtype = 'edittextV2';
+                        obj.prefix = '';
+                        return false;
+                    }
+                });
+            }
+
+            tplObj.input = util.setTemplateObj(getTemplate(viewtype), obj);
+            tplObj.inputItem = v;
+            tplCnt++;
+        } else if (v.viewtype == 'globalPhoneNumber') {
+            tplObj.input = util.setTemplateObj(getTemplate(v.viewtype), {
+                id: v.id,
+                hint: v.attr.hint,
+                countryCode: v.attr.countryCode,
+                apiKey: v.apiKey.length ? v.apiKey[0]:'',
+                min: v.attr.min_val,
+                max: v.attr.max_val
+            });
+            tplObj.inputItem = v;
+            tplCnt++;
+        } else if (v.viewtype == 'spinner') {
+            var itemCode = '';
+
+            if (v.item) {
+                if (v.item.length) {
+                    if (_defaultProviderId == v.id) {
+//                        var item = v.item.find(function(item) { return item.text == _defaultProviderName } );
+                        // 낮은버전 코드수정
+                        var item;
+                        $.each(v.item, function(i,v) { 
+                            if(v.text == _defaultProviderName) { item = v.item[i]; return false; }
+                        });
+
+                        // console.log('_defaultProviderId', v.id, _defaultProviderId, item);
+                        if (item) {
+                            itemCode = item.itemCode;
+                            _defaultProviderId = null;
+                            _defaultProviderName = null;
+                        } else {
+                            itemCode = v.item[0].itemCode;    
+                        }
+                    } else {
+                        itemCode = v.item[0].itemCode;
+                    }
+                    
+                }
+            }
+
+            tplObj.input = util.setTemplateObj(getTemplate(v.viewtype), {
+                id: v.id,
+                itemCode: itemCode,
+                text: v.item.length ? v.item[0].text: '',
+                apiKey: v.apiKey.length ? v.apiKey[0]:''
+            });
+            tplObj.inputItem = v;
+
+            _spinner[v.id] = v.item;
+
+            if (itemCode) {
+                selSpinnerList.push({
+                    fieldId: v.id,
+                    itemCode: itemCode
+                });
+            }
+
+            tplCnt++;
+        } else if (v.viewtype == 'image') {
+            var imageTpl = util.setTemplateObj(getTemplate(v.viewtype), {
+                url: v.attr.contentUrl
+            });
+            imgList.push(imageTpl);
+        } else if (v.viewtype == 'viewGroup') {
+            var viewGroup = util.setTemplateObj(getTemplate(v.viewtype), {
+                id: v.id,
+                sort: v.sortNo
+            });
+            html.push(viewGroup);
+            // tplCnt = 0;
+        }
+
+        if (tplCnt == 2) {
+            // console.log('뭐야 ??', i, tplCnt, tplObj.labelItem.id.replace(/_title/gi, ''), tplObj.inputItem.id)
+            // 유효성 체크
+            // if (tplObj.labelItem.id.replace(/_title/gi, '') != tplObj.inputItem.id) {
+            //     console.log(i, tplCnt, '달라 ??');
+            //     return true;
+            // }
+            
+            tplObj.sort = v.sortNo;
+
+            html.push(util.setTemplateObj(baseTpl, tplObj));
+            tplCnt = 0;
+            tplObj = { label: '', input: '' };
+        }
+    });
+    return { html: html, selSpinnerList: selSpinnerList, imgList: imgList };
+}
+
+function getTemplate(viewtype) {
+    var tpl = '';
+    var margin_str = ''; // 나라별 폰트에 따라 margin값 적용
+
+    if($('#zawgyi').length > 0 && ( viewtype == 'edittextV2' || viewtype == 'globalPhoneNumber'))
+        margin_str = 'style="margin-top:29px;"';
+    else if($('#khmer').length > 0 && ( viewtype == 'edittextV2' || viewtype == 'globalPhoneNumber'))
+        margin_str = 'style="margin-top:24px;"';
+    else if($('#notosans').length > 0 && ( viewtype == 'edittextV2' || viewtype == 'globalPhoneNumber'))
+        margin_str = 'style="margin-top:23px;"';
+
+    if (viewtype == 'text') {
+        tpl = '<label for="form_{{id}}">{{text}}</label>';
+    } else if (viewtype == 'edittext') {
+        tpl = '<div class="int_select_inner int_phone rel">\
+                <input type="{{inputType}}" class="int" id="form_{{id}}" placeholder="{{hint}}" data-key="{{apiKey}}" data-min="{{min}}" data-inputtype="{{inputType}}" data-max="{{max}}" data-autocompletetype="{{autoCompleteType}}">\
+                <a href="javascript:;" class="btn_History1" id=""><img src="/assets/images/i_address2.png" alt="전화부 아이콘"></a>\
+                </div>';
+    } else if (viewtype == 'edittextV2') {
+        tpl = '<div class="int_select_inner int_phone rel">\
+                <input type="{{inputType}}" class="int" id="form_{{id}}" placeholder="{{hint}}" data-key="{{apiKey}}" data-min="{{min}}" data-max="{{max}}" data-inputtype="{{inputType}}" data-autocompletetype="{{autoCompleteType}}">\
+                <span class="prefix" ' + margin_str + '>{{prefix}}</span><a href="javascript:;" class="btn_History1" id=""><img src="/assets/images/i_address2.png" alt="전화부 아이콘"></a>\
+                </div>';
+    } else if (viewtype == 'globalPhoneNumber') {
+        tpl = '<div class="int_select_inner int_phone rel">\
+                <input type="tel" class="int phone intFoc" id="form_{{id}}" placeholder="{{hint}}" autocomplete="off" value="" \
+                    data-min="{{min}}" data-max="{{max}}" \
+                    data-key="{{apiKey}}">\
+                <span class="country_code" ' + margin_str + '>{{countryCode}}</span>\
+                <a href="javascript:;" class="btn_History2" id=""><img src="/assets/images/i_address2.png" alt="전화부 아이콘"></a>\
+                <a href="javascript:;" class="btn_Address" id=""><img src="/assets/images/i_address.png" alt="전화부 아이콘"></a>\
+            </div>';
+    } else if (viewtype == 'spinner') {
+        tpl = '<div name="form_{{id}}" id="{{id}}" class="int_select_inner sel_spinner">\
+                <a href="javascript:;" class="int_select">{{text}}</a>\
+                <input type="hidden" id="form_{{id}}" data-key="{{apiKey}}" value="{{itemCode}}"> \
+            </div>';
+    } else if (viewtype == 'image') {
+        tpl = '<li>\
+                    <a href="javascript:;">\
+                        <div class="tabmenu_inner tac tabmenu_img">\
+                            <div class="tabmenu_image">\
+                                <div class="l-table">\
+                                    <div class="l-cell">\
+                                        <img src="{{url}}" alt="" >\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </a>\
+                </li>';
+    } else if (viewtype == 'viewGroup') {
+        tpl = '<div  id="{{id}}" data-sort="{{sort}}" class="viewGroup"></div>';
+    }
+    return tpl;
+}
+
+// 스피너 그리기
+function renderSpinner(id, isSelFirst) {
+    var target = $('#POPUP_dataCheck .default_select_inner');
+    var html = [];
+    var tpl = '<li data-id="{{id}}" data-code="{{itemCode}}" data-text="{{text}}">\
+                <input type="radio" id="select_{{itemCode}}" name="select" value="{{itemCode}}" {{checked}}><label for="select_{{itemCode}}"><span></span> {{text}}</label>\
+            </li>';
+    var firstSel = {};
+
+    _spinner[id].forEach(function (v, i) {
+        v.checked = '';
+
+        if (i == 0) {
+            firstSel = {
+                itemCode: v.itemCode,
+                fieldId: id
+            }
+            v.checked = 'checked';
+        }
+        html.push(util.setTemplateObj(tpl, { id: id, itemCode: v.itemCode, text: v.text }));
+    });
+
+    if (html.length) {
+        target.empty().html(html);
+
+        var popup = $('#POPUP_dataCheck');
+        var targetCode = $('#form_' + id).val();
+        var offset = 0;
+//        console.log('render Spinner ! =>', id, firstSel, isSelFirst);
+
+        if (!targetCode || isSelFirst) {
+            offset = 0;
+            selectSpinner(firstSel);
+        } else {
+            target.find('input[value="'+ targetCode +'"]').prop('checked', true);
+        }
+
+        setPop(popup, true);
+        if (targetCode) {
+            // fadeIn time wait
+            setTimeout(function() {
+                offset = target.find('input[value="'+ targetCode +'"]').parents('li').prop('offsetTop');
+//                console.log(offset);
+                popup.find('.popup__body').scrollTop(offset);
+            }, 150)
+        }
+    } else {
+        target.empty();
+    }
+}
+
+// 프리픽스 선택
+function renderPrefix(arg) {
+    var target = arg[0];
+    var prefix = arg[1];
+
+    if (prefix) {
+        $('#form_' + target).addClass('int_prefix')
+            .next('.prefix').text(prefix);
+    } else {
+        $('#form_' + target).removeClass('int_prefix')
+            .next('.prefix').text(prefix);
+    }
+}
+
+// 나라 선택
+function selectCountry(target) {
+    var mvnoId = target.data('id');
+    $('#mvnoId').val(mvnoId);
+
+//    var eload = _countryList.find(function(e) {
+//        return e.mvnoId == mvnoId;
+//    });
+	// 낮은버전 코드수정
+    var eload;
+    $.each(_countryList, function(i,v) { 
+        if(v.mvnoId == mvnoId) { eload = _countryList[i]; return false; }
+    });
+
+//    console.log(target, mvnoId);
+    if (eload) {
+        var select = $('.country_select_inner a');
+        select.find('img').attr('src', '/assets/images/nation/flag_' + eload.countryCode + '.png');
+        select.find('span').text(' ' + eload.mvnoName);
+        $('#countryCode').val(eload.countryCode);
+
+        if (eload.itemLists.length) {
+            $('#prodItem').val(eload.itemLists[0].itemId);
+            // 충전 상품 그리기
+            renderItem(eload.itemLists);
+        }
+    }
+}
+
+// 아이템 선택
+function selectItem(item) {
+//    console.log('selectItem', item);
+
+    var itemId = item.data('id');
+    var itemName = item.data('name');
+
+    $('#prodItem').val(itemId);
+    $('#form_itemName').val(itemName);
+    $('.select_item').removeClass('active');
+    item.addClass('active');
+
+    // 충전 상품 정보 가져오기
+    ajax_preloading_eloadV2();
+}
+
+// 스피너 선택
+function selectSpinner(selObj, isPopSel) {
+    // console.log('selObj', selObj);
+    var inp = $('#form_' + selObj.fieldId).val(selObj.itemCode);
+
+    if (inp.prop('type') == 'hidden') inp.trigger('change');
+
+    var item = findArray(_spinner[selObj.fieldId], 'itemCode', selObj.itemCode);
+
+    if (item) {
+        $('#' + selObj.fieldId + ' a').text(item.text);
+        if ($.isArray(item.function)) {
+            // var itemFnc = item.function[0];
+            var showList = item.function.filter(function(v) { return v.type == 'show' });
+            var otherList = item.function.filter(function(v) { return v.type != 'show' });
+            $.each(otherList, function(i, v) {
+                // 일부 타입 유형 때문에 제거
+                if (v['type'] == 'eloadCalcurate') {
+                    if (!v.arg) return true;
+
+                    var itemArg = v.arg[0];
+                    $('#prodId').val(itemArg.prodId);
+                    $('#amt').val(itemArg.amount);
+                    $('#amount').text(_LANG.won + ' ' + util.comma(itemArg.amount));
+                    renderPoint();
+
+                    if (isPopSel)  $(window).scrollTop($('body').prop('scrollHeight'));
+                } else if (v['type'] == 'setPrefix') {
+                    // console.log('setPrefix', v)
+                    renderPrefix(v.arg);
+                } else if (v['type'] == 'requestDynamicView') {
+                    // console.log('다이나믹 뷰 호출 부분', v, item)
+                    ajax_eload_dynamic_view(v.arg);
+                }  else if (v['type'] == 'clearViewGroup') {
+                    // console.log('커스텀 뷰 삭제 처리 clearViewGroup', v)
+                    v.arg.forEach(function(id) {
+                        var target = $('#' + id);
+                        if (target.length) target.empty();
+                    });
+                }  else if (v['type'] == 'hide') {
+                    v.arg.forEach(function(id) {
+                        var target = $('#form_' + id);
+                        if (target.length) target.parents('.form-group').remove();
+                    });
+                }
+            });
+
+            // _isRechargeBtn false 일때 hide 목록이 존재 하면 제거
+            if (!_isRechargeBtn && _remoteEloadList.length) {
+                _remoteEloadList.forEach(function(v) {
+                    $('#form_' + v.id).parents('.form-group').remove();
+                });
+                _remoteEloadList = [];
+            }
+            // show list 만 모아서 따로 동작
+            if (showList.length) {
+                var selSpinnerList = renderEloadCustomFieldV2(showList);
+                
+                if (selSpinnerList.length) {
+                    selSpinnerList.forEach(function(selObj) {
+                        selectSpinner(selObj);
+                    });
+                }
+                // btnModeChange
+                btnModeChange(getIsAmtField());
+            }
+            // console.log('스피너 선택', item, selObj, isAmountField);
+        }
+    }
+}
+
+// 현재 화면에 있는 스피너중 금액 타입이 있는지 확인
+function getIsAmtField() {
+    var spnIdList = Object.keys(_spinner);
+    var isAmtField = false;
+    $.each(spnIdList, function (i, spnId) {
+        var $el = $('#form_' + spnId);
+        if (!$el.length) return true; // Element가 없으면 continue
+        $.each(_spinner[spnId], function(ii, item) {
+//            var amt = item.function.find(function(v) { return v.type == 'eloadCalcurate' });
+            // 낮은버전 코드수정
+            var amt;
+            $.each(item.function, function(i,v) { 
+                if(v.type == 'eloadCalcurate') { amt = item.function[i]; return false; }
+            });
+
+            if (amt) {
+                isAmtField = true;
+                return !isAmtField; // break;
+            }
+        });
+        return !isAmtField; // break;
+    });
+    return isAmtField;
+}
+
+// Eload html 정렬
+function sortEloadHtml() {
+    var html = [];
+    var eloadFields = $('.eload_field').children();
+
+    eloadFields.sort(function(a, b) {
+        return $(a).data('sort') - $(b).data('sort');
+    });
+
+    $('.eload_field').html(eloadFields);
+}
+
+function isSearchApiValue(strValue) {
+    var regExp = /^{#.*}$/gi;
+    return regExp.test(strValue);
+}
+
+function getApiValue(strValue) {
+    var regExp = /[^{?.$?}]+/gim;
+    var regExpEmail = /(\w+\.)*\w+@(\w+\.)+[A-Za-z]{2,3}$/i; 
+    var matchList = strValue.match(regExp);
+    var result = '';
+
+    if (matchList.length != 2) return result;
+
+    var fieldId = matchList[0];
+    var findKey = matchList[1];
+
+    if (fieldId.indexOf('#') > -1) {
+        fieldId = fieldId.replace('#', '');
+        var $this = $('#form_' + fieldId);
+        var itemCode = $this.val();
+        var eload = findArray(_eloadList, 'id', fieldId);
+        var prefixLen = 0;
+
+        // eload 리스트에 없으면 remote 리스트에서 찾음
+        if (!eload) eload = findArray(_remoteEloadList, 'id', fieldId);
+
+        // 그래도 없으면 실패
+        if (!eload) return result;
+
+        // console.log(eload, 'getapivalue', fieldId, findKey)
+
+        var apiKey = eload.apiKey;
+        var apiValue = '';
+        // 스피너 유형 일때
+        if (eload.viewtype == 'spinner') {
+            var item = findArray(eload.item, 'itemCode', itemCode);
+            if (!item) return result;
+            apiValue = item.apiValue;
+        } else if (eload.viewtype == 'edittext') {
+            apiValue = eload.apiValue;
+        } else if (eload.viewtype == 'globalPhoneNumber') {
+            apiValue = eload.apiValue;
+        }
+
+        var idx = findArrayIndex(apiKey, findKey);
+        if (idx > -1) result = apiValue[idx];
+
+        // ApiValue 값에 prefix 가 먼저 존재하는지 확인
+        if (util.getNum(result) && eload.viewtype == 'globalPhoneNumber') {
+            prefixLen = util.getNum(result).length;
+        }
+
+        if (result.indexOf('{$inputValue}') > -1) {
+            var intVal = $this.val();
+            result = result.replace('{$inputValue}', intVal);
+        }
+
+        if (result.indexOf('{$getPrefix}') > -1) {
+            var prefixEl = $('.country_code, .prefix');
+            if (prefixEl.length) {
+                var prefix = prefixEl.text();
+                prefixLen = prefix.length;
+                result = result.replace('{$getPrefix}', prefix);
+            }
+        }
+
+        // console.log('result', result, (result.length), prefixLen);
+
+        // 유효성 체크
+        if ((eload.attr['min_val'] || '') && (result.length - prefixLen) < eload.attr['min_val']) {
+            alert(_LANG.eload_min_length_error.replace(/%d/gi, eload.attr['min_val']));
+            return;
+        }
+
+        if ((eload.attr['max_val'] || '') && (result.length - prefixLen) > eload.attr['max_val']) {
+            alert(_LANG.eload_min_length_error.replace(/%d/gi, eload.attr['max_val']));
+            return;
+        }
+
+        if ((eload.attr.inputType || '') == 'email' && !result.match(regExpEmail)) {
+            alert(_LANG.eload_email_valid_check_error);
+            return;
+        }
+//        console.log(apiKey, apiValue, idx, result);
+    }
+
+    if (isSearchApiValue(result)) {
+        return getApiValue(result); // 재호출
+    } else {
+        return result;
+    }
+}
+
+function findArray(target, searchKey, searchValue) {
+//    return target.find(function (v) { return v[searchKey] == searchValue});
+    // 낮은버전 코드수정
+   var result;
+    $.each(target, function(i,v) { 
+        if(v[searchKey] == searchValue) { result = target[i]; return false; }
+    });
+    return result;
+}
+
+function findArrayIndex(target, searchKey) {
+//    return target.findIndex(function (v) { return v == searchKey});
+    // 낮은버전 코드수정
+    var result = -1;
+    $.each(target, function(i,v) { 
+        if(v == searchKey) { result = i; return false; }
+    });
+    return result;
+}
+
+function filterArray(target, searchKey, searchValue) {
+    return target.filter(function (v) { return v[searchKey] == searchValue});
+}
+
+function setPageComm() {
+    var params = util.getUrlParams();
+
+    if (params['country_type']) {
+        _defaultCountry = params['country_type'];
+    }
+
+    if (params['product_type']) {
+        _defaultProductType = params['product_type'];
+    }
+
+    if (params['provider_id']) {
+        _defaultProviderId = params['provider_id'];
+    }
+
+    if (params['provider_name']) {
+        _defaultProviderName = decodeURIComponent(params['provider_name']);
+    }
+}
+
+function pageLoadInit() {
+    bridge.callCommonParams(function() {
+        commonInit(); // XML LANG load
+        setPageComm(); // SET GET PARAMS
+
+        bridge.callSetWebViewTitle({ 
+            title: _LANG.title_activity_charge_preview_eload 
+        });
+
+        // mustache render
+        pageInit();
+        ajax_page_info();
+        ajax_page_remains();
+
+        // after mustache render
+        pageActionInit();
+    });
+}
+
+// 페이지 이벤트 구현부
+function pageActionInit() {
+    // 뒤로 가기
+    $('.head__back').on('click', function() {
+        history.back();
+    });
+
+    // 팝업닫기
+    $('.popup__close, .dim').on('click', function() {
+        setPop($('.l__popup'), false);
+    });
+
+    // item change
+    $(document).on('click', '.select_item', function() {
+        var $this = $(this);
+        if ($this.hasClass('active')) return false;
+        selectItem($this);
+    });
+
+    $(document).on('keyup input', '.phone',function() {
+        var phone = $(this).val().replace(/[^0-9]/g, "");
+        var max = $(this).data('max');
+
+        // console.log('data max', phone.length, max);
+        if (phone.length > max) {
+            phone = phone.substr(0, max);
+        }
+
+        phone = phone.replace(/(^0[0-9]{2})([0-9]{4})([0-9]{4})/,"$1-$2-$3").replace("--", "-");
+        $(this).val(phone);
+    });
+
+    // 충전 유효성 검사
+    $('#btn_recharge').on('click', function(e) {
+        e.stopPropagation(); e.preventDefault();
+        ajax_pg_rcg();
+    });
+
+    // 충전 진행
+    $('.btn_pg_confirm').on('click', function() {
+        ajax_pg_cash();
+    });
+
+    // form country change
+    $('.country_select_inner').on('click', function() {
+        setPop($('#POPUP_default'), true);
+    });
+    // country 선택
+    $(document).on('click', '#POPUP_default .default_select_inner li',function(e) {
+        e.preventDefault(); e.stopPropagation();
+        var target = $(this);
+        target.find('input').prop('checked', true);
+    });
+    // country select
+    $('.btn_sel_country').on('click', function() {
+        var popup = $(this).parents('.l__popup');
+        var target = popup.find('input[type=radio]:checked');
+
+        if (!target.length) {
+            return false;
+        }
+
+        target = target.parent('li');
+        selectCountry(target);
+        setPop(popup, false);
+    });
+
+    // spinner
+    $(document).on('click', '.sel_spinner', function(e) {
+        e.stopPropagation(); e.preventDefault();
+
+        var id = this.id.replace('form_', '');
+        // var label = $('label[for=form_'+id+']').text();
+
+        // popup.find('.popup__title').text(label);
+        renderSpinner(id, false);
+
+        return false;
+    });
+
+    // 추가팝업 선택
+    $(document).on('click', '#POPUP_dataCheck .default_select_inner li',function(e) {
+        e.preventDefault(); e.stopPropagation();
+        var target = $(this);
+        target.find('input').prop('checked', true);
+    });
+
+    // spinner select
+    $('.btn_spinner_confirm').on('click', function() {
+        var popup = $(this).parents('.l__popup');
+        var target = popup.find('input[type=radio]:checked');
+
+        if (!target.length) {
+            return false;
+        }
+
+        target = target.parent('li');
+
+        var itemCode = target.data('code');
+        var fieldId = target.data('id');
+
+        setPop(popup, false);
+
+        if (itemCode == $('#' + fieldId).val()) return false;
+
+        selectSpinner({
+            itemCode: itemCode,
+            fieldId: fieldId
+        }, true);
+    });
+
+    $('.checkbox_wrap').on('click', function(e) {
+        e.stopPropagation(); e.preventDefault();
+        var target = $(this).find('input[type=checkbox]');
+        var isChecked = target.prop('checked');
+
+        if ($(this).find('.int_check').css('display') == 'none') return false;
+
+        // 1개만 선택
+        $('input[type=checkbox]:checked').prop('checked', false);
+        target.prop('checked', !isChecked);
+
+        if (target.prop('checked')) {
+            if (target.attr('id') == 'use_point') {
+                _userSelCash = 'point';
+            } else {
+                _userSelCash = 'cash';
+            }
+        }
+
+        // payAmt 계산
+        calcPayAmt();
+    });
+
+    // 이로드 조회 네팔:Internet
+    $('#btn_search').on('click', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        ajax_eload_remote_view();
+    });
+
+    $(document).on('click', '.btn_Address',function () {
+        var countryCode = $('#countryCode').val();
+        var dataType = $(this).prevAll('input').data('autocompletetype'); //btn_address공통사용위해 dataType으로 분기처리
+        dataType = (dataType)?dataType:"num";
+        var inputId = $(this).prevAll('input').attr('id');
+
+        bridge.callGoToContact({
+            countryCode: countryCode,
+            tabType: 'commonContact',
+            pageType: 'charge',
+            dataType: dataType,
+            inputId: inputId
+        });
+    });
+
+    $(document).on('click', '.btn_History1, .btn_History2',function (e) {
+        var countryCode = $('#countryCode').val();
+        var dataType = $(this).prevAll('input').data('autocompletetype'); //btn_address공통사용위해 dataType으로 분기처리
+        dataType = (dataType)?dataType:"num";
+        var inputId = $(this).prevAll('input').attr('id');
+
+        bridge.callGoToContact({
+            countryCode: countryCode,
+            tabType: 'commonHistory',
+            pageType: 'charge',
+            dataType: dataType,
+            inputId: inputId
+        });
+    });
+
+    // 인풋 입력시 타겟의 위치의 절반 만큼 스크롤 이동
+    // 이부분은 페이지 마다 엘리먼트 속성의 차이로 개별 구현함
+    $(document).on('focus', 'input', function() {
+        var formGroup = $(this).parents('.form-group');
+        if (!formGroup.length) return false;
+        var offsetTop  = formGroup.prop('offsetTop');
+        $(window).scrollTop(offsetTop/2);
+    });
+}
+
+$(function(){   
+    pageLoadInit();
+});
+</script>
+</body>
+</html>
